@@ -2,12 +2,13 @@ import pandas as pd
 import re
 import json
 
-df = pd.read_csv('./recipe/Recipe.csv')
-df_de = pd.read_csv('./recipe/RecipeDE.csv')
-df_fr = pd.read_csv('./recipe/RecipeFR.csv')
-df_ja = pd.read_csv('./recipe/RecipeJA.csv')
 
-df_level_table = pd.read_csv('./recipe/RecipeLevelTable.csv')
+df = pd.read_csv("./recipe/Recipe.csv")
+df_de = pd.read_csv("./recipe/RecipeDE.csv")
+df_fr = pd.read_csv("./recipe/RecipeFR.csv")
+df_ja = pd.read_csv("./recipe/RecipeJA.csv")
+
+df_level_table = pd.read_csv("./recipe/RecipeLevelTable.csv")
 df_level_table.columns = df_level_table.iloc[0]
 df_level_table = df_level_table[2:]
 
@@ -31,14 +32,11 @@ recipes_df = {}
 recipes_df_de = {}
 recipes_df_fr = {}
 recipes_df_ja = {}
-for craft in craft_types:
-    recipes_df[craft] = df[df["CraftType"] == craft]
-for craft in craft_types_de:
-    recipes_df_de[craft] = df_de[df_de["CraftType"] == craft]
-for craft in craft_types_fr:
-    recipes_df_fr[craft] = df_fr[df_fr["CraftType"] == craft]
-for craft in craft_types_ja:
-    recipes_df_ja[craft] = df_ja[df_ja["CraftType"] == craft]
+for i in range(len(craft_types)):
+    recipes_df[craft_types[i]] = df[df["CraftType"] == craft_types[i]]
+    recipes_df_de[craft_types_de[i]] = df_de[df_de["CraftType"] == craft_types_de[i]]
+    recipes_df_fr[craft_types_fr[i]] = df_fr[df_fr["CraftType"] == craft_types_fr[i]]
+    recipes_df_ja[craft_types_ja[i]] = df_ja[df_ja["CraftType"] == craft_types_ja[i]]
 
 
 export_recipes = {
@@ -79,8 +77,12 @@ for j, craft_type in enumerate(recipes_df):
         name_fr = recipes_df_fr[craft_types_fr[j]].iloc[i]["Item{Result}"]
         name_fr = str(name_fr).replace("<SoftHyphen/>", "\u00AD")
         name_ja = recipes_df_ja[craft_types_ja[j]].iloc[i]["Item{Result}"]
-        level_table_num = [num for num in re.findall(r'\d+', current_recipe["RecipeLevelTable"])][0]
-        current_recipe["RecipeLevelTable"] = df_level_table.iloc[int(level_table_num)]  # append level table
+        level_table_num = [
+            num for num in re.findall(r"\d+", current_recipe["RecipeLevelTable"])
+        ][0]
+        current_recipe["RecipeLevelTable"] = df_level_table.iloc[
+            int(level_table_num)
+        ]  # append level table
         current_level_table = current_recipe["RecipeLevelTable"]
         difficulty = current_level_table["Difficulty"]
         durability = current_level_table["Durability"]
@@ -93,30 +95,36 @@ for j, craft_type in enumerate(recipes_df):
         quality_modifier = current_level_table["QualityModifier"]
         suggested_craft = current_level_table["SuggestedCraftsmanship"]
         stars = current_level_table["Stars"]
-        if (type(name) == str):
-            export_recipes[craft_key].append({
-                "baseLevel": int(base_level),
-                "difficulty": int(difficulty),
-                "durability": int(durability),
-                "level": int(level),
-                "maxQuality": int(quality),
-                "name": {
-                    "de": name_de,
-                    "en": name,
-                    "fr": name_fr,
-                    "ja": name_ja,
-                },
-                "progressDivider": int(progress_divider),
-                "progressModifier": int(progress_modifier),
-                "qualityDivider": int(quality_divider),
-                "qualityModifier": int(quality_modifier),
-                "suggestedCraftsmanship": int(suggested_craft),
-                "stars": int(stars),
-            })
-
+        if type(name) == str:
+            export_recipes[craft_key].append(
+                {
+                    "baseLevel": int(base_level),
+                    "difficulty": int(difficulty),
+                    "durability": int(durability),
+                    "level": int(level),
+                    "maxQuality": int(quality),
+                    "name": {
+                        "de": name_de,
+                        "en": name,
+                        "fr": name_fr,
+                        "ja": name_ja,
+                    },
+                    "progressDivider": int(progress_divider),
+                    "progressModifier": int(progress_modifier),
+                    "qualityDivider": int(quality_divider),
+                    "qualityModifier": int(quality_modifier),
+                    "suggestedCraftsmanship": int(suggested_craft),
+                    "stars": int(stars),
+                }
+            )
 
 
 for crafter in export_recipes:
     with open(f"./export/{crafter}.json", "w", encoding="utf-8") as json_file:
-        json.dump(export_recipes[crafter], json_file, indent=2, sort_keys=True, ensure_ascii=False)
-
+        json.dump(
+            export_recipes[crafter],
+            json_file,
+            indent=2,
+            sort_keys=True,
+            ensure_ascii=False,
+        )
