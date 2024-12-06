@@ -93,23 +93,23 @@ for j, craft_type in enumerate(recipes_df):
         stars = current_level_table["Stars"]
         if (type(name) == str):
             export_recipes[craft_key].append({
-                "baseLevel": base_level,
-                "difficulty": difficulty,
-                "durability": durability,
-                "level": level,
-                "maxQuality": quality,
+                "baseLevel": int(base_level),
+                "difficulty": int(difficulty),
+                "durability": int(durability),
+                "level": int(level),
+                "maxQuality": int(quality),
                 "name": {
                     "de": name_de,
                     "en": name,
                     "fr": name_fr,
                     "ja": name_ja,
                 },
-                "progressDivider": progress_divider,
-                "progressModifier": progress_modifier,
-                "qualityDivider": quality_divider,
-                "qualityModifier": quality_modifier,
-                "suggestedCraftsmanship": suggested_craft,
-                "stars": stars,
+                "progressDivider": int(progress_divider),
+                "progressModifier": int(progress_modifier),
+                "qualityDivider": int(quality_divider),
+                "qualityModifier": int(quality_modifier),
+                "suggestedCraftsmanship": int(suggested_craft),
+                "stars": int(stars),
             })
 
 
