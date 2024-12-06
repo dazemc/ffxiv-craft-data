@@ -17,14 +17,15 @@ recipes_df = {}
 for craft in craft_types:
     recipes_df[craft] = df[df["CraftType"] == craft]
 
-current_recipe = recipes_df["Woodworking"].iloc[1]
+current_recipe = recipes_df["Woodworking"].iloc[666]
 name = current_recipe["Item{Result}"]
-base_level = [num for num in re.findall(r'\d+', current_recipe["RecipeLevelTable"])][0]
-current_recipe["RecipeLevelTable"] = df_level_table.iloc[int(base_level)]  # append level table
+level_table_num = [num for num in re.findall(r'\d+', current_recipe["RecipeLevelTable"])][0]
+current_recipe["RecipeLevelTable"] = df_level_table.iloc[int(level_table_num)]  # append level table
 current_level_table = current_recipe["RecipeLevelTable"]
 difficulty = current_level_table["Difficulty"]
 durability = current_level_table["Durability"]
-level = current_level_table["#"]
+level = current_level_table["ClassJobLevel"]
+base_level = current_level_table["#"]
 quality = current_level_table["Quality"]
 progress_divider = current_level_table["ProgressDivider"]
 progress_modifier = current_level_table["ProgressModifier"]
@@ -48,7 +49,9 @@ print({
     "suggestedCraftsmanship": suggested_craft,
     "stars": stars,
 })
-
+# print(first_loc)
+print(current_level_table)
+# print(name)
 
 
 
