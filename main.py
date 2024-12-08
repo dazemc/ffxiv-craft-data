@@ -84,11 +84,20 @@ for j, craft_type in enumerate(recipes_df):
             int(level_table_num)
         ]  # append level table
         current_level_table = current_recipe["RecipeLevelTable"]
-        difficulty = current_level_table["Difficulty"]
-        durability = current_level_table["Durability"]
+        difficulty = int(current_level_table["Difficulty"])
+        durability = int(current_level_table["Durability"])
         base_level = current_level_table["ClassJobLevel"]
         level = current_level_table["#"]
-        quality = current_level_table["Quality"]
+        quality = int(current_level_table["Quality"])
+        difficulty_factor = int(current_recipe["DifficultyFactor"]) / 100
+        quality_factor = int(current_recipe["QualityFactor"]) / 100
+        durability_factor = int(current_recipe["DurabilityFactor"]) / 100
+        difficulty *= difficulty_factor
+        durability *= durability_factor
+        quality *= quality_factor
+        difficulty = int(difficulty // 1)
+        durability = int(durability // 1)
+        quality = int(quality // 1)
         progress_divider = current_level_table["ProgressDivider"]
         progress_modifier = current_level_table["ProgressModifier"]
         quality_divider = current_level_table["QualityDivider"]
@@ -99,10 +108,10 @@ for j, craft_type in enumerate(recipes_df):
             export_recipes[craft_key].append(
                 {
                     "baseLevel": int(base_level),
-                    "difficulty": int(difficulty),
-                    "durability": int(durability),
+                    "difficulty": difficulty,
+                    "durability": durability,
                     "level": int(level),
-                    "maxQuality": int(quality),
+                    "maxQuality": quality,
                     "name": {
                         "de": name_de,
                         "en": name,
