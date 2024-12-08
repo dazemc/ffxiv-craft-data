@@ -1,6 +1,7 @@
 import pandas as pd
 import re
 import json
+import os
 
 
 df = pd.read_csv("./recipe/Recipe.csv")
@@ -127,13 +128,14 @@ for j, craft_type in enumerate(recipes_df):
                 }
             )
 
-
-for crafter in export_recipes:
-    with open(f"./export/{crafter}.json", "w", encoding="utf-8") as json_file:
-        json.dump(
-            export_recipes[crafter],
-            json_file,
-            indent=2,
-            sort_keys=True,
-            ensure_ascii=False,
-        )
+path = "../../data/recipedb/"
+if os.path.isdir(path):
+    for crafter in export_recipes:
+        with open(f"./{path}/{crafter}.json", "w", encoding="utf-8") as json_file:
+            json.dump(
+                export_recipes[crafter],
+                json_file,
+                indent=2,
+                sort_keys=True,
+                ensure_ascii=False,
+            )
