@@ -57,7 +57,7 @@ class Program
             }
             using (var levelWriter = new StreamWriter(csvRecipeLevelTable))
             {
-                levelWriter.WriteLine("#", "Stars", "Difficulty");
+                levelWriter.WriteLine("#,Stars,Difficulty");
                 foreach (var level in recipeLevelTable) 
                 {
                     levelWriter.WriteLine($"{level.Key},{level.Stars}.{level.Difficulty}");
