@@ -1,0 +1,3 @@
+[submodule "saintcoinach_src"]
+	path = saintcoinach_src
+	url = https://github.com/xivapi/SaintCoinach.git
