@@ -1,4 +1,4 @@
-#,CraftType,RecipeLevelTable,Item{Result},MaterialQualityFactor,DifficultyFactor,QualityFactor,DurabilityFactor,RequiredControl,RequiredCraftsmanship
+#,CraftType,RecipeLevelTable,Name,MaterialQualityFactor,DifficultyFactor,QualityFactor,DurabilityFactor,RequiredControl,RequiredCraftsmanship
 0,Woodworking,RecipeLevelTable#0,,50,100,100,100,0,0
 1,Smithing,RecipeLevelTable#1,Bronze Ingot,0,50,80,67,0,0
 2,Smithing,RecipeLevelTable#1,Bronze Hatchet,50,100,100,100,0,0
