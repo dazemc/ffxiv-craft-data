@@ -1,119 +1,97 @@
 import pandas as pd
-import re
 import json
 import os
+import subprocess
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
-os.chdir(script_dir)
-
-df = pd.read_csv("./recipe/Recipe.csv")
-df_de = pd.read_csv("./recipe/RecipeDE.csv")
-df_fr = pd.read_csv("./recipe/RecipeFR.csv")
-df_ja = pd.read_csv("./recipe/RecipeJA.csv")
-
-df_level_table = pd.read_csv("./recipe/RecipeLevelTable.csv")
-df_level_table.columns = df_level_table.iloc[0]
-df_level_table = df_level_table[2:]
-
-df.columns = df.iloc[0]
-df = df[1:]
-df_de.columns = df_de.iloc[0]
-df_de = df_de[1:]
-df_fr.columns = df_fr.iloc[0]
-df_fr = df_fr[1:]
-df_ja.columns = df_ja.iloc[0]
-df_ja = df_ja[1:]
+CRAFTDATA_FILEPATH: str = "/CraftData/Debug/net7.0/"
+CSV_FILEPATH: str = "./CraftData/Debug/net7.0/export/Recipe.csv"
+CURRENT_FILEPATH: str = os.path.abspath(__file__).replace("main.py", "")
 
 
-craft_types = list(df["CraftType"].unique())[1:]
-craft_types_de = list(df_de["CraftType"].unique())[1:]
-craft_types_fr = list(df_fr["CraftType"].unique())[1:]
-craft_types_ja = list(df_ja["CraftType"].unique())[1:]
+def set_cwd(filepath: str = "") -> None:
+    os.chdir(os.path.dirname(CURRENT_FILEPATH + filepath))
+
+def create_csv() -> None:
+    print(os.getcwd())
+    subprocess.run([
+        "./CraftData.exe"
+    ])
+
+def read_csv(file_path: str) -> pd.DataFrame:
+    df: pd.DataFrame = pd.read_csv(file_path)
+    df.dropna(inplace=True)
+    return df
 
 
-recipes_df = {}
-recipes_df_de = {}
-recipes_df_fr = {}
-recipes_df_ja = {}
-for i in range(len(craft_types)):
-    recipes_df[craft_types[i]] = df[df["CraftType"] == craft_types[i]]
-    recipes_df_de[craft_types_de[i]] = df_de[df_de["CraftType"] == craft_types_de[i]]
-    recipes_df_fr[craft_types_fr[i]] = df_fr[df_fr["CraftType"] == craft_types_fr[i]]
-    recipes_df_ja[craft_types_ja[i]] = df_ja[df_ja["CraftType"] == craft_types_ja[i]]
+def seperate_crafters(crafts: list, df: pd.DataFrame) -> dict:
+    recipes_df: dict = {}
+    for crafter in crafts:
+        recipes_df[crafter] = df[df.CraftType == crafter]
+    return recipes_df
 
 
-export_recipes = {
-    "Carpenter": [],
-    "Blacksmith": [],
-    "Armorer": [],
-    "Leatherworker": [],
-    "Weaver": [],
-    "Goldsmith": [],
-    "Culinarian": [],
-    "Alchemist": [],
-}
+def create_export(recipes_df: dict) -> dict:
+    export_recipes: dict = {
+        "Carpenter": [],
+        "Blacksmith": [],
+        "Armorer": [],
+        "Leatherworker": [],
+        "Weaver": [],
+        "Goldsmith": [],
+        "Culinarian": [],
+        "Alchemist": [],
+    }
 
-
-for j, craft_type in enumerate(recipes_df):
-    for i in range(len(recipes_df[craft_type])):
-        match craft_type:
-            case "Alchemy":
-                craft_key = "Alchemist"
-            case "Armorcraft":
-                craft_key = "Armorer"
-            case "Smithing":
-                craft_key = "Blacksmith"
-            case "Woodworking":
-                craft_key = "Carpenter"
-            case "Cooking":
-                craft_key = "Culinarian"
-            case "Goldsmithing":
-                craft_key = "Goldsmith"
-            case "Clothcraft":
-                craft_key = "Weaver"
-            case "Leatherworking":
-                craft_key = "Leatherworker"
-        current_recipe = recipes_df[craft_type].iloc[i]
-        name = current_recipe["Item{Result}"]
-        name_de = recipes_df_de[craft_types_de[j]].iloc[i]["Item{Result}"]
-        name_de = str(name_de).replace("<SoftHyphen/>", "\u00AD")
-        name_fr = recipes_df_fr[craft_types_fr[j]].iloc[i]["Item{Result}"]
-        name_fr = str(name_fr).replace("<SoftHyphen/>", "\u00AD")
-        name_ja = recipes_df_ja[craft_types_ja[j]].iloc[i]["Item{Result}"]
-        level_table_num = [
-            num for num in re.findall(r"\d+", current_recipe["RecipeLevelTable"])
-        ][0]
-        current_recipe["RecipeLevelTable"] = df_level_table.iloc[
-            int(level_table_num)
-        ]  # append level table
-        current_level_table = current_recipe["RecipeLevelTable"]
-        difficulty = int(current_level_table["Difficulty"])
-        durability = int(current_level_table["Durability"])
-        base_level = current_level_table["ClassJobLevel"]
-        level = current_level_table["#"]
-        quality = int(current_level_table["Quality"])
-        difficulty_factor = int(current_recipe["DifficultyFactor"]) / 100
-        quality_factor = int(current_recipe["QualityFactor"]) / 100
-        durability_factor = int(current_recipe["DurabilityFactor"]) / 100
-        difficulty *= difficulty_factor
-        durability *= durability_factor
-        quality *= quality_factor
-        difficulty = int(difficulty // 1)
-        durability = int(durability // 1)
-        quality = int(quality // 1)
-        progress_divider = current_level_table["ProgressDivider"]
-        progress_modifier = current_level_table["ProgressModifier"]
-        quality_divider = current_level_table["QualityDivider"]
-        quality_modifier = current_level_table["QualityModifier"]
-        suggested_craft = current_level_table["SuggestedCraftsmanship"]
-        stars = current_level_table["Stars"]
-        if type(name) == str:
+    for craft_type in recipes_df:
+        for i in range(len(recipes_df[craft_type])):
+            match craft_type:
+                case "Alchemy":
+                    craft_key: str = "Alchemist"
+                case "Armorcraft":
+                    craft_key: str = "Armorer"
+                case "Smithing":
+                    craft_key: str = "Blacksmith"
+                case "Woodworking":
+                    craft_key: str = "Carpenter"
+                case "Cooking":
+                    craft_key: str = "Culinarian"
+                case "Goldsmithing":
+                    craft_key: str = "Goldsmith"
+                case "Clothcraft":
+                    craft_key: str = "Weaver"
+                case "Leatherworking":
+                    craft_key: str = "Leatherworker"
+            current_recipe: dict = recipes_df[craft_type].iloc[i]
+            name: str = current_recipe.Name
+            name_de: str = str(current_recipe.NameDE).replace("<SoftHyphen/>", "\u00AD")
+            name_fr: str = str(current_recipe.NameFR).replace("<SoftHyphen/>", "\u00AD")
+            name_ja: str = current_recipe.NameJA
+            difficulty: int = int(current_recipe.Difficulty)
+            durability: int = int(current_recipe.Durability)
+            base_level: int = int(current_recipe.ClassJobLevel)
+            level: int = int(current_recipe.Level)
+            quality: int = int(current_recipe.Quality)
+            difficulty_factor: int = int(current_recipe.DifficultyFactor) / 100
+            quality_factor: int = int(current_recipe.QualityFactor) / 100
+            durability_factor: int = int(current_recipe.DurabilityFactor) / 100
+            difficulty *= difficulty_factor
+            durability *= durability_factor
+            quality *= quality_factor
+            difficulty: int = int(difficulty // 1)
+            durability: int = int(durability // 1)
+            quality: int = int(quality // 1)
+            progress_divider: int = int(current_recipe.ProgressDivider)
+            progress_modifier: int = int(current_recipe.ProgressModifier)
+            quality_divider: int = int(current_recipe.QualityDivider)
+            quality_modifier: int = int(current_recipe.QualityModifier)
+            suggested_craft: int = int(current_recipe.SuggestedCrafsmanship)
+            stars: int = int(current_recipe.Stars)
             export_recipes[craft_key].append(
                 {
-                    "baseLevel": int(base_level),
+                    "baseLevel": base_level,
                     "difficulty": difficulty,
                     "durability": durability,
-                    "level": int(level),
+                    "level": level,
                     "maxQuality": quality,
                     "name": {
                         "de": name_de,
@@ -121,25 +99,41 @@ for j, craft_type in enumerate(recipes_df):
                         "fr": name_fr,
                         "ja": name_ja,
                     },
-                    "progressDivider": int(progress_divider),
-                    "progressModifier": int(progress_modifier),
-                    "qualityDivider": int(quality_divider),
-                    "qualityModifier": int(quality_modifier),
-                    "suggestedCraftsmanship": int(suggested_craft),
-                    "stars": int(stars),
+                    "progressDivider": progress_divider,
+                    "progressModifier": progress_modifier,
+                    "qualityDivider": quality_divider,
+                    "qualityModifier": quality_modifier,
+                    "suggestedCraftsmanship": suggested_craft,
+                    "stars": stars,
                 }
             )
+    return export_recipes
 
-path = "../../data/recipedb/"
-if not os.path.isdir(path):
-    path = "export"
-    os.mkdir(path)
-for crafter in export_recipes:
-    with open(f"./{path}/{crafter}.json", "w", encoding="utf-8") as json_file:
-        json.dump(
-            export_recipes[crafter],
-            json_file,
-            indent=2,
-            sort_keys=True,
-            ensure_ascii=False,
-        )
+
+def export(export_recipes: dict) -> None:
+    path: str = "../../data/recipedb/"
+    if not os.path.isdir(path):
+        path: str = "export"
+        if not os.path.isdir(path):
+            os.mkdir(path)
+    for crafter in export_recipes:
+        with open(f"./{path}/{crafter}.json", "w", encoding="utf-8") as json_file:
+            json.dump(
+                export_recipes[crafter],
+                json_file,
+                indent=2,
+                sort_keys=True,
+                ensure_ascii=False,
+            )
+def main() -> None:
+    set_cwd(CRAFTDATA_FILEPATH)
+    create_csv()
+    set_cwd()
+    df: pd.DataFrame = read_csv(CSV_FILEPATH)
+    craft_types: list = list(df.CraftType.unique())
+    recipes_df: dict = seperate_crafters(crafts=craft_types, df=df)
+    export_recipes: dict = create_export(recipes_df=recipes_df)
+    export(export_recipes=export_recipes)
+
+if __name__ == "__main__":
+    main()
