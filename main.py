@@ -4,12 +4,19 @@ import os
 import subprocess
 
 CRAFTDATA_FILEPATH: str = "/CraftData/Debug/net7.0/"
+CRAFTDATA_CONFIG: str = CRAFTDATA_FILEPATH + "config.txt"
+FFXIV_FILEPATH: str = "G:/SteamLibrary/steamapps/common/FINAL FANTASY XIV Online"
 CSV_FILEPATH: str = "./CraftData/Debug/net7.0/export/Recipe.csv"
 CURRENT_FILEPATH: str = os.path.abspath(__file__).replace("main.py", "")
 
 
 def set_cwd(filepath: str = "") -> None:
     os.chdir(os.path.dirname(CURRENT_FILEPATH + filepath))
+
+
+def set_ffxiv_filepath(filepath: str) -> None:
+    with open("config.txt", "w") as file:
+        file.writelines(filepath)
 
 def create_csv() -> None:
     subprocess.run([
@@ -126,6 +133,7 @@ def export(export_recipes: dict) -> None:
             )
 def main() -> None:
     set_cwd(CRAFTDATA_FILEPATH)
+    set_ffxiv_filepath(FFXIV_FILEPATH)
     create_csv()
     set_cwd()
     df: pd.DataFrame = read_csv(CSV_FILEPATH)
