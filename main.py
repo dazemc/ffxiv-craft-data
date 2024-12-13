@@ -12,7 +12,6 @@ def set_cwd(filepath: str = "") -> None:
     os.chdir(os.path.dirname(CURRENT_FILEPATH + filepath))
 
 def create_csv() -> None:
-    print(os.getcwd())
     subprocess.run([
         "./CraftData.exe"
     ])
