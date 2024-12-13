@@ -1,3 +1,1 @@
-This aims to replace the need for a 3rd party api call for ffxiv-craft
-
-Currently using saintcoinach.cmd. A compiled saintcoinach version is in progress to pull sheet files directly from gamefiles, directory is set in CraftData/config.txt. Execute CraftData.exe to pull csv files.
+Set ffxiv installation directory in main.py, then run main.py. If executed outside of ffxiv craft directory it will create an export directory with the needed json files. 
