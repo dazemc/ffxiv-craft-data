@@ -6,9 +6,10 @@ import mmap
 import struct
 from io import StringIO
 
+FFXIV_FILEPATH: str = "G:/SteamLibrary/steamapps/common/FINAL FANTASY XIV Online"
+
 CRAFTDATA_FILEPATH: str = "/CraftData/Debug/net7.0/"
 CRAFTDATA_CONFIG: str = CRAFTDATA_FILEPATH + "config.txt"
-FFXIV_FILEPATH: str = "G:/SteamLibrary/steamapps/common/FINAL FANTASY XIV Online"
 # CSV_FILEPATH: str = "./CraftData/Debug/net7.0/export/Recipe.csv"
 CURRENT_FILEPATH: str = os.path.abspath(__file__).replace("main.py", "")
 

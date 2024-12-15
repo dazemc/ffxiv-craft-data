@@ -1,11 +1,7 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using System.IO.MemoryMappedFiles;
+﻿using System.IO.MemoryMappedFiles;
 using SaintCoinach;
 using SaintCoinach.Xiv;
 using SaintCoinach.Ex;
-using System.Collections.Generic;
 using System.Text;
 
 class Program
@@ -14,7 +10,7 @@ class Program
     {
         // Specify the path to the game directory
         const string ConfigFilePath = @"config.txt";
-        
+
         // Shared Memory 
         const string sharedMemoryName = "Global\\CraftData";
         const int sharedMemorySize = 5000192;
@@ -54,7 +50,7 @@ class Program
             // var csvRecipe = @"./export/Recipe.csv";
 
             // Open or create the CSV file
-            var csv = new System.Text.StringBuilder();
+            var csv = new StringBuilder();
             csv.AppendLine(
             "Key," +
             "Level," +
@@ -118,7 +114,7 @@ class Program
                     Console.ReadLine();
                 }
             }
-            
+
         }
         catch (DirectoryNotFoundException ex)
         {
