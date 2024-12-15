@@ -110,7 +110,7 @@ class Program
                     byte[] bytes = Encoding.UTF8.GetBytes(csv.ToString());
                     accessor.Write(0, bytes.Length);
                     accessor.WriteArray(4, bytes, 0, bytes.Length);
-                    Console.WriteLine("Waiting to be terminated...");
+                    Console.WriteLine("terminate");
                     Console.ReadLine();
                 }
             }

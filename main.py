@@ -22,7 +22,7 @@ async def run_exe_waiting_input() -> asyncio.subprocess.Process:
     try:
         process: asyncio.subprocess.Process = await asyncio.create_subprocess_exec(
             "./CraftData.exe",
-            # stdout=asyncio.subprocess.PIPE,
+            stdout=asyncio.subprocess.PIPE,
         )
         return process
 
@@ -49,10 +49,18 @@ def set_ffxiv_filepath(filepath: str) -> None:
         file.writelines(filepath)
 
 
+async def terminate_signal(process) -> bool:
+    async for line in process.stdout:
+        if "terminate" in line.decode("utf-8").strip():
+            return False
+        return True
+
+
 async def create_csv() -> StringIO:
     process_task: asyncio.Task = asyncio.create_task(run_exe_waiting_input())
     process: asyncio.Task = await process_task
-    await asyncio.sleep(8)  # TODO: Dynamic await
+    while await terminate_signal(process):
+        await asyncio.sleep(0.1)
     csv: StringIO = read_shared_memory()
     if process:
         process.terminate()
