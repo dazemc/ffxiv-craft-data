@@ -38,7 +38,7 @@ def read_shared_memory() -> StringIO:
         with mmap.mmap(-1, memory_size, tagname=shared_memory_name) as mm:
             memory_size = struct.unpack("i", mm)[0]
         with mmap.mmap(-1, memory_size, tagname=shared_memory_name) as mm:
-            data: str = mm[:].decode("utf-8")
+            data: str = mm[4:memory_size].decode("utf-8")
             csv_buffer: StringIO = StringIO(data)
             return csv_buffer
     except Exception as e:
