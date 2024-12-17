@@ -31,13 +31,14 @@ async def run_exe_waiting_input() -> asyncio.subprocess.Process:
 
 
 def read_shared_memory() -> StringIO:
-    shared_memory_name = "Global\\CraftData"
-    memory_size = 5000192
+    shared_memory_name: str = "Global\\CraftData"
+    memory_size: int = 4  # First 4 bytes stores the length of the byte array
 
     try:
         with mmap.mmap(-1, memory_size, tagname=shared_memory_name) as mm:
-            data_length: int = struct.unpack("i", mm[:4])[0]
-            data: str = mm[4 : 4 + data_length].decode("utf-8")
+            memory_size = struct.unpack("i", mm)[0]
+        with mmap.mmap(-1, memory_size, tagname=shared_memory_name) as mm:
+            data: str = mm[:].decode("utf-8")
             csv_buffer: StringIO = StringIO(data)
             return csv_buffer
     except Exception as e:

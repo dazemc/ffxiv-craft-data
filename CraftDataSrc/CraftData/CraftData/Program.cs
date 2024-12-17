@@ -13,7 +13,7 @@ class Program
 
         // Shared Memory 
         const string sharedMemoryName = "Global\\CraftData";
-        const int sharedMemorySize = 5000192;
+        int sharedMemorySize = 4;
 
         // Check if the config file exists
         if (!File.Exists(ConfigFilePath))
@@ -102,13 +102,14 @@ class Program
                 $"{recipe.RecipeLevelTable[8]}"
                 );
             }
+            byte[] bytes = Encoding.UTF8.GetBytes(csv.ToString());
+            sharedMemorySize += bytes.Length;
 
             using (MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen(sharedMemoryName, sharedMemorySize))
             {
                 using (MemoryMappedViewAccessor accessor = mmf.CreateViewAccessor())
                 {
-                    byte[] bytes = Encoding.UTF8.GetBytes(csv.ToString());
-                    accessor.Write(0, bytes.Length);
+                    accessor.Write(0, sharedMemorySize);
                     accessor.WriteArray(4, bytes, 0, bytes.Length);
                     Console.WriteLine("terminate");
                     Console.ReadLine();
