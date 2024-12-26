@@ -78,7 +78,7 @@ class Program
                 "MaxValue," +
                 "PercentageValueHQ," +
                 "MaxValueHQ," +
-                "BuffType" +
+                "BuffType," +
                 "PercentageValue," +
                 "MaxValue," +
                 "PercentageValueHQ," +
