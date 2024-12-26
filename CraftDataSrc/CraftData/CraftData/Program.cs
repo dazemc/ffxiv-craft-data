@@ -67,13 +67,13 @@ class Program
             StringBuilder csvItem = new StringBuilder();
 
             csvItem.AppendLine( // TODO: dynamic header to match item values
-                "Key" +
+                "Key," +
                 "Category," +
-                "Name" +
-                "NameJA" +
-                "NameDE" +
-                "NameFR" +
-                "BuffType" +
+                "Name," +
+                "NameJA," +
+                "NameDE," +
+                "NameFR," +
+                "BuffType," +
                 "PercentageValue," +
                 "MaxValue," +
                 "PercentageValueHQ," +
