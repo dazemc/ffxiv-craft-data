@@ -30,7 +30,7 @@ async def run_exe_waiting_input() -> asyncio.subprocess.Process:
         print(f"An error occurred: {e}")
 
 
-def read_shared_memory() -> StringIO:
+def read_shared_memory() -> tuple: # <StringIO>
     shared_memory_name: str = "Global\\CraftData"
     memory_size: int = 0
     memory_offset: int = 8
@@ -47,9 +47,9 @@ def read_shared_memory() -> StringIO:
         with mmap.mmap(-1, memory_size, tagname=shared_memory_name) as mm:
             data: str = mm[memory_offset:buffer_size].decode("utf-8")
             data_item: str = mm[buffer_size:].decode("utf-8")
-            print(data_item)
+            csv_item_buffer: StringIO = StringIO(data_item)
             csv_buffer: StringIO = StringIO(data)
-            return csv_buffer
+            return csv_buffer, csv_item_buffer
     except Exception as e:
         print(f"Error: {e}")
 
@@ -71,7 +71,9 @@ async def create_csv() -> StringIO:
     process: asyncio.Task = await process_task
     while await terminate_signal(process):
         await asyncio.sleep(0.1)
-    csv: StringIO = read_shared_memory()
+    csv_data: tuple = read_shared_memory()
+    csv: StringIO = csv_data[0]
+    # TODO: Finish parsing csv_data[1] (buffs)
     if process:
         process.terminate()
     await process.wait()

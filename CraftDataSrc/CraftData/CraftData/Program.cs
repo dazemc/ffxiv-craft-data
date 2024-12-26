@@ -189,7 +189,7 @@ class Program
             }
             byte[] bytes = Encoding.UTF8.GetBytes(csv.ToString());
             byte[] bytesItem = Encoding.UTF8.GetBytes(csvItem.ToString());
-            int sharedMemoryOffest = 8;
+            const int sharedMemoryOffest = 8;
             sharedMemorySize += bytes.Length + bytesItem.Length + sharedMemoryOffest;
 
             using (MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen(sharedMemoryName, sharedMemorySize))
