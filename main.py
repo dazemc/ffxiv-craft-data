@@ -32,13 +32,22 @@ async def run_exe_waiting_input() -> asyncio.subprocess.Process:
 
 def read_shared_memory() -> StringIO:
     shared_memory_name: str = "Global\\CraftData"
-    memory_size: int = 4  # First 4 bytes stores the length of the byte array
+    memory_size: int = 0
+    memory_offset: int = 8
+    memory_size += memory_offset
+    buffer_size = 0
+    next_buffer_size = 0
+
 
     try:
+        with mmap.mmap(-1, memory_size, tagname=shared_memory_name, access=mmap.ACCESS_READ) as mm:
+            buffer_size = struct.unpack_from("i", mm, 0)[0]
+            next_buffer_size = struct.unpack_from("i", mm, 4)[0]
+            memory_size += buffer_size + next_buffer_size
         with mmap.mmap(-1, memory_size, tagname=shared_memory_name) as mm:
-            memory_size = struct.unpack("i", mm)[0]
-        with mmap.mmap(-1, memory_size, tagname=shared_memory_name) as mm:
-            data: str = mm[4:memory_size].decode("utf-8")
+            data: str = mm[memory_offset:buffer_size].decode("utf-8")
+            data_item: str = mm[buffer_size:].decode("utf-8")
+            print(data_item)
             csv_buffer: StringIO = StringIO(data)
             return csv_buffer
     except Exception as e:
@@ -167,10 +176,14 @@ def create_export(recipes_df: dict) -> dict:
 
 def export(export_recipes: dict) -> None:
     path: str = "../../data/recipedb/"
+    path_item: str = "../../data/buffs/"
     if not os.path.isdir(path):
-        path: str = "export"
+        path: str = "./export/recipedb/"
+        path_item: str = "./export/buffs/"
         if not os.path.isdir(path):
+            os.mkdir("./export")
             os.mkdir(path)
+            os.mkdir(path_item)
     for crafter in export_recipes:
         with open(f"./{path}/{crafter}.json", "w", encoding="utf-8") as json_file:
             json.dump(

@@ -99,8 +99,6 @@ class Program
                             int i = buff.SourceRow.ColumnValues().Count();
                             if (acceptedBuffs.Contains(buffType) && item.Name.ToString() != "Potion")
                             {
-
-
                                 int itemKey = item.Key;
                                 var values = new StringBuilder();
                                 for (int k = 1; k != i; k++) // first value is exp bonus
@@ -137,71 +135,75 @@ class Program
 
 
             // Open or create the CSV file
-                    StringBuilder csv = new StringBuilder();
-                    csv.AppendLine(
-                    "Key," +
-                    "Level," +
-                    "CraftType," +
-                    "Name," +
-                    "NameJA," +
-                    "NameDE," +
-                    "NameFR," +
-                    "ClassJobLevel," +
-                    "MaterialQualityFactor," +
-                    "DifficultyFactor," +
-                    "QualityFactor," +
-                    "DurabilityFactor," +
-                    "SuggestedCrafsmanship," +
-                    "Stars," +
-                    "Difficulty," +
-                    "Quality," +
-                    "Durability," +
-                    "ProgressDivider," +
-                    "ProgressModifier," +
-                    "QualityDivider," +
-                    "QualityModifier"
-                    );
+            StringBuilder csv = new StringBuilder();
+            csv.AppendLine(
+            "Key," +
+            "Level," +
+            "CraftType," +
+            "Name," +
+            "NameJA," +
+            "NameDE," +
+            "NameFR," +
+            "ClassJobLevel," +
+            "MaterialQualityFactor," +
+            "DifficultyFactor," +
+            "QualityFactor," +
+            "DurabilityFactor," +
+            "SuggestedCrafsmanship," +
+            "Stars," +
+            "Difficulty," +
+            "Quality," +
+            "Durability," +
+            "ProgressDivider," +
+            "ProgressModifier," +
+            "QualityDivider," +
+            "QualityModifier"
+            );
 
-                    // Loop through each recipe and write it to the CSV file
-                    foreach (var recipe in recipes)
-                    {
-                        csv.AppendLine(
-                        $"{recipe.Key}," +
-                        $"{recipe.RecipeLevelTable.Key}," +
-                        $"{recipe.CraftType}," +
-                        $"{recipe.ResultItem.Name}," +
-                        $"{recipesJA[recipe.Key].ResultItem.Name}," +
-                        $"{recipesDE[recipe.Key].ResultItem.Name}," +
-                        $"{recipesFR[recipe.Key].ResultItem.Name}," +
-                        $"{recipe.RecipeLevelTable.ClassJobLevel}," +
-                        $"{recipe.MaterialQualityFactor}," +
-                        $"{recipe.DifficultyFactor}," +
-                        $"{recipe.QualityFactor}," +
-                        $"{recipe.DurabilityFactor}," +
-                        $"{recipe.RecipeLevelTable[2]}," +
-                        $"{recipe.RecipeLevelTable.Stars}," +
-                        $"{recipe.RecipeLevelTable.Difficulty}," +
-                        $"{recipe.RecipeLevelTable.Quality}," +
-                        $"{recipe.RecipeLevelTable[9]}," +
-                        $"{recipe.RecipeLevelTable[5]}," +
-                        $"{recipe.RecipeLevelTable[7]}," +
-                        $"{recipe.RecipeLevelTable[6]}," +
-                        $"{recipe.RecipeLevelTable[8]}"
-                        );
-                    }
-                    byte[] bytes = Encoding.UTF8.GetBytes(csv.ToString());
-                    sharedMemorySize += bytes.Length;
+            // Loop through each recipe and write it to the CSV file
+            foreach (var recipe in recipes)
+            {
+                csv.AppendLine(
+                $"{recipe.Key}," +
+                $"{recipe.RecipeLevelTable.Key}," +
+                $"{recipe.CraftType}," +
+                $"{recipe.ResultItem.Name}," +
+                $"{recipesJA[recipe.Key].ResultItem.Name}," +
+                $"{recipesDE[recipe.Key].ResultItem.Name}," +
+                $"{recipesFR[recipe.Key].ResultItem.Name}," +
+                $"{recipe.RecipeLevelTable.ClassJobLevel}," +
+                $"{recipe.MaterialQualityFactor}," +
+                $"{recipe.DifficultyFactor}," +
+                $"{recipe.QualityFactor}," +
+                $"{recipe.DurabilityFactor}," +
+                $"{recipe.RecipeLevelTable[2]}," +
+                $"{recipe.RecipeLevelTable.Stars}," +
+                $"{recipe.RecipeLevelTable.Difficulty}," +
+                $"{recipe.RecipeLevelTable.Quality}," +
+                $"{recipe.RecipeLevelTable[9]}," +
+                $"{recipe.RecipeLevelTable[5]}," +
+                $"{recipe.RecipeLevelTable[7]}," +
+                $"{recipe.RecipeLevelTable[6]}," +
+                $"{recipe.RecipeLevelTable[8]}"
+                );
+            }
+            byte[] bytes = Encoding.UTF8.GetBytes(csv.ToString());
+            byte[] bytesItem = Encoding.UTF8.GetBytes(csvItem.ToString());
+            int sharedMemoryOffest = 8;
+            sharedMemorySize += bytes.Length + bytesItem.Length + sharedMemoryOffest;
 
-                    using (MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen(sharedMemoryName, sharedMemorySize))
-                    {
-                        using (MemoryMappedViewAccessor accessor = mmf.CreateViewAccessor())
-                        {
-                            accessor.Write(0, sharedMemorySize);
-                            accessor.WriteArray(4, bytes, 0, bytes.Length);
-                            Console.WriteLine("terminate");
-                            Console.ReadLine();
-                        }
-                    }
+            using (MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen(sharedMemoryName, sharedMemorySize))
+            {
+                using (MemoryMappedViewAccessor accessor = mmf.CreateViewAccessor())
+                {
+                    accessor.Write(0, bytes.Length);
+                    accessor.Write(4, bytesItem.Length);
+                    accessor.WriteArray(sharedMemoryOffest, bytes, 0, bytes.Length);
+                    accessor.WriteArray(bytes.Length, bytesItem, 0, bytesItem.Length);
+                    Console.WriteLine("terminate");
+                    Console.ReadLine();
+                }
+            }
 
         }
         catch (DirectoryNotFoundException ex)
