@@ -30,7 +30,7 @@ async def run_exe_waiting_input() -> asyncio.subprocess.Process:
         print(f"An error occurred: {e}")
 
 
-def read_shared_memory() -> tuple: # <StringIO>
+def read_shared_memory() -> tuple:  # <StringIO>
     shared_memory_name: str = "Global\\CraftData"
     memory_size: int = 0
     memory_offset: int = 8
@@ -38,15 +38,20 @@ def read_shared_memory() -> tuple: # <StringIO>
     buffer_size = 0
     next_buffer_size = 0
 
-
     try:
-        with mmap.mmap(-1, memory_size, tagname=shared_memory_name, access=mmap.ACCESS_READ) as mm:
+        with mmap.mmap(
+            -1, memory_size, tagname=shared_memory_name, access=mmap.ACCESS_READ
+        ) as mm:
             buffer_size = struct.unpack_from("i", mm, 0)[0]
             next_buffer_size = struct.unpack_from("i", mm, 4)[0]
             memory_size += buffer_size + next_buffer_size
         with mmap.mmap(-1, memory_size, tagname=shared_memory_name) as mm:
-            data: str = mm[memory_offset:buffer_size].decode("utf-8").replace("\x00", "")
-            data_item: str = mm[buffer_size:memory_size].decode("utf-8").replace("\x00", "")
+            data: str = (
+                mm[memory_offset:buffer_size].decode("utf-8").replace("\x00", "")
+            )
+            data_item: str = (
+                mm[buffer_size:memory_size].decode("utf-8").replace("\x00", "")
+            )
             csv_item_buffer: StringIO = StringIO(data_item)
             csv_buffer: StringIO = StringIO(data)
             return csv_buffer, csv_item_buffer
@@ -96,7 +101,14 @@ def seperate_crafters(crafts: list, df: pd.DataFrame) -> dict:
     return recipes_df
 
 
-def create_export(recipes_df: dict) -> dict:
+def seperate_buffs(buffs: list, df: pd.DataFrame) -> dict:
+    buffs_df: dict = {}
+    for buff in buffs:
+        buffs_df[buff] = df[df.Category == buff]
+    return buffs_df
+
+
+def create_export_recipe(recipes_df: dict) -> dict:
     export_recipes: dict = {
         "Carpenter": [],
         "Blacksmith": [],
@@ -176,7 +188,78 @@ def create_export(recipes_df: dict) -> dict:
     return export_recipes
 
 
-def export(export_recipes: dict) -> None:
+def create_export_buffs(df):
+    export_buffs = {"Meal": [], "Medicine": []}
+    buff_key = ""
+    for buff in df:
+        for i in range(len(df[buff])):
+            buff_key = buff
+            if buff == "Meals":
+                buff_key = "Meal"
+            current_item = df[buff].iloc[i]
+            buff_types = {}
+            buff_types_hq = {}
+            for j in range(3):
+                match current_item[f"BuffType{j + 1}"]:
+                    case "CP":
+                        buff_types["cp_percent"] = int(
+                            current_item[f"PercentageValue{j + 1}"]
+                        )
+                        buff_types["cp_value"] = int(current_item[f"MaxValue{j + 1}"])
+                        buff_types_hq["cp_percent"] = int(
+                            current_item[f"PercentageValueHQ{j + 1}"]
+                        )
+                        buff_types_hq["cp_value"] = int(
+                            current_item[f"MaxValueHQ{j + 1}"]
+                        )
+                    case "Craftsmanship":
+                        buff_types["craftsmanship_percent"] = int(
+                            current_item[f"PercentageValue{j + 1}"]
+                        )
+                        buff_types["craftsmanship_value"] = int(
+                            current_item[f"MaxValue{j + 1}"]
+                        )
+                        buff_types_hq["craftsmanship_percent"] = int(
+                            current_item[f"PercentageValueHQ{j + 1}"]
+                        )
+                        buff_types_hq["craftsmanship_value"] = int(
+                            current_item[f"MaxValueHQ{j + 1}"]
+                        )
+                    case "Control":
+                        buff_types["control_percent"] = int(
+                            current_item[f"PercentageValue{j + 1}"]
+                        )
+                        buff_types["control_value"] = int(
+                            current_item[f"MaxValue{j + 1}"]
+                        )
+                        buff_types_hq["control_percent"] = int(
+                            current_item[f"PercentageValueHQ{j + 1}"]
+                        )
+                        buff_types_hq["control_value"] = int(
+                            current_item[f"MaxValueHQ{j + 1}"]
+                        )
+                    case "Nothing":
+                        break
+            for k in range(2):
+                info = {
+                    "hq": False if k == 0 else True,
+                    "name": {
+                        "de": current_item.NameDE,
+                        "en": current_item.Name,
+                        "fr": current_item.NameFR,
+                        "ja": current_item.NameJA,
+                    },
+                }
+                if k == 0:
+                    buff_types.update(info)
+                    export_buffs[buff_key].append(buff_types)
+                else:
+                    buff_types_hq.update(info)
+                    export_buffs[buff_key].append(buff_types_hq)
+    return export_buffs
+
+
+def export(export_recipes: dict, export_buffs: dict) -> None:
     path: str = "../../data/recipedb/"
     path_item: str = "../../data/buffs/"
     if not os.path.isdir(path):
@@ -195,6 +278,15 @@ def export(export_recipes: dict) -> None:
                 sort_keys=True,
                 ensure_ascii=False,
             )
+    for buff in export_buffs:
+        with open(f"./{path_item}/{buff}.json", "w", encoding="utf-8") as json_file:
+            json.dump(
+                export_buffs[buff],
+                json_file,
+                indent=2,
+                sort_keys=True,
+                ensure_ascii=False,
+            )
 
 
 async def main() -> None:
@@ -207,9 +299,12 @@ async def main() -> None:
     df_recipe: pd.DataFrame = read_csv(csv_recipe)
     df_item: pd.DataFrame = read_csv(csv_item)
     craft_types: list = list(df_recipe.CraftType.unique())
+    buff_types: list = list(df_item.Category.unique())
+    ordered_buff: dict = seperate_buffs(buffs=buff_types, df=df_item)
     ordered_recipe: dict = seperate_crafters(crafts=craft_types, df=df_recipe)
-    export_recipes: dict = create_export(recipes_df=ordered_recipe)
-    export(export_recipes=export_recipes)
+    export_buffs: dict = create_export_buffs(df=ordered_buff)
+    export_recipes: dict = create_export_recipe(recipes_df=ordered_recipe)
+    export(export_recipes=export_recipes, export_buffs=export_buffs)
 
 
 if __name__ == "__main__":
