@@ -45,8 +45,8 @@ def read_shared_memory() -> tuple: # <StringIO>
             next_buffer_size = struct.unpack_from("i", mm, 4)[0]
             memory_size += buffer_size + next_buffer_size
         with mmap.mmap(-1, memory_size, tagname=shared_memory_name) as mm:
-            data: str = mm[memory_offset:buffer_size].decode("utf-8")
-            data_item: str = mm[buffer_size:].decode("utf-8")
+            data: str = mm[memory_offset:buffer_size].decode("utf-8").replace("\x00", "")
+            data_item: str = mm[buffer_size:memory_size].decode("utf-8").replace("\x00", "")
             csv_item_buffer: StringIO = StringIO(data_item)
             csv_buffer: StringIO = StringIO(data)
             return csv_buffer, csv_item_buffer
@@ -73,11 +73,11 @@ async def create_csv() -> StringIO:
         await asyncio.sleep(0.1)
     csv_data: tuple = read_shared_memory()
     csv: StringIO = csv_data[0]
-    # TODO: Finish parsing csv_data[1] (buffs)
+    csv_item: StringIO = csv_data[1]
     if process:
         process.terminate()
     await process.wait()
-    return csv
+    return csv, csv_item
 
 
 def read_csv(csv: StringIO) -> pd.DataFrame:
@@ -200,12 +200,15 @@ def export(export_recipes: dict) -> None:
 async def main() -> None:
     set_cwd(CRAFTDATA_FILEPATH)
     set_ffxiv_filepath(FFXIV_FILEPATH)
-    csv: StringIO = await create_csv()
+    csv: tuple = await create_csv()
+    csv_recipe: StringIO = csv[0]
+    csv_item: StringIO = csv[1]
     set_cwd()
-    df: pd.DataFrame = read_csv(csv)
-    craft_types: list = list(df.CraftType.unique())
-    recipes_df: dict = seperate_crafters(crafts=craft_types, df=df)
-    export_recipes: dict = create_export(recipes_df=recipes_df)
+    df_recipe: pd.DataFrame = read_csv(csv_recipe)
+    df_item: pd.DataFrame = read_csv(csv_item)
+    craft_types: list = list(df_recipe.CraftType.unique())
+    ordered_recipe: dict = seperate_crafters(crafts=craft_types, df=df_recipe)
+    export_recipes: dict = create_export(recipes_df=ordered_recipe)
     export(export_recipes=export_recipes)
 
 

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using SaintCoinach.Xiv.Sheets;
 using System.Data.Entity.Core.Metadata.Edm;
 using Microsoft.CSharp;
+using System.Drawing.Printing;
 
 class Program
 {
@@ -18,7 +19,7 @@ class Program
 
         // Shared Memory 
         const string sharedMemoryName = "Global\\CraftData";
-        int sharedMemorySize = 4;
+        int sharedMemorySize = 0;
 
         // Check if the config file exists
         if (!File.Exists(ConfigFilePath))
@@ -73,16 +74,21 @@ class Program
                 "NameJA," +
                 "NameDE," +
                 "NameFR," +
-                "BuffType," +
-                "PercentageValue," +
-                "MaxValue," +
-                "PercentageValueHQ," +
-                "MaxValueHQ," +
-                "BuffType," +
-                "PercentageValue," +
-                "MaxValue," +
-                "PercentageValueHQ," +
-                "MaxValueHQ,"
+                "BuffType1," +
+                "PercentageValue1," +
+                "MaxValue1," +
+                "PercentageValueHQ1," +
+                "MaxValueHQ1," +
+                "BuffType2," +
+                "PercentageValue2," +
+                "MaxValue2," +
+                "PercentageValueHQ2," +
+                "MaxValueHQ2," +
+                "BuffType3," +
+                "PercentageValue3," +
+                "MaxValue3," +
+                "PercentageValueHQ3," +
+                "MaxValueHQ3"
             );
 
             foreach (var item in items)
@@ -105,11 +111,18 @@ class Program
                                 {
                                     if (buff[k].ToString() == "")
                                     {
-                                        break;
+                                        values.Append("Nothing");
                                     }
-                                    if (buff[k].ToString() != "True")
+                                    if (buff[k].ToString() != "True" && buff[k].ToString() != "False")
                                     {
-                                        values.Append($"{buff[k]},");
+                                        if (k == i - 1)  // last value doesn't get a comma
+                                        {
+                                            values.Append($"{buff[k].ToString()}");
+                                        }
+                                        else
+                                        {
+                                            values.Append($"{buff[k].ToString()},");
+                                        }
                                     }
                                 }
                                 csvItem.AppendLine(
@@ -189,6 +202,7 @@ class Program
             }
             byte[] bytes = Encoding.UTF8.GetBytes(csv.ToString());
             byte[] bytesItem = Encoding.UTF8.GetBytes(csvItem.ToString());
+            // System.Console.WriteLine(csvItem.ToString());
             const int sharedMemoryOffest = 8;
             sharedMemorySize += bytes.Length + bytesItem.Length + sharedMemoryOffest;
 
