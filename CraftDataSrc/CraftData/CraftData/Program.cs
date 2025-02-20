@@ -1,17 +1,17 @@
-﻿using System.IO.MemoryMappedFiles;
-using SaintCoinach;
-using SaintCoinach.Xiv;
-using SaintCoinach.Ex;
-using System.Text;
-using SaintCoinach.Xiv.ItemActions;
-using System.Runtime.InteropServices;
-using SaintCoinach.Xiv.Sheets;
-using System.Data.Entity.Core.Metadata.Edm;
-using Microsoft.CSharp;
+﻿using System.Data.Entity.Core.Metadata.Edm;
 using System.Drawing.Printing;
-using System.Net;
-using System.Linq.Expressions;
 using System.Globalization;
+using System.IO.MemoryMappedFiles;
+using System.Linq.Expressions;
+using System.Net;
+using System.Runtime.InteropServices;
+using System.Text;
+using Microsoft.CSharp;
+using SaintCoinach;
+using SaintCoinach.Ex;
+using SaintCoinach.Xiv;
+using SaintCoinach.Xiv.ItemActions;
+using SaintCoinach.Xiv.Sheets;
 
 class Program
 {
@@ -38,18 +38,20 @@ class Program
         {
             Dictionary<Language, dynamic> gameData = new() { };
 
-            Language[] languages = {
-            Language.English,
-            Language.Japanese,
-            Language.German,
-            Language.French,
-            Language.Korean,
-            Language.ChineseSimplified,
-            // Language.ChineseTraditional
-        };
-
-            foreach (Language lang in languages)
+            List<Language> languages = new()
             {
+                Language.English,
+                Language.Japanese,
+                Language.German,
+                Language.French,
+                Language.Korean,
+                Language.ChineseSimplified,
+                // Language.ChineseTraditional
+            };
+
+            for (int i = 0; i < languages.Count; i++)
+            {
+                Language lang = languages[i];
                 try
                 {
                     ARealmReversed realm = new(gameDirectory, lang);
@@ -59,10 +61,8 @@ class Program
                     IXivSheet<ItemAction> itemAction = realm.GameData.GetSheet<ItemAction>();
                     IXivSheet<ItemFood> itemFood = realm.GameData.GetSheet<ItemFood>();
 
-                    if (!gameData.ContainsKey(lang))
-                    {
-                        gameData[lang] = new Dictionary<string, dynamic>();
-                    }
+                    Item _ = items[0]; // this calls the item so that it fails if not there and removes the lang
+                    gameData[lang] = new Dictionary<string, dynamic>();
 
                     gameData[lang]["recipes"] = recipes;
                     gameData[lang]["items"] = items;
@@ -72,6 +72,9 @@ class Program
                 }
                 catch (FileNotFoundException)
                 {
+                    Console.WriteLine("Language not found: " + lang);
+                    languages.Remove(lang);
+                    i--;
                     continue;
                 }
             }
@@ -79,31 +82,34 @@ class Program
             StringBuilder csvItem = new();
 
             csvItem.AppendLine(
-                "Key," +
-                "Category," +
-                "Name," +
-                "NameJA," +
-                "NameDE," +
-                "NameFR," +
-                "BuffType1," +
-                "PercentageValue1," +
-                "MaxValue1," +
-                "PercentageValueHQ1," +
-                "MaxValueHQ1," +
-                "BuffType2," +
-                "PercentageValue2," +
-                "MaxValue2," +
-                "PercentageValueHQ2," +
-                "MaxValueHQ2," +
-                "BuffType3," +
-                "PercentageValue3," +
-                "MaxValue3," +
-                "PercentageValueHQ3," +
-                "MaxValueHQ3"
+                "Key,"
+                    + "Category,"
+                    + "Name,"
+                    + "NameJA,"
+                    + "NameDE,"
+                    + "NameFR,"
+                    + "BuffType1,"
+                    + "PercentageValue1,"
+                    + "MaxValue1,"
+                    + "PercentageValueHQ1,"
+                    + "MaxValueHQ1,"
+                    + "BuffType2,"
+                    + "PercentageValue2,"
+                    + "MaxValue2,"
+                    + "PercentageValueHQ2,"
+                    + "MaxValueHQ2,"
+                    + "BuffType3,"
+                    + "PercentageValue3,"
+                    + "MaxValue3,"
+                    + "PercentageValueHQ3,"
+                    + "MaxValueHQ3"
             );
             foreach (var item in gameData[languages[0]]["items"])
             {
-                if (item.ItemSearchCategory.ToString() == "Medicine" || item.ItemSearchCategory.ToString() == "Meals")
+                if (
+                    item.ItemSearchCategory.ToString() == "Medicine"
+                    || item.ItemSearchCategory.ToString() == "Meals"
+                )
                 {
                     if (int.TryParse(item.ItemAction["Data[1]"].ToString(), out int j))
                     {
@@ -114,7 +120,10 @@ class Program
                             string? buffType = buff[1].ToString();
                             string[] acceptedBuffs = { "Control", "Craftsmanship", "CP" };
                             int i = buff.SourceRow.ColumnValues().Count();
-                            if (acceptedBuffs.Contains(buffType) && item.Name.ToString() != "Potion")
+                            if (
+                                acceptedBuffs.Contains(buffType)
+                                && item.Name.ToString() != "Potion"
+                            )
                             {
                                 int itemKey = item.Key;
                                 var values = new StringBuilder();
@@ -124,9 +133,12 @@ class Program
                                     {
                                         values.Append("Nothing");
                                     }
-                                    if (buff[k].ToString() != "True" && buff[k].ToString() != "False")
+                                    if (
+                                        buff[k].ToString() != "True"
+                                        && buff[k].ToString() != "False"
+                                    )
                                     {
-                                        if (k == i - 1)  // last value doesn't get a comma
+                                        if (k == i - 1) // last value doesn't get a comma
                                         {
                                             values.Append($"{buff[k].ToString()}");
                                         }
@@ -137,15 +149,12 @@ class Program
                                     }
                                 }
 
-                                csvItem.Append(
-                                $"\n{itemKey}," +
-                                $"{item.ItemSearchCategory},");
+                                csvItem.Append($"\n{itemKey}," + $"{item.ItemSearchCategory},");
                                 foreach (Language lang in languages)
                                 {
                                     try
                                     {
-                                        csvItem.Append(
-                                        $"{gameData[lang]["items"][itemKey].Name},");
+                                        csvItem.Append($"{gameData[lang]["items"][itemKey].Name},");
                                     }
                                     catch (FileNotFoundException)
                                     {
@@ -156,8 +165,6 @@ class Program
                             }
                         }
                     }
-
-
                 }
             }
 
@@ -168,86 +175,75 @@ class Program
 
             StringBuilder csv = new();
             csv.AppendLine(
-            "Key," +
-            "Level," +
-            "CraftType," +
-            "Name," +
-            "NameJA," +
-            "NameDE," +
-            "NameFR," +
-            "ClassJobLevel," +
-            "MaterialQualityFactor," +
-            "DifficultyFactor," +
-            "QualityFactor," +
-            "DurabilityFactor," +
-            "SuggestedCrafsmanship," +
-            "Stars," +
-            "Difficulty," +
-            "Quality," +
-            "Durability," +
-            "ProgressDivider," +
-            "ProgressModifier," +
-            "QualityDivider," +
-            "QualityModifier"
+                "Key,"
+                    + "Level,"
+                    + "CraftType,"
+                    + "Name,"
+                    + "NameJA,"
+                    + "NameDE,"
+                    + "NameFR,"
+                    + "ClassJobLevel,"
+                    + "MaterialQualityFactor,"
+                    + "DifficultyFactor,"
+                    + "QualityFactor,"
+                    + "DurabilityFactor,"
+                    + "SuggestedCrafsmanship,"
+                    + "Stars,"
+                    + "Difficulty,"
+                    + "Quality,"
+                    + "Durability,"
+                    + "ProgressDivider,"
+                    + "ProgressModifier,"
+                    + "QualityDivider,"
+                    + "QualityModifier"
             );
             foreach (Recipe recipe in gameData[languages[0]]["recipes"])
             {
-
                 csv.Append(
-                $"\n{recipe.Key}," +
-                $"{recipe.RecipeLevelTable.Key}," +
-                $"{recipe.CraftType},");
+                    $"\n{recipe.Key}," + $"{recipe.RecipeLevelTable.Key}," + $"{recipe.CraftType},"
+                );
 
                 foreach (Language lang in languages)
                 {
-                    try
-                    {
-                        csv.Append(
-                            $"{gameData[lang]["recipes"][recipe.Key].ResultItem.Name},");
-                    }
-                    catch (FileNotFoundException)
-                    {
-                        continue;
-                    }
+                    csv.Append($"{gameData[lang]["recipes"][recipe.Key].ResultItem.Name},");
                 }
 
                 csv.Append(
-                $"{recipe.RecipeLevelTable.ClassJobLevel}," +
-                $"{recipe.MaterialQualityFactor}," +
-                $"{recipe.DifficultyFactor}," +
-                $"{recipe.QualityFactor}," +
-                $"{recipe.DurabilityFactor}," +
-                $"{recipe.RecipeLevelTable[2]}," +
-                $"{recipe.RecipeLevelTable.Stars}," +
-                $"{recipe.RecipeLevelTable.Difficulty}," +
-                $"{recipe.RecipeLevelTable.Quality}," +
-                $"{recipe.RecipeLevelTable[9]}," +
-                $"{recipe.RecipeLevelTable[5]}," +
-                $"{recipe.RecipeLevelTable[7]}," +
-                $"{recipe.RecipeLevelTable[6]}," +
-                $"{recipe.RecipeLevelTable[8]}\n"
+                    $"{recipe.RecipeLevelTable.ClassJobLevel},"
+                        + $"{recipe.MaterialQualityFactor},"
+                        + $"{recipe.DifficultyFactor},"
+                        + $"{recipe.QualityFactor},"
+                        + $"{recipe.DurabilityFactor},"
+                        + $"{recipe.RecipeLevelTable[2]},"
+                        + $"{recipe.RecipeLevelTable.Stars},"
+                        + $"{recipe.RecipeLevelTable.Difficulty},"
+                        + $"{recipe.RecipeLevelTable.Quality},"
+                        + $"{recipe.RecipeLevelTable[9]},"
+                        + $"{recipe.RecipeLevelTable[5]},"
+                        + $"{recipe.RecipeLevelTable[7]},"
+                        + $"{recipe.RecipeLevelTable[6]},"
+                        + $"{recipe.RecipeLevelTable[8]}\n"
                 );
             }
-            // System.Console.WriteLine(csv.ToString()[..600]);
+            // Console.WriteLine(csv.ToString()[..600]);
+            Console.OutputEncoding = Encoding.UTF8;
+            System.Console.WriteLine(csvItem.ToString()[..600]);
             byte[] bytes = Encoding.UTF8.GetBytes(csv.ToString());
             byte[] bytesItem = Encoding.UTF8.GetBytes(csvItem.ToString());
-            // System.Console.WriteLine(csvItem.ToString());
             const int sharedMemoryOffest = 8;
             sharedMemorySize += bytes.Length + bytesItem.Length + sharedMemoryOffest;
 
-            using (MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen(sharedMemoryName, sharedMemorySize))
-            {
-                using (MemoryMappedViewAccessor accessor = mmf.CreateViewAccessor())
-                {
-                    accessor.Write(0, bytes.Length);
-                    accessor.Write(4, bytesItem.Length);
-                    accessor.WriteArray(sharedMemoryOffest, bytes, 0, bytes.Length);
-                    accessor.WriteArray(bytes.Length, bytesItem, 0, bytesItem.Length);
-                    Console.WriteLine("terminate");
-                    Console.ReadLine();
-                }
-            }
-
+            using MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen(
+                sharedMemoryName,
+                sharedMemorySize
+            );
+            using MemoryMappedViewAccessor accessor = mmf.CreateViewAccessor();
+            accessor.Write(0, bytes.Length);
+            accessor.Write(4, bytesItem.Length);
+            accessor.WriteArray(sharedMemoryOffest, bytes, 0, bytes.Length);
+            accessor.WriteArray(bytes.Length, bytesItem, 0, bytesItem.Length);
+            Console.WriteLine("terminate");
+            Console.ReadLine();
         }
         catch (DirectoryNotFoundException ex)
         {
