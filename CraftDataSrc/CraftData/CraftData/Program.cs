@@ -9,65 +9,76 @@ using SaintCoinach.Xiv.Sheets;
 using System.Data.Entity.Core.Metadata.Edm;
 using Microsoft.CSharp;
 using System.Drawing.Printing;
+using System.Net;
+using System.Linq.Expressions;
+using System.Globalization;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // Specify the path to the game directory
         const string ConfigFilePath = @"config.txt";
-
-        // Shared Memory 
         const string sharedMemoryName = "Global\\CraftData";
         int sharedMemorySize = 0;
 
-        // Check if the config file exists
         if (!File.Exists(ConfigFilePath))
         {
             Console.WriteLine("Error: Config file not found: " + ConfigFilePath);
             return;
         }
-        // Read the game directory path from the config file
         string gameDirectory = File.ReadAllText(ConfigFilePath).Trim();
 
-        // Check if the directory exists
         if (!Directory.Exists(gameDirectory))
         {
             Console.WriteLine("Error: The game directory does not exist: " + gameDirectory);
             return;
         }
 
-        // Initialize SaintCoinach
         try
         {
-            // Load each translation
-            ARealmReversed realm = new ARealmReversed(gameDirectory, Language.English);
-            ARealmReversed realmJA = new ARealmReversed(gameDirectory, Language.Japanese);
-            ARealmReversed realmDE = new ARealmReversed(gameDirectory, Language.German);
-            ARealmReversed realmFR = new ARealmReversed(gameDirectory, Language.French);
+            Dictionary<Language, dynamic> gameData = new() { };
 
-            // Retrieve the Crafting Recipe sheet
-            IXivSheet<Recipe> recipes = realm.GameData.GetSheet<Recipe>();
-            IXivSheet<Recipe> recipesJA = realmJA.GameData.GetSheet<Recipe>();
-            IXivSheet<Recipe> recipesDE = realmDE.GameData.GetSheet<Recipe>();
-            IXivSheet<Recipe> recipesFR = realmFR.GameData.GetSheet<Recipe>();
+            Language[] languages = {
+            Language.English,
+            Language.Japanese,
+            Language.German,
+            Language.French,
+            Language.Korean,
+            Language.ChineseSimplified,
+            // Language.ChineseTraditional
+        };
 
-            // Each recipe has a corresponding table
-            IXivSheet recipeLevelTable = realm.GameData.GetSheet<RecipeLevelTable>();
+            foreach (Language lang in languages)
+            {
+                try
+                {
+                    ARealmReversed realm = new(gameDirectory, lang);
+                    IXivSheet<Recipe> recipes = realm.GameData.GetSheet<Recipe>();
+                    IXivSheet<Item> items = realm.GameData.GetSheet<Item>();
+                    IXivSheet recipeLevelTable = realm.GameData.GetSheet<RecipeLevelTable>();
+                    IXivSheet<ItemAction> itemAction = realm.GameData.GetSheet<ItemAction>();
+                    IXivSheet<ItemFood> itemFood = realm.GameData.GetSheet<ItemFood>();
 
-            // Load item sheet
-            IXivSheet<Item> items = realm.GameData.GetSheet<Item>();
-            IXivSheet<Item> itemsJA = realmJA.GameData.GetSheet<Item>();
-            IXivSheet<Item> itemsDE = realmDE.GameData.GetSheet<Item>();
-            IXivSheet<Item> itemsFR = realmFR.GameData.GetSheet<Item>();
+                    if (!gameData.ContainsKey(lang))
+                    {
+                        gameData[lang] = new Dictionary<string, dynamic>();
+                    }
 
-            // Each item has a corresponding itemAction sheet and each itemAction sheet links to a itemFood sheet
-            IXivSheet<ItemAction> itemAction = realm.GameData.GetSheet<ItemAction>();
-            IXivSheet<ItemFood> itemFood = realm.GameData.GetSheet<ItemFood>();
+                    gameData[lang]["recipes"] = recipes;
+                    gameData[lang]["items"] = items;
+                    gameData[lang]["level_table"] = recipeLevelTable;
+                    gameData[lang]["item_action"] = itemAction;
+                    gameData[lang]["item_food"] = itemFood;
+                }
+                catch (FileNotFoundException)
+                {
+                    continue;
+                }
+            }
 
-            StringBuilder csvItem = new StringBuilder();
+            StringBuilder csvItem = new();
 
-            csvItem.AppendLine( // TODO: dynamic header to match item values
+            csvItem.AppendLine(
                 "Key," +
                 "Category," +
                 "Name," +
@@ -90,13 +101,13 @@ class Program
                 "PercentageValueHQ3," +
                 "MaxValueHQ3"
             );
-
-            foreach (var item in items)
+            foreach (var item in gameData[languages[0]]["items"])
             {
                 if (item.ItemSearchCategory.ToString() == "Medicine" || item.ItemSearchCategory.ToString() == "Meals")
                 {
-                    if (Int32.TryParse(item.ItemAction["Data[1]"].ToString(), out int j))
+                    if (int.TryParse(item.ItemAction["Data[1]"].ToString(), out int j))
                     {
+                        IXivSheet<ItemFood> itemFood = gameData[languages[0]]["item_food"];
                         if (j <= itemFood.Keys.Count() - 1)
                         {
                             ItemFood buff = itemFood[j];
@@ -125,15 +136,23 @@ class Program
                                         }
                                     }
                                 }
-                                csvItem.AppendLine(
-                                $"{itemKey}," +
-                                $"{item.ItemSearchCategory}," +
-                                $"{item.Name}," +
-                                $"{itemsJA[itemKey].Name}," +
-                                $"{itemsDE[itemKey].Name}," +
-                                $"{itemsFR[itemKey].Name}," +
-                                values
-                               );
+
+                                csvItem.Append(
+                                $"\n{itemKey}," +
+                                $"{item.ItemSearchCategory},");
+                                foreach (Language lang in languages)
+                                {
+                                    try
+                                    {
+                                        csvItem.Append(
+                                        $"{gameData[lang]["items"][itemKey].Name},");
+                                    }
+                                    catch (FileNotFoundException)
+                                    {
+                                        continue;
+                                    }
+                                }
+                                csvItem.Append(values.ToString() + "\n");
                             }
                         }
                     }
@@ -142,13 +161,12 @@ class Program
                 }
             }
 
-            // Console.OutputEncoding = System.Text.Encoding.Unicode;
-            // System.Console.WriteLine(csvItem);
-            // File.WriteAllText("item.csv", csvItem.ToString());
+            //         // Console.OutputEncoding = System.Text.Encoding.Unicode;
+            //         // System.Console.WriteLine(csvItem);
+            //         // File.WriteAllText("item.csv", csvItem.ToString());
 
 
-            // Open or create the CSV file
-            StringBuilder csv = new StringBuilder();
+            StringBuilder csv = new();
             csv.AppendLine(
             "Key," +
             "Level," +
@@ -172,18 +190,28 @@ class Program
             "QualityDivider," +
             "QualityModifier"
             );
-
-            // Loop through each recipe and write it to the CSV file
-            foreach (var recipe in recipes)
+            foreach (Recipe recipe in gameData[languages[0]]["recipes"])
             {
-                csv.AppendLine(
-                $"{recipe.Key}," +
+
+                csv.Append(
+                $"\n{recipe.Key}," +
                 $"{recipe.RecipeLevelTable.Key}," +
-                $"{recipe.CraftType}," +
-                $"{recipe.ResultItem.Name}," +
-                $"{recipesJA[recipe.Key].ResultItem.Name}," +
-                $"{recipesDE[recipe.Key].ResultItem.Name}," +
-                $"{recipesFR[recipe.Key].ResultItem.Name}," +
+                $"{recipe.CraftType},");
+
+                foreach (Language lang in languages)
+                {
+                    try
+                    {
+                        csv.Append(
+                            $"{gameData[lang]["recipes"][recipe.Key].ResultItem.Name},");
+                    }
+                    catch (FileNotFoundException)
+                    {
+                        continue;
+                    }
+                }
+
+                csv.Append(
                 $"{recipe.RecipeLevelTable.ClassJobLevel}," +
                 $"{recipe.MaterialQualityFactor}," +
                 $"{recipe.DifficultyFactor}," +
@@ -197,9 +225,10 @@ class Program
                 $"{recipe.RecipeLevelTable[5]}," +
                 $"{recipe.RecipeLevelTable[7]}," +
                 $"{recipe.RecipeLevelTable[6]}," +
-                $"{recipe.RecipeLevelTable[8]}"
+                $"{recipe.RecipeLevelTable[8]}\n"
                 );
             }
+            // System.Console.WriteLine(csv.ToString()[..600]);
             byte[] bytes = Encoding.UTF8.GetBytes(csv.ToString());
             byte[] bytesItem = Encoding.UTF8.GetBytes(csvItem.ToString());
             // System.Console.WriteLine(csvItem.ToString());

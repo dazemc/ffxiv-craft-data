@@ -1,10 +1,11 @@
-import pandas as pd
-import json
-import os
 import asyncio
+import json
 import mmap
+import os
 import struct
 from io import StringIO
+
+import pandas as pd
 
 FFXIV_FILEPATH: str = "G:/SteamLibrary/steamapps/common/FINAL FANTASY XIV Online"
 
@@ -141,8 +142,8 @@ def create_export_recipe(recipes_df: dict) -> dict:
                     craft_key: str = "Leatherworker"
             current_recipe: dict = recipes_df[craft_type].iloc[i]
             name: str = current_recipe.Name
-            name_de: str = str(current_recipe.NameDE).replace("<SoftHyphen/>", "\u00AD")
-            name_fr: str = str(current_recipe.NameFR).replace("<SoftHyphen/>", "\u00AD")
+            name_de: str = str(current_recipe.NameDE).replace("<SoftHyphen/>", "\u00ad")
+            name_fr: str = str(current_recipe.NameFR).replace("<SoftHyphen/>", "\u00ad")
             name_ja: str = current_recipe.NameJA
             difficulty: int = int(current_recipe.Difficulty)
             durability: int = int(current_recipe.Durability)

@@ -1,15 +1,10 @@
-[tool.poetry]
+[project]
 name = "ffxiv-craft-data"
 version = "0.1.0"
-description = "produces craft data json from ffxiv game files"
-authors = ["Daazed McFarland <daazedjmcfarland@gmail.com>"]
+description = "Add your description here"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.13"
-pandas = "^2.2.3"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.13"
+dependencies = [
+    "pandas>=2.2.3",
+    "ruff>=0.9.6",
+]

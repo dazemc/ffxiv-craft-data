@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Downloads\\SaintCoinach.Cmd\\ffxiv-craft-data\\CraftDataSrc\\CraftData\\CraftData\\CraftData.csproj": {}
+    "C:\\Users\\Administrator\\source\\repos\\dazemc\\ffxiv-craft-data\\CraftDataSrc\\CraftData\\CraftData\\CraftData.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Downloads\\SaintCoinach.Cmd\\ffxiv-craft-data\\CraftDataSrc\\CraftData\\CraftData\\CraftData.csproj": {
+    "C:\\Users\\Administrator\\source\\repos\\dazemc\\ffxiv-craft-data\\CraftDataSrc\\CraftData\\CraftData\\CraftData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Downloads\\SaintCoinach.Cmd\\ffxiv-craft-data\\CraftDataSrc\\CraftData\\CraftData\\CraftData.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\dazemc\\ffxiv-craft-data\\CraftDataSrc\\CraftData\\CraftData\\CraftData.csproj",
         "projectName": "CraftData",
-        "projectPath": "C:\\Users\\Administrator\\Downloads\\SaintCoinach.Cmd\\ffxiv-craft-data\\CraftDataSrc\\CraftData\\CraftData\\CraftData.csproj",
+        "projectPath": "C:\\Users\\Administrator\\source\\repos\\dazemc\\ffxiv-craft-data\\CraftDataSrc\\CraftData\\CraftData\\CraftData.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Downloads\\SaintCoinach.Cmd\\ffxiv-craft-data\\CraftDataSrc\\CraftData\\CraftData\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\source\\repos\\dazemc\\ffxiv-craft-data\\CraftDataSrc\\CraftData\\CraftData\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -42,7 +42,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
@@ -79,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
