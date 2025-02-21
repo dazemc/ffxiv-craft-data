@@ -44,7 +44,7 @@ class Utils
                 gameData[lang]["item_action"] = itemAction;
                 gameData[lang]["item_food"] = itemFood;
             }
-            catch (FileNotFoundException)
+            catch (Exception) // temp
             {
                 Console.WriteLine("Language not found: " + lang);
                 languages.Remove(lang);
