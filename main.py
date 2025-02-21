@@ -9,9 +9,7 @@ import pandas as pd
 
 FFXIV_FILEPATH: str = "G:/SteamLibrary/steamapps/common/FINAL FANTASY XIV Online"
 
-CRAFTDATA_FILEPATH: str = "/CraftData/Debug/net7.0/"
-CRAFTDATA_CONFIG_FILEPATH: str = CRAFTDATA_FILEPATH + "config.txt"
-# CSV_FILEPATH: str = "./CraftData/Debug/net7.0/export/Recipe.csv"
+CRAFTDATA_FILEPATH: str = "/CraftData/Release/net7.0/win-x64/publish/"
 CURRENT_FILEPATH: str = os.path.abspath(__file__).replace("main.py", "")
 
 CRAFTDATA_CONFIG: dict = {

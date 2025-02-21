@@ -327,9 +327,6 @@ class Program
                 );
                 StringBuilder csvItem = utils.GetBuffsCsv(gameData, languages);
                 StringBuilder csvRecipe = utils.GetRecipesCsv(gameData, languages);
-                System.Console.WriteLine(csvItem.Length);
-                System.Console.WriteLine(csvRecipe.ToString()[..600]);
-
                 utils.WriteCsvMemory(csvRecipe, csvItem, sharedMemorySize, sharedMemoryName);
                 // File.WriteAllText("item.csv", csvItem.ToString());
                 // System.Console.WriteLine(config?.GameDirectory);
