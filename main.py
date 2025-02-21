@@ -10,9 +10,13 @@ import pandas as pd
 FFXIV_FILEPATH: str = "G:/SteamLibrary/steamapps/common/FINAL FANTASY XIV Online"
 
 CRAFTDATA_FILEPATH: str = "/CraftData/Debug/net7.0/"
-CRAFTDATA_CONFIG: str = CRAFTDATA_FILEPATH + "config.txt"
+CRAFTDATA_CONFIG_FILEPATH: str = CRAFTDATA_FILEPATH + "config.txt"
 # CSV_FILEPATH: str = "./CraftData/Debug/net7.0/export/Recipe.csv"
 CURRENT_FILEPATH: str = os.path.abspath(__file__).replace("main.py", "")
+
+CRAFTDATA_CONFIG: dict = {
+    "GameDirectory": FFXIV_FILEPATH,
+}
 
 
 def set_cwd(filepath: str = "") -> None:
@@ -60,9 +64,15 @@ def read_shared_memory() -> tuple:  # <StringIO>
         print(f"Error: {e}")
 
 
-def set_ffxiv_filepath(filepath: str) -> None:
-    with open("config.txt", "w") as file:
-        file.writelines(filepath)
+def set_ffxiv_config(config: dict) -> None:
+    with open("config.json", "w") as file:
+        json.dump(
+            config,
+            file,
+            indent=2,
+            sort_keys=True,
+            ensure_ascii=False,
+        )
 
 
 async def terminate_signal(process) -> bool:
@@ -292,7 +302,7 @@ def export(export_recipes: dict, export_buffs: dict) -> None:
 
 async def main() -> None:
     set_cwd(CRAFTDATA_FILEPATH)
-    set_ffxiv_filepath(FFXIV_FILEPATH)
+    set_ffxiv_config(CRAFTDATA_CONFIG)
     csv: tuple = await create_csv()
     csv_recipe: StringIO = csv[0]
     csv_item: StringIO = csv[1]

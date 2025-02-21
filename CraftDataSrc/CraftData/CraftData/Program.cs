@@ -8,7 +8,9 @@ using System.Reflection.Metadata;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.Json;
 using Microsoft.CSharp;
+using Microsoft.VisualBasic;
 using SaintCoinach;
 using SaintCoinach.Ex;
 using SaintCoinach.Xiv;
@@ -227,56 +229,89 @@ class Utils
         Console.WriteLine("terminate");
         Console.ReadLine();
     }
+
+    public Config? GetConfig()
+    {
+        try
+        {
+            string filePath = "config.json";
+            string jsonString = File.ReadAllText(filePath);
+
+            Config? config = JsonSerializer.Deserialize<Config>(jsonString);
+            return config;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error reading config file: " + ex.Message);
+            return null;
+        }
+    }
+}
+
+class Config
+{
+    public required string GameDirectory { get; set; }
 }
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.OutputEncoding = Encoding.UTF8;
-        Utils utils = new();
-        const string ConfigFilePath = @"config.txt";
-        const string sharedMemoryName = "Global\\CraftData";
-        int sharedMemorySize = 0;
-        List<Language> languages = new()
+        string logFilePath = "log.txt";
+        File.WriteAllText(logFilePath, string.Empty);
+        using (TextWriter writer = File.AppendText(logFilePath))
         {
-            Language.English,
-            Language.Japanese,
-            Language.German,
-            Language.French,
-            Language.Korean,
-            Language.ChineseSimplified,
-            // Language.ChineseTraditional
-        };
+            Console.OutputEncoding = Encoding.UTF8;
+            Utils utils = new();
+            const string ConfigFilePath = @"config.json";
+            Config? config = utils.GetConfig();
 
-        if (!File.Exists(ConfigFilePath))
-        {
-            Console.WriteLine("Error: Config file not found: " + ConfigFilePath);
-            return;
-        }
-        string gameDirectory = File.ReadAllText(ConfigFilePath).Trim();
+            const string sharedMemoryName = "Global\\CraftData";
+            int sharedMemorySize = 0;
+            List<Language> languages = new()
+            {
+                Language.English,
+                Language.Japanese,
+                Language.German,
+                Language.French,
+                Language.Korean,
+                Language.ChineseSimplified,
+                // Language.ChineseTraditional
+            };
 
-        if (!Directory.Exists(gameDirectory))
-        {
-            Console.WriteLine("Error: The game directory does not exist: " + gameDirectory);
-            return;
-        }
-        try
-        {
-            Dictionary<Language, dynamic> gameData = utils.GetGameData(gameDirectory, languages);
-            StringBuilder csvItem = utils.GetBuffsCsv(gameData, languages);
-            StringBuilder csvRecipe = utils.GetRecipesCsv(gameData, languages);
-            utils.WriteCsvMemory(csvRecipe, csvItem, sharedMemorySize, sharedMemoryName);
-        }
-        // File.WriteAllText("item.csv", csvItem.ToString());
+            if (!File.Exists(ConfigFilePath))
+            {
+                // Console.WriteLine("Error: Config file not found: " + ConfigFilePath);
+                writer.WriteLine("Config was not found: " + ConfigFilePath);
+                return;
+            }
+            string gameDirectory = config!.GameDirectory;
 
-        catch (DirectoryNotFoundException ex)
-        {
-            Console.WriteLine("Directory not found: " + ex.Message);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("An error occurred: " + ex.Message);
+            if (!Directory.Exists(gameDirectory))
+            {
+                writer.WriteLine("Error: The game directory does not exist: " + gameDirectory);
+                return;
+            }
+            try
+            {
+                Dictionary<Language, dynamic> gameData = utils.GetGameData(
+                    gameDirectory,
+                    languages
+                );
+                StringBuilder csvItem = utils.GetBuffsCsv(gameData, languages);
+                StringBuilder csvRecipe = utils.GetRecipesCsv(gameData, languages);
+                utils.WriteCsvMemory(csvRecipe, csvItem, sharedMemorySize, sharedMemoryName);
+                // File.WriteAllText("item.csv", csvItem.ToString());
+                // System.Console.WriteLine(config?.GameDirectory);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                writer.WriteLine("Directory not found: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                writer.WriteLine("An error occurred: " + ex.Message);
+            }
         }
     }
 }
