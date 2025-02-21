@@ -340,7 +340,7 @@ class Program
             }
             catch (Exception ex)
             {
-                writer.WriteLine("Unhandled exception: " + ex.Message);
+                writer.WriteLine("Unhandled exception: " + ex.Message + "\n\n" + ex.StackTrace);
             }
         }
     }
