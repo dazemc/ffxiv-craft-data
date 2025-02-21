@@ -62,14 +62,29 @@ class Utils
     {
         StringBuilder csvItem = new();
 
-        csvItem.AppendLine(
-            "Key,"
-                + "Category,"
-                + "Name,"
-                + "NameJA,"
-                + "NameDE,"
-                + "NameFR,"
-                + "BuffType1,"
+        System.Console.WriteLine();
+
+        csvItem.Append("Key," + "Category,");
+        foreach (Language lang in languages)
+        {
+            switch (lang)
+            {
+                case Language.English:
+                    csvItem.Append("Name,");
+                    break;
+                case Language.Japanese:
+                    csvItem.Append("NameJA,");
+                    break;
+                case Language.German:
+                    csvItem.Append("NameDE,");
+                    break;
+                case Language.French:
+                    csvItem.Append("NameFR,");
+                    break;
+            }
+        }
+        csvItem.Append(
+            "BuffType1,"
                 + "PercentageValue1,"
                 + "MaxValue1,"
                 + "PercentageValueHQ1,"
@@ -83,7 +98,7 @@ class Utils
                 + "PercentageValue3,"
                 + "MaxValue3,"
                 + "PercentageValueHQ3,"
-                + "MaxValueHQ3"
+                + "MaxValueHQ3\n"
         );
         foreach (var item in gameData[languages[0]]["items"])
         {
@@ -151,15 +166,27 @@ class Utils
     )
     {
         StringBuilder csv = new();
-        csv.AppendLine(
-            "Key,"
-                + "Level,"
-                + "CraftType,"
-                + "Name,"
-                + "NameJA,"
-                + "NameDE,"
-                + "NameFR,"
-                + "ClassJobLevel,"
+        csv.Append("Key," + "Level," + "CraftType,");
+        foreach (Language lang in languages)
+        {
+            switch (lang)
+            {
+                case Language.English:
+                    csv.Append("Name,");
+                    break;
+                case Language.Japanese:
+                    csv.Append("NameJA,");
+                    break;
+                case Language.German:
+                    csv.Append("NameDE,");
+                    break;
+                case Language.French:
+                    csv.Append("NameFR,");
+                    break;
+            }
+        }
+        csv.Append(
+            "ClassJobLevel,"
                 + "MaterialQualityFactor,"
                 + "DifficultyFactor,"
                 + "QualityFactor,"
@@ -172,7 +199,7 @@ class Utils
                 + "ProgressDivider,"
                 + "ProgressModifier,"
                 + "QualityDivider,"
-                + "QualityModifier"
+                + "QualityModifier\n"
         );
         foreach (Recipe recipe in gameData[languages[0]]["recipes"])
         {
@@ -300,6 +327,9 @@ class Program
                 );
                 StringBuilder csvItem = utils.GetBuffsCsv(gameData, languages);
                 StringBuilder csvRecipe = utils.GetRecipesCsv(gameData, languages);
+                System.Console.WriteLine(csvItem.Length);
+                System.Console.WriteLine(csvRecipe.ToString()[..600]);
+
                 utils.WriteCsvMemory(csvRecipe, csvItem, sharedMemorySize, sharedMemoryName);
                 // File.WriteAllText("item.csv", csvItem.ToString());
                 // System.Console.WriteLine(config?.GameDirectory);
@@ -310,7 +340,7 @@ class Program
             }
             catch (Exception ex)
             {
-                writer.WriteLine("An error occurred: " + ex.Message);
+                writer.WriteLine("Unhandled exception: " + ex.Message);
             }
         }
     }

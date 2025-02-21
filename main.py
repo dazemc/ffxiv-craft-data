@@ -2,6 +2,7 @@ import asyncio
 import json
 import mmap
 import os
+import sys
 import struct
 from io import StringIO
 
@@ -105,14 +106,14 @@ def read_csv(csv: StringIO) -> pd.DataFrame:
         print(f"Error reading csv: {e}")
 
 
-def seperate_crafters(crafts: list, df: pd.DataFrame) -> dict:
+def separate_crafters(crafts: list, df: pd.DataFrame) -> dict:
     recipes_df: dict = {}
     for crafter in crafts:
         recipes_df[crafter] = df[df.CraftType == crafter]
     return recipes_df
 
 
-def seperate_buffs(buffs: list, df: pd.DataFrame) -> dict:
+def separate_buffs(buffs: list, df: pd.DataFrame) -> dict:
     buffs_df: dict = {}
     for buff in buffs:
         buffs_df[buff] = df[df.Category == buff]
@@ -130,31 +131,34 @@ def create_export_recipe(recipes_df: dict) -> dict:
         "Culinarian": [],
         "Alchemist": [],
     }
-
     for craft_type in recipes_df:
         for i in range(len(recipes_df[craft_type])):
             match craft_type:
-                case "Alchemy":
+                case "Alchemy" | "연금술사":
                     craft_key: str = "Alchemist"
-                case "Armorcraft":
+                case "Armorcraft" | "갑주제작사":
                     craft_key: str = "Armorer"
-                case "Smithing":
+                case "Smithing" | "대장장이":
                     craft_key: str = "Blacksmith"
-                case "Woodworking":
+                case "Woodworking" | "목수":
                     craft_key: str = "Carpenter"
-                case "Cooking":
+                case "Cooking" | "요리사":
                     craft_key: str = "Culinarian"
-                case "Goldsmithing":
+                case "Goldsmithing" | "보석공예가":
                     craft_key: str = "Goldsmith"
-                case "Clothcraft":
+                case "Clothcraft" | "재봉사":
                     craft_key: str = "Weaver"
-                case "Leatherworking":
+                case "Leatherworking" | "가죽공예가":
                     craft_key: str = "Leatherworker"
             current_recipe: dict = recipes_df[craft_type].iloc[i]
-            name: str = current_recipe.Name
-            name_de: str = str(current_recipe.NameDE).replace("<SoftHyphen/>", "\u00ad")
-            name_fr: str = str(current_recipe.NameFR).replace("<SoftHyphen/>", "\u00ad")
-            name_ja: str = current_recipe.NameJA
+            name: str = current_recipe.get("Name", "") or ""
+            name_de: str = str(current_recipe.get("NameDE", "") or "").replace(
+                "<SoftHyphen/>", "\u00ad"
+            )
+            name_fr: str = str(current_recipe.get("NameFR", "") or "").replace(
+                "<SoftHyphen/>", "\u00ad"
+            )
+            name_ja: str = current_recipe.get("NameJA", "") or ""
             difficulty: int = int(current_recipe.Difficulty)
             durability: int = int(current_recipe.Durability)
             base_level: int = int(current_recipe.ClassJobLevel)
@@ -255,12 +259,21 @@ def create_export_buffs(df):
                 info = {
                     "hq": False if k == 0 else True,
                     "name": {
-                        "de": current_item.NameDE,
-                        "en": current_item.Name,
-                        "fr": current_item.NameFR,
-                        "ja": current_item.NameJA,
+                        "de": current_item.get("NameDE", "")
+                        if pd.notna(current_item.get("NameDE", ""))
+                        else "",
+                        "en": current_item.get("Name", "")
+                        if pd.notna(current_item.get("Name", ""))
+                        else "",
+                        "fr": current_item.get("NameFR", "")
+                        if pd.notna(current_item.get("NameFR", ""))
+                        else "",
+                        "ja": current_item.get("NameJA", "")
+                        if pd.notna(current_item.get("NameJA", ""))
+                        else "",
                     },
                 }
+
                 if k == 0:
                     buff_types.update(info)
                     export_buffs[buff_key].append(buff_types)
@@ -311,11 +324,12 @@ async def main() -> None:
     df_item: pd.DataFrame = read_csv(csv_item)
     craft_types: list = list(df_recipe.CraftType.unique())
     buff_types: list = list(df_item.Category.unique())
-    ordered_buff: dict = seperate_buffs(buffs=buff_types, df=df_item)
-    ordered_recipe: dict = seperate_crafters(crafts=craft_types, df=df_recipe)
+    ordered_buff: dict = separate_buffs(buffs=buff_types, df=df_item)
+    ordered_recipe: dict = separate_crafters(crafts=craft_types, df=df_recipe)
     export_buffs: dict = create_export_buffs(df=ordered_buff)
     export_recipes: dict = create_export_recipe(recipes_df=ordered_recipe)
     export(export_recipes=export_recipes, export_buffs=export_buffs)
+    
 
 
 if __name__ == "__main__":
