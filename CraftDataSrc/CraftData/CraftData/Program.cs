@@ -191,7 +191,7 @@ class Utils
                 + "DifficultyFactor,"
                 + "QualityFactor,"
                 + "DurabilityFactor,"
-                + "SuggestedCrafsmanship,"
+                + "SuggestedCraftsmanship,"
                 + "Stars,"
                 + "Difficulty,"
                 + "Quality,"

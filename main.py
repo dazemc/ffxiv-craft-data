@@ -2,7 +2,6 @@ import asyncio
 import json
 import mmap
 import os
-import sys
 import struct
 from io import StringIO
 
@@ -177,7 +176,7 @@ def create_export_recipe(recipes_df: dict) -> dict:
             progress_modifier: int = int(current_recipe.ProgressModifier)
             quality_divider: int = int(current_recipe.QualityDivider)
             quality_modifier: int = int(current_recipe.QualityModifier)
-            suggested_craft: int = int(current_recipe.SuggestedCrafsmanship)
+            suggested_craft: int = int(current_recipe.SuggestedCraftsmanship)
             stars: int = int(current_recipe.Stars)
             export_recipes[craft_key].append(
                 {
