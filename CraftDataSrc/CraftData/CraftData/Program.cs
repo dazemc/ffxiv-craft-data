@@ -81,6 +81,9 @@ class Utils
                 case Language.French:
                     csvItem.Append("NameFR,");
                     break;
+                case Language.Korean:
+                    csvItem.Append("NameKO,");
+                    break;
             }
         }
         csvItem.Append(
@@ -182,6 +185,9 @@ class Utils
                     break;
                 case Language.French:
                     csv.Append("NameFR,");
+                    break;
+                case Language.Korean:
+                    csv.Append("NameKO,");
                     break;
             }
         }
