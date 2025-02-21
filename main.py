@@ -135,9 +135,9 @@ def create_export_recipe(recipes_df: dict) -> dict:
                     craft_key: str = "Alchemist"
                 case "Armorcraft" | "갑주제작사":
                     craft_key: str = "Armorer"
-                case "Smithing" | "대장장이":
+                case "Smithing" | "대장일":
                     craft_key: str = "Blacksmith"
-                case "Woodworking" | "목수":
+                case "Woodworking" | "목공":
                     craft_key: str = "Carpenter"
                 case "Cooking" | "요리사":
                     craft_key: str = "Culinarian"
