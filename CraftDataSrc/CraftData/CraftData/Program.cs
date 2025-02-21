@@ -214,16 +214,11 @@ class Utils
             csv.Append(
                 $"\n{recipe.Key}," + $"{recipe.RecipeLevelTable.Key}," + $"{recipe.CraftType},"
             );
-            if (languages.Count == 1)
+
+            foreach (Language lang in languages)
             {
-                csv.Append($"{recipe.ResultItem.Name},");
-            }
-            else
-            {
-                foreach (Language lang in languages)
-                {
-                    csv.Append($"{gameData[lang]["recipes"][recipe.Key].ResultItem.Name},");
-                }
+                int key = recipe.ResultItem.Key;
+                csv.Append($"{gameData[lang]["items"][key]},");
             }
 
             csv.Append(
@@ -243,7 +238,8 @@ class Utils
                     + $"{recipe.RecipeLevelTable[8]}\n"
             );
         }
-        foreach (string crafter in crafters) {
+        foreach (string crafter in crafters)
+        {
             System.Console.WriteLine(crafter);
         }
         return csv;
