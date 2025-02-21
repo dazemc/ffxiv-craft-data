@@ -336,6 +336,8 @@ class Program
                 System.Console.WriteLine(csvItem.Length);
                 // System.Console.WriteLine(csvRecipe.ToString()[..600]);
                 File.WriteAllText("item.csv", csvItem.ToString());
+                File.WriteAllText("recipe.csv", csvRecipe.ToString());
+                File.WriteAllText("data.csv", gameData[languages[0]]["items"][600].ToString());
 
                 utils.WriteCsvMemory(csvRecipe, csvItem, sharedMemorySize, sharedMemoryName);
                 // System.Console.WriteLine(config?.GameDirectory);

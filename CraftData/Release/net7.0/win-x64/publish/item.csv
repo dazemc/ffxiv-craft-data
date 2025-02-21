@@ -1,0 +1,121 @@
+Key,Category,Name,NameJA,NameDE,NameFR,BuffType1,PercentageValue1,MaxValue1,PercentageValueHQ1,MaxValueHQ1,BuffType2,PercentageValue2,MaxValue2,PercentageValueHQ2,MaxValueHQ2,BuffType3,PercentageValue3,MaxValue3,PercentageValueHQ3,MaxValueHQ3
+
+4666,Meals,Salt Cod,ソルトコッド,Salzdorsch,Morue salée,Control,8,4,10,5,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4667,Meals,Raw Oyster,ローオイスター,Rohe Auster,Huître crue,Control,8,8,10,10,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4668,Meals,Boiled Bream,ボイルドブリーム,Gekochte Brasse,Brème bouillie,Control,8,12,10,15,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4669,Meals,Baked Sole,ベイクドソール,Gebratene Seezunge,Sole au four,Control,8,14,10,17,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4670,Meals,Tuna Miq'abob,ミコッテ風海の幸串焼,Thunfisch-Miqo'Kebab,Miqo-brochette de thon,Control,8,16,10,20,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4671,Meals,Salt Cod Puffs,ソルトコッドパフ,Dorsch im Schlafrock,Choux à la morue salée,Control,8,18,10,23,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4672,Meals,Pan-fried Mahi-mahi,マヒマヒの揚げ焼き,Gebratener Mahi-Mahi,Mahi-mahi frit,Control,8,25,10,31,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4716,Meals,Frumenty,フルメンティ,Frumenty,Fromentée,CP,10,10,13,12,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4717,Meals,Stone Soup,ストーンスープ,Steinsuppe,Soupe de pierre,CP,10,17,13,21,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4718,Meals,Pea Soup,ピースープ,Erbsensuppe,Soupe de pois,CP,10,21,13,26,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4719,Meals,Cawl Cennin,カウルケニン,Cawl Cennin,Bouillon de poireaux,CP,10,24,13,30,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4720,Meals,Fish Soup,フィッシュスープ,Fischsuppe,Soupe de poisson,CP,10,26,13,33,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4721,Meals,Bouillabaisse,ブイヤベース,Bouillabaisse,Bouillabaisse,CP,10,34,13,43,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4722,Meals,Mashed Popotoes,マッシュポポト,Toffelbrei,Purée de popotos,Craftsmanship,12,12,15,15,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4723,Meals,Cheese Risotto,チーズリゾット,Käserisotto,Risotto au fromage,Craftsmanship,12,16,15,20,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4724,Meals,Cheese Souffle,チーズスフレ,Käseauflauf,Soufflé au fromage,Craftsmanship,12,20,15,25,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4725,Meals,Rolanberry Cheesecake,ロランベリーチーズケーキ,Rolanbeeren-Käsekuchen,Gâteau au fromage à la rolanbaie,Craftsmanship,12,32,15,40,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4726,Meals,Mint Lassi,ミントラッシー,Minz-Lassi,Lassi à la menthe,Craftsmanship,12,8,15,10,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+4727,Meals,Rolanberry Lassi,ロランベリーラッシー,Rolanbeeren-Lassi,Lassi à la rolanbaie,Craftsmanship,12,24,15,30,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+6144,Meals,Dagger Soup,ダガースープ,Dolchfisch-Suppe,Soupe de dagues,Control,8,22,10,27,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+7574,Meals,Chilled Popoto Soup,冷製ポポトスープ,Kalte Toffelsuppe,Soupe de popotos glacée,Craftsmanship,10,38,12,47,CP,4,14,5,17,Nothing,0,0,0,0
+
+9333,Meals,Shark Fin Soup,フカヒレスープ,Haifischflossensuppe,Soupe d'aileron,Craftsmanship,10,49,12,61,CP,4,14,5,18,Nothing,0,0,0,0
+
+12861,Meals,Baked Onion Soup,オニオングラタンスープ,Überbackene Zwiebelsuppe,Soupe à l'oignon,CP,10,38,13,48,Craftsmanship,4,22,5,28,Nothing,0,0,0,0
+
+12862,Meals,Beet Soup,クリムゾンスープ,Purpurrote Bete-Suppe,Soupe pourpre,Control,10,54,12,68,Craftsmanship,4,23,5,29,Nothing,0,0,0,0
+
+12863,Meals,Emerald Soup,エメラルドスープ,Emeraldgrüne Bohnensuppe,Soupe émeraude,Craftsmanship,10,60,12,75,CP,4,15,5,19,Nothing,0,0,0,0
+
+12864,Meals,Clam Chowder,クラムチャウダー,Muschelsuppe,Chaudrée de palourdes,Control,10,58,12,73,CP,4,15,5,19,Nothing,0,0,0,0
+
+12865,Meals,Seafood Stew,トマトシチュー,Ishgarder Fischtopf,Ragoût du pêcheur,CP,12,40,15,50,Control,4,25,5,31,Nothing,0,0,0,0
+
+14139,Meals,Oyster Confit,オイスターコンフィ,Austern-Confit,Huîtres confites,Control,10,70,12,88,Craftsmanship,4,30,5,37,Nothing,0,0,0,0
+
+15650,Meals,Heavensegg Soup,ヘヴンスエッグスープ,Himmelseier-Suppe,Soupe aux célestœufs,Control,7,62,9,77,Craftsmanship,5,42,6,53,CP,3,8,4,10
+
+19824,Meals,Steamed Grouper,キジハタの清蒸,Gedünsteter Zackenbarsch,Garoupa à l'étuvée,Craftsmanship,10,109,12,136,CP,4,16,5,20,Nothing,0,0,0,0
+
+19826,Meals,Tempura Platter,天ぷら盛り合わせ,Tempura-Platte,Assortiment de tenpura,CP,12,43,15,54,Craftsmanship,4,42,5,53,Nothing,0,0,0,0
+
+19834,Meals,Miso Soup with Tofu,豆腐の味噌汁,Miso-Suppe mit Tofu,Soupe miso au tôfu,Craftsmanship,10,104,12,130,Control,4,39,5,49,Nothing,0,0,0,0
+
+19837,Meals,Warrior's Stew,ゼラスープ,Kriegereintopf,Nogootoj shol,Control,10,99,12,124,Craftsmanship,4,42,5,53,Nothing,0,0,0,0
+
+19882,Medicine,Competent Craftsman's Tea,名匠の薬茶,Handwerkermeister-Tee,Infusion de virtuosité,Craftsmanship,2,20,3,25,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+19883,Medicine,Commanding Craftsman's Tea,巨匠の薬茶,Handwerkerlegenden-Tee,Infusion de maîtrise,Control,2,20,3,25,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+19884,Medicine,Cunning Craftsman's Tea,魔匠の薬茶,Handwerkerkoryphäen-Tee,Infusion de capacité,CP,4,10,5,13,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+23187,Meals,Matcha,抹茶,Matcha-Tee,Matcha,CP,12,45,15,56,Control,4,49,5,61,Nothing,0,0,0,0
+
+27864,Meals,Blood Tomato Salad,ブラッドトマトサラダ,Bluttomatensalat,Salade de tomates sanguines,Craftsmanship,7,122,9,153,CP,8,22,10,27,Nothing,0,0,0,0
+
+27871,Meals,Popotoes au Gratin,ラセットポポトグラタン,Ockertoffel-Gratin,Gratin de popotos brunes,Control,7,118,9,147,Craftsmanship,4,53,5,66,Nothing,0,0,0,0
+
+27876,Meals,Blood Bouillabaisse,ブラッドブイヤベース,Blut-Bouillabaisse,Bouillabaisse sanguine,CP,21,53,26,66,Control,4,51,5,64,Nothing,0,0,0,0
+
+27957,Medicine,Competent Craftsman's Syrup,名匠の水薬,Artisanentrank der Effizienz,Potion de virtuosité,Craftsmanship,2,33,3,41,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+27958,Medicine,Commanding Craftsman's Syrup,巨匠の水薬,Artisanentrank der Fachkenntnis,Potion de maîtrise,Control,2,34,3,42,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+27959,Medicine,Cunning Craftsman's Syrup,魔匠の水薬,Artisanentrank des Fachwissens,Potion de capacité,CP,5,13,6,16,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+28720,Meals,Mejillones al Ajillo,ムセルアヒージョ,Miserabelmuscheln al Ajillo,Moules al ajillo,CP,21,56,26,70,Craftsmanship,5,84,6,105,Nothing,0,0,0,0
+
+30482,Meals,Chili Crab,チリクラブ,Chili-Krabbengericht,Chili de crabe,CP,21,57,26,72,Control,5,56,6,70,Nothing,0,0,0,0
+
+36046,Meals,Happiness Juice,ハピネスジュース,Glückskarottensaft,Jus de bonheur,Craftsmanship,7,146,9,183,CP,8,26,10,32,Nothing,0,0,0,0
+
+36053,Meals,Giant Haddock Dip,ジャイアントタラモサラータ,Riesentaramosalata,Tarama géant,Control,7,132,9,165,Craftsmanship,4,62,5,77,Nothing,0,0,0,0
+
+36060,Meals,Tsai tou Vounou,チャイ・トゥ・ヴヌー,Tsai Tou Vounou,Chai tou vounou,CP,21,62,26,78,Control,4,61,5,76,Nothing,0,0,0,0
+
+36114,Medicine,Competent Craftsman's Draught,名匠の薬酒,Facharbeiter-Kräuterwein,Potion spiritueuse de virtuosité,Craftsmanship,2,40,3,50,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+36115,Medicine,Commanding Craftsman's Draught,巨匠の薬酒,Fachkenntnis-Kräuterwein,Potion spiritueuse de maîtrise,Control,2,40,3,50,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+36116,Medicine,Cunning Craftsman's Draught,魔匠の薬酒,Fachwissen-Kräuterwein,Potion spiritueuse de capacité,CP,5,17,6,21,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+37282,Meals,Calamari Ripieni,カラマリ・リピエーニ,Calamari Ripieni,Khalamar ripieni,CP,21,66,26,82,Craftsmanship,4,96,5,120,Nothing,0,0,0,0
+
+38929,Meals,Jhinga Biryani,ジンガビリヤニ,Zingarnelen-Biryani,Biryani aux crevettes jhingas,CP,21,69,26,86,Control,4,72,5,90,Nothing,0,0,0,0
+
+44077,Meals,Salmon Jerky,サーモンジャーキー,Getrockneter Lachs,Tranches de saumon séché,Control,7,172,9,215,Craftsmanship,4,78,5,98,Nothing,0,0,0,0
+
+44088,Meals,Gateau au Chocolat,ガトーショコラ,Gâteau au Chocolat,Gâteau au chocolat,Craftsmanship,7,192,9,240,CP,8,30,10,38,Nothing,0,0,0,0
+
+44091,Meals,Rroneek Steak,ロネークステーキ,Rroneek-Steak,Steak de rroneek,CP,21,73,26,92,Control,4,77,5,97,Nothing,0,0,0,0
+
+44167,Medicine,Competent Craftsman's Tisane,名匠の薬液,Kräutertee für behände Handwerker,Sérum de virtuosité,Craftsmanship,2,50,3,63,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+44168,Medicine,Commanding Craftsman's Tisane,巨匠の薬液,Kräutertee für hehre Handwerker,Sérum de maîtrise,Control,2,50,3,63,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+44169,Medicine,Cunning Craftsman's Tisane,魔匠の薬液,Kräutertee für herausragende Handwerker,Sérum de capacité,CP,5,21,6,27,Nothing,0,0,0,0,Nothing,0,0,0,0
+
+44842,Meals,Ceviche,セビーチェ,Ceviche,Ceviche,CP,21,76,26,96,Craftsmanship,4,120,5,150,Nothing,0,0,0,0
