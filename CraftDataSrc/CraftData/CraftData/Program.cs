@@ -216,7 +216,7 @@ class Utils
             );
             if (languages.Count == 1)
             {
-                csv.Append($"{gameData[languages[0]]["recipes"][recipe.Key].ResultItem.Name}");
+                csv.Append($"{recipe.ResultItem.Name},");
             }
             else
             {
