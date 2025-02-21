@@ -156,6 +156,7 @@ def create_export_recipe(recipes_df: dict) -> dict:
                 "<SoftHyphen/>", "\u00ad"
             )
             name_ja: str = current_recipe.get("NameJA", "") or ""
+            name_ko: str = current_recipe.get("NameKO", "") or ""
             difficulty: int = int(current_recipe.Difficulty)
             durability: int = int(current_recipe.Durability)
             base_level: int = int(current_recipe.ClassJobLevel)
@@ -188,6 +189,7 @@ def create_export_recipe(recipes_df: dict) -> dict:
                         "en": name,
                         "fr": name_fr,
                         "ja": name_ja,
+                        "ko": name_ko,
                     },
                     "progressDivider": progress_divider,
                     "progressModifier": progress_modifier,
