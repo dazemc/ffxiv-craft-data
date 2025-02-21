@@ -21,6 +21,10 @@
     <Reference Include="SaintCoinach">
       <HintPath>..\..\SaintCoinach.dll</HintPath>
     </Reference>
+    <None Update="Definitions\**\*">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <DestinationFolder>$(OutDir)Definitions\</DestinationFolder>
+    </None>
   </ItemGroup>
 
 </Project>
