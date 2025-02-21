@@ -61,9 +61,6 @@ class Utils
     )
     {
         StringBuilder csvItem = new();
-
-        System.Console.WriteLine();
-
         csvItem.Append("Key," + "Category,");
         foreach (Language lang in languages)
         {
@@ -207,15 +204,26 @@ class Utils
                 + "QualityDivider,"
                 + "QualityModifier\n"
         );
+        List<string> crafters = new();
         foreach (Recipe recipe in gameData[languages[0]]["recipes"])
         {
+            if (!crafters.Contains(recipe.CraftType.ToString()))
+            {
+                crafters.Add(recipe.CraftType.ToString());
+            }
             csv.Append(
                 $"\n{recipe.Key}," + $"{recipe.RecipeLevelTable.Key}," + $"{recipe.CraftType},"
             );
-
-            foreach (Language lang in languages)
+            if (languages.Count == 1)
             {
-                csv.Append($"{gameData[lang]["recipes"][recipe.Key].ResultItem.Name},");
+                csv.Append($"{gameData[languages[0]]["recipes"][recipe.Key].ResultItem.Name}");
+            }
+            else
+            {
+                foreach (Language lang in languages)
+                {
+                    csv.Append($"{gameData[lang]["recipes"][recipe.Key].ResultItem.Name},");
+                }
             }
 
             csv.Append(
@@ -234,6 +242,9 @@ class Utils
                     + $"{recipe.RecipeLevelTable[6]},"
                     + $"{recipe.RecipeLevelTable[8]}\n"
             );
+        }
+        foreach (string crafter in crafters) {
+            System.Console.WriteLine(crafter);
         }
         return csv;
     }
@@ -314,7 +325,6 @@ class Program
 
             if (!File.Exists(ConfigFilePath))
             {
-                // Console.WriteLine("Error: Config file not found: " + ConfigFilePath);
                 writer.WriteLine("Config was not found: " + ConfigFilePath);
                 return;
             }
@@ -333,14 +343,11 @@ class Program
                 );
                 StringBuilder csvItem = utils.GetBuffsCsv(gameData, languages);
                 StringBuilder csvRecipe = utils.GetRecipesCsv(gameData, languages);
-                System.Console.WriteLine(csvItem.Length);
-                // System.Console.WriteLine(csvRecipe.ToString()[..600]);
-                File.WriteAllText("item.csv", csvItem.ToString());
+
+                // File.WriteAllText("item.csv", csvItem.ToString());
                 File.WriteAllText("recipe.csv", csvRecipe.ToString());
-                File.WriteAllText("data.csv", gameData[languages[0]]["items"][600].ToString());
 
                 utils.WriteCsvMemory(csvRecipe, csvItem, sharedMemorySize, sharedMemoryName);
-                // System.Console.WriteLine(config?.GameDirectory);
             }
             catch (DirectoryNotFoundException ex)
             {
