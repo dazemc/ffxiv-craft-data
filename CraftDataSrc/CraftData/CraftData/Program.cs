@@ -219,15 +219,13 @@ class Utils
             {
                 if (lang == Language.Korean)
                 {
-                    dynamic keyKO = recipe[5];
+                    dynamic keyKO = recipe[3];
                     System.Console.WriteLine(gameData[Language.Korean]["items"][keyKO]);
                     csv.Append($"{gameData[Language.Korean]["items"][keyKO]},");
                 }
                 else
                 {
                     int key = recipe.ResultItem.Key;
-                    dynamic test = recipe[5];
-                    System.Console.WriteLine(test.ToString());
                     csv.Append($"{gameData[lang]["items"][key]},");
                 }
             }
@@ -355,12 +353,13 @@ class Program
                 File.WriteAllText("recipe.csv", csvRecipe.ToString());
                 File.WriteAllText("item.csv", csvItem.ToString());
                 System.Console.WriteLine("Recipe data\n");
-                dynamic data = gameData[languages[0]]["recipes"][4];
+                dynamic data = gameData[languages[0]]["recipes"][3];
                 // writer.WriteLine("getting recipe data...\n\n");
                 for (int i = 0; i < 10; i++)
                 {
                     System.Console.WriteLine(data[i]);
                     writer.WriteLine($"{i}: {data[i]}");
+                    System.Console.WriteLine(data.Key);
                     writer.Flush();
                 }
 

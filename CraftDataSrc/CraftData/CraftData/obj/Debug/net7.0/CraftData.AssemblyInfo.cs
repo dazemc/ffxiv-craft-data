@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CraftData")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a0967ca01732dc1c6b6d03455931b7e125dc508")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8479993cb788475a4d355cf6e6b03de7b9fe14d")]
 [assembly: System.Reflection.AssemblyProductAttribute("CraftData")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CraftData")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
