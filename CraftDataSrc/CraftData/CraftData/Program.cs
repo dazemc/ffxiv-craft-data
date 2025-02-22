@@ -217,8 +217,19 @@ class Utils
 
             foreach (Language lang in languages)
             {
-                int key = recipe.ResultItem.Key;
-                csv.Append($"{gameData[lang]["items"][key]},");
+                if (lang == Language.Korean)
+                {
+                    dynamic keyKO = recipe[5];
+                    System.Console.WriteLine(gameData[Language.Korean]["items"][keyKO]);
+                    csv.Append($"{gameData[Language.Korean]["items"][keyKO]},");
+                }
+                else
+                {
+                    int key = recipe.ResultItem.Key;
+                    dynamic test = recipe[5];
+                    System.Console.WriteLine(test.ToString());
+                    csv.Append($"{gameData[lang]["items"][key]},");
+                }
             }
 
             csv.Append(
@@ -342,6 +353,7 @@ class Program
 
                 // File.WriteAllText("item.csv", csvItem.ToString());
                 File.WriteAllText("recipe.csv", csvRecipe.ToString());
+                File.WriteAllText("item.csv", csvItem.ToString());
                 System.Console.WriteLine("Recipe data\n");
                 dynamic data = gameData[languages[0]]["recipes"][4];
                 // writer.WriteLine("getting recipe data...\n\n");
