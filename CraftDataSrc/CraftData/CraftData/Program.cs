@@ -343,7 +343,7 @@ class Program
                 // File.WriteAllText("item.csv", csvItem.ToString());
                 File.WriteAllText("recipe.csv", csvRecipe.ToString());
                 System.Console.WriteLine("Recipe data\n");
-                dynamic data = gameData[Language.English]["recipes"][4];
+                dynamic data = gameData[languages[0]]["recipes"][4];
                 // writer.WriteLine("getting recipe data...\n\n");
                 for (int i = 0; i < 10; i++)
                 {
