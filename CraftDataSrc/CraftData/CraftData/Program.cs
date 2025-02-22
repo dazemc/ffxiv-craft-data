@@ -344,9 +344,10 @@ class Program
                 File.WriteAllText("recipe.csv", csvRecipe.ToString());
                 System.Console.WriteLine("Recipe data\n");
                 dynamic data = gameData[Language.English]["recipes"][4];
-
-                for (int i = 0; i < 10; i++)
+                writer.WriteLine("getting recipe data...\n\n");
+                for (int i = 0; i < 19; i++)
                 {
+                    System.Console.WriteLine(data[i]);
                     writer.WriteLine($"{i}: {data[i]}");
                 }
 
