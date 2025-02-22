@@ -1,5 +1,6 @@
 CraftDataSrc/CraftData/.vs/
 export/
 *.vs/
+CraftData/Debug/*
 CraftData/Release/net7.0/win-x64/*
 !CraftData/Release/net7.0/win-x64/publish/

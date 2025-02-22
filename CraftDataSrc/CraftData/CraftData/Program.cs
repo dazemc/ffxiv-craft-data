@@ -344,11 +344,12 @@ class Program
                 File.WriteAllText("recipe.csv", csvRecipe.ToString());
                 System.Console.WriteLine("Recipe data\n");
                 dynamic data = gameData[Language.English]["recipes"][4];
-                writer.WriteLine("getting recipe data...\n\n");
-                for (int i = 0; i < 19; i++)
+                // writer.WriteLine("getting recipe data...\n\n");
+                for (int i = 0; i < 10; i++)
                 {
                     System.Console.WriteLine(data[i]);
                     writer.WriteLine($"{i}: {data[i]}");
+                    writer.Flush();
                 }
 
                 utils.WriteCsvMemory(csvRecipe, csvItem, sharedMemorySize, sharedMemoryName);

@@ -1,0 +1,10 @@
+0: 3
+1: Smithing
+2: RecipeLevelTable#2
+3: 0
+4: Amateur's File
+5: 1
+6: Bronze Ingot
+7: 2
+8: Leather
+9: 1
