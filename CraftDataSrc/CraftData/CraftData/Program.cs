@@ -220,7 +220,6 @@ class Utils
                 if (lang == Language.Korean)
                 {
                     dynamic keyKO = recipe[3];
-                    System.Console.WriteLine(gameData[Language.Korean]["items"][keyKO]);
                     csv.Append($"{gameData[Language.Korean]["items"][keyKO]},");
                 }
                 else
@@ -350,19 +349,8 @@ class Program
                 StringBuilder csvRecipe = utils.GetRecipesCsv(gameData, languages);
 
                 // File.WriteAllText("item.csv", csvItem.ToString());
-                File.WriteAllText("recipe.csv", csvRecipe.ToString());
-                File.WriteAllText("item.csv", csvItem.ToString());
-                System.Console.WriteLine("Recipe data\n");
-                dynamic data = gameData[languages[0]]["recipes"][3];
-                // writer.WriteLine("getting recipe data...\n\n");
-                for (int i = 0; i < 10; i++)
-                {
-                    System.Console.WriteLine(data[i]);
-                    writer.WriteLine($"{i}: {data[i]}");
-                    System.Console.WriteLine(data.Key);
-                    writer.Flush();
-                }
-
+                // File.WriteAllText("recipe.csv", csvRecipe.ToString());
+                // File.WriteAllText("item.csv", csvItem.ToString());
                 utils.WriteCsvMemory(csvRecipe, csvItem, sharedMemorySize, sharedMemoryName);
             }
             catch (DirectoryNotFoundException ex)

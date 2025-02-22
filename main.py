@@ -131,21 +131,21 @@ def create_export_recipe(recipes_df: dict) -> dict:
     for craft_type in recipes_df:
         for i in range(len(recipes_df[craft_type])):
             match craft_type:
-                case "Alchemy" | "연금술사":
+                case "Alchemy" | "연금":
                     craft_key: str = "Alchemist"
-                case "Armorcraft" | "갑주제작사":
+                case "Armorcraft" | "갑주제작":
                     craft_key: str = "Armorer"
                 case "Smithing" | "대장일":
                     craft_key: str = "Blacksmith"
                 case "Woodworking" | "목공":
                     craft_key: str = "Carpenter"
-                case "Cooking" | "요리사":
+                case "Cooking" | "요리":
                     craft_key: str = "Culinarian"
                 case "Goldsmithing" | "보석공예":
                     craft_key: str = "Goldsmith"
-                case "Clothcraft" | "재봉사":
+                case "Clothcraft" | "재봉":
                     craft_key: str = "Weaver"
-                case "Leatherworking" | "가죽공예가":
+                case "Leatherworking" | "가죽공예":
                     craft_key: str = "Leatherworker"
             current_recipe: dict = recipes_df[craft_type].iloc[i]
             name: str = current_recipe.get("Name", "") or ""
@@ -285,13 +285,22 @@ def create_export_buffs(df):
 def export(export_recipes: dict, export_buffs: dict) -> None:
     path: str = "../../data/recipedb/"
     path_item: str = "../../data/buffs/"
-    if not os.path.isdir(path):
+    ko_check = export_recipes["Weaver"][0]["name"].get("ko", False)
+
+    if ko_check:
+        path: str = "./import/ko/recipedb"
+        path_item: str = "./import/ko/buffs"
+
+    elif not os.path.isdir(path):
         path: str = "./export/recipedb/"
         path_item: str = "./export/buffs/"
-        if not os.path.isdir(path):
-            os.mkdir("./export")
-            os.mkdir(path)
-            os.mkdir(path_item)
+
+    else:
+        path: str = "../../data/recipedb/"
+        path_item: str = "../../data/buffs/"
+
+    os.makedirs(path, exist_ok=True)
+    os.makedirs(path_item, exist_ok=True)
     for crafter in export_recipes:
         with open(f"./{path}/{crafter}.json", "w", encoding="utf-8") as json_file:
             json.dump(
@@ -328,7 +337,27 @@ async def main() -> None:
     export_buffs: dict = create_export_buffs(df=ordered_buff)
     export_recipes: dict = create_export_recipe(recipes_df=ordered_recipe)
     export(export_recipes=export_recipes, export_buffs=export_buffs)
-    
+
+
+# async def main() -> None:
+#     # set_cwd(CRAFTDATA_FILEPATH)
+#     # set_ffxiv_config(CRAFTDATA_CONFIG)
+#     # csv: tuple = await create_csv()
+#     # csv_recipe: StringIO = csv[0]
+#     # csv_item: StringIO = csv[1]
+#     # set_cwd()
+#     with open("recipe.csv", "r", encoding="utf-8") as csv_file:
+#         csv_recipe = StringIO(csv_file.read())
+#     df_recipe: pd.DataFrame = read_csv(csv_recipe)
+#     # df_item: pd.DataFrame = read_csv(csv_item)
+#     craft_types: list = list(df_recipe.CraftType.unique())
+#     # buff_types: list = list(df_item.Category.unique())
+#     # ordered_buff: dict = separate_buffs(buffs=buff_types, df=df_item)
+#     ordered_recipe: dict = separate_crafters(crafts=craft_types, df=df_recipe)
+#     # export_buffs: dict = create_export_buffs(df=ordered_buff)
+#     export_recipes: dict = create_export_recipe(recipes_df=ordered_recipe)
+#     export_buffs = {}  #  TODO
+#     export(export_recipes=export_recipes, export_buffs=export_buffs)
 
 
 if __name__ == "__main__":
