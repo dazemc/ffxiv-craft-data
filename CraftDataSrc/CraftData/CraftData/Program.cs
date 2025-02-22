@@ -342,6 +342,13 @@ class Program
 
                 // File.WriteAllText("item.csv", csvItem.ToString());
                 File.WriteAllText("recipe.csv", csvRecipe.ToString());
+                System.Console.WriteLine("Recipe data\n");
+                dynamic data = gameData[Language.English]["recipes"][4];
+
+                for (int i = 0; i < 10; i++)
+                {
+                    writer.WriteLine($"{i}: {data[i]}");
+                }
 
                 utils.WriteCsvMemory(csvRecipe, csvItem, sharedMemorySize, sharedMemoryName);
             }
