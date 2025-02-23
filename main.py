@@ -43,15 +43,10 @@ async def run_exe_waiting_input() -> asyncio.subprocess.Process:
 
 def read_shared_memory() -> tuple:  # <StringIO>
     shared_memory_name: str = "Global\\CraftData"
-
     memory_size: int = 0
-
     memory_offset: int = 8
-
     memory_size += memory_offset
-
     buffer_size = 0
-
     next_buffer_size = 0
 
     try:
@@ -150,6 +145,7 @@ def separate_buffs(buffs: list, df: pd.DataFrame) -> dict:
 
 
 def merge_json(primary: dict, secondary: dict):
+    missing_recipes = {}
     secondary_lookup = {
         recipe["key"]: recipe["name"].get("ko")
         for category in secondary.values()
@@ -161,7 +157,31 @@ def merge_json(primary: dict, secondary: dict):
         for recipe in recipes:
             key = recipe.get("key")
             if key in secondary_lookup:
-                recipe["name"]["ko"] = secondary_lookup[key]
+                if secondary_lookup[key] is None:
+                    print(
+                        f"Warning: 'ko' name missing for key '{key}' in secondary JSON."
+                    )
+                else:
+                    recipe["name"]["ko"] = secondary_lookup[key]
+            else:
+                if category not in missing_recipes:
+                    missing_recipes[category] = [
+                        {
+                            "ko": recipe["name"]["en"],
+                            "key": recipe["key"],
+                        }
+                    ]
+                else:
+                    missing_recipes[category].append(
+                        {
+                            "ko": recipe["name"]["en"],
+                            "key": recipe["key"],
+                        }
+                    )
+
+    if len(missing_recipes) > 0:
+        with open("missing_recipes.json", "w", encoding="utf-8") as file:
+            json.dump(missing_recipes, file, ensure_ascii=False, indent=2)
 
 
 def is_import_available() -> bool:
@@ -224,59 +244,34 @@ def create_export_recipe(recipes_df: dict) -> dict:
             current_recipe: dict = recipes_df[craft_type].iloc[i]
 
             recipe_key: int = int(current_recipe.Key)
-
-            name: str = current_recipe.get("Name", "") or ""
-
-            name_de: str = str(current_recipe.get("NameDE", "") or name).replace(
+            name: str = current_recipe.get("Name", "")
+            name_de: str = str(current_recipe.get("NameDE", name)).replace(
                 "<SoftHyphen/>", "\u00ad"
             )
-
-            name_fr: str = str(current_recipe.get("NameFR", "") or name).replace(
+            name_fr: str = str(current_recipe.get("NameFR", name)).replace(
                 "<SoftHyphen/>", "\u00ad"
             )
-
-            name_ja: str = current_recipe.get("NameJA", "") or name
-
-            name_ko: str = current_recipe.get("NameKO", "") or name
-
+            name_ja: str = current_recipe.get("NameJA", name)
+            name_ko: str | bool = current_recipe.get("NameKO", None) # ko version < current version
             difficulty: int = int(current_recipe.Difficulty)
-
             durability: int = int(current_recipe.Durability)
-
             base_level: int = int(current_recipe.ClassJobLevel)
-
             level: int = int(current_recipe.Level)
-
             quality: int = int(current_recipe.Quality)
-
             difficulty_factor: int = int(current_recipe.DifficultyFactor) / 100
-
             quality_factor: int = int(current_recipe.QualityFactor) / 100
-
             durability_factor: int = int(current_recipe.DurabilityFactor) / 100
-
             difficulty *= difficulty_factor
-
             durability *= durability_factor
-
             quality *= quality_factor
-
             difficulty: int = int(difficulty // 1)
-
             durability: int = int(durability // 1)
-
             quality: int = int(quality // 1)
-
             progress_divider: int = int(current_recipe.ProgressDivider)
-
             progress_modifier: int = int(current_recipe.ProgressModifier)
-
             quality_divider: int = int(current_recipe.QualityDivider)
-
             quality_modifier: int = int(current_recipe.QualityModifier)
-
             suggested_craft: int = int(current_recipe.SuggestedCraftsmanship)
-
             stars: int = int(current_recipe.Stars)
 
             export_recipes[craft_key].append(
