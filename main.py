@@ -11,8 +11,9 @@ import pandas as pd
 
 
 FFXIV_FILEPATH: str = "G:/SteamLibrary/steamapps/common/FINAL FANTASY XIV Online"
-IMPORT_RECIPE_DIR_KO: str = "./import/ko/recipedb"
-IMPORT_BUFFS_DIR_KO: str = "./import/ko/buffs"
+IMPORT_DIR: str = "./import"
+IMPORT_RECIPE_DIR_KO: str = IMPORT_DIR + "/ko/recipedb"
+IMPORT_BUFFS_DIR_KO: str = IMPORT_DIR + "/ko/buffs"
 
 
 CRAFTDATA_FILEPATH: str = "/CraftData/Release/net7.0/win-x64/publish/"
@@ -167,20 +168,20 @@ def merge_json(primary: dict, secondary: dict):
                 if category not in missing_recipes:
                     missing_recipes[category] = [
                         {
-                            "ko": recipe["name"]["en"],
+                            "recipe": recipe["name"]["en"],
                             "key": recipe["key"],
                         }
                     ]
                 else:
                     missing_recipes[category].append(
                         {
-                            "ko": recipe["name"]["en"],
+                            "recipe": recipe["name"]["en"],
                             "key": recipe["key"],
                         }
                     )
 
     if len(missing_recipes) > 0:
-        with open("missing_recipes.json", "w", encoding="utf-8") as file:
+        with open(f"{IMPORT_DIR}/ko/missing_recipes.json", "w", encoding="utf-8") as file:
             json.dump(missing_recipes, file, ensure_ascii=False, indent=2)
 
 

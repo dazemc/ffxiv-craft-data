@@ -1,0 +1,526 @@
+{
+  "Carpenter": [
+    {
+      "recipe": "Botanical Loft",
+      "key": 6247
+    },
+    {
+      "recipe": "Imitation Closet",
+      "key": 6251
+    },
+    {
+      "recipe": "Rail-and-stile Partition",
+      "key": 6254
+    },
+    {
+      "recipe": "Tea Caddy Cabinet",
+      "key": 6255
+    },
+    {
+      "recipe": "Cushioned Bench",
+      "key": 6257
+    },
+    {
+      "recipe": "Tropical Canopy Bed",
+      "key": 6258
+    },
+    {
+      "recipe": "Far Eastern Gazebo",
+      "key": 6259
+    },
+    {
+      "recipe": "Royal Bed",
+      "key": 6260
+    },
+    {
+      "recipe": "Everseeker's Fishing Rod",
+      "key": 35969
+    },
+    {
+      "recipe": "Everseeker's Grinding Wheel",
+      "key": 35973
+    },
+    {
+      "recipe": "Everseeker's Spinning Wheel",
+      "key": 35975
+    },
+    {
+      "recipe": "Rail Grindstone",
+      "key": 35993
+    },
+    {
+      "recipe": "Plush Carriage Seating",
+      "key": 35994
+    },
+    {
+      "recipe": "Map Printing Essentials",
+      "key": 35995
+    },
+    {
+      "recipe": "Engineer's Supply Kit",
+      "key": 35996
+    },
+    {
+      "recipe": "Railroad Repair Kit",
+      "key": 35997
+    }
+  ],
+  "Blacksmith": [
+    {
+      "recipe": "Everseeker's Saw",
+      "key": 35959
+    },
+    {
+      "recipe": "Everseeker's Cross-pein Hammer",
+      "key": 35960
+    },
+    {
+      "recipe": "Everseeker's Raising Hammer",
+      "key": 35961
+    },
+    {
+      "recipe": "Everseeker's Lapidary Hammer",
+      "key": 35962
+    },
+    {
+      "recipe": "Everseeker's Creasing Knife",
+      "key": 35963
+    },
+    {
+      "recipe": "Everseeker's Pickaxe",
+      "key": 35967
+    },
+    {
+      "recipe": "Everseeker's Hatchet",
+      "key": 35968
+    },
+    {
+      "recipe": "Everseeker's Claw Hammer",
+      "key": 35970
+    },
+    {
+      "recipe": "Everseeker's File",
+      "key": 35971
+    },
+    {
+      "recipe": "Everseeker's Pliers",
+      "key": 35972
+    },
+    {
+      "recipe": "Everseeker's Awl",
+      "key": 35974
+    },
+    {
+      "recipe": "Everseeker's Mortar",
+      "key": 35976
+    },
+    {
+      "recipe": "Everseeker's Culinary Knife",
+      "key": 35977
+    },
+    {
+      "recipe": "Everseeker's Sledgehammer",
+      "key": 35978
+    },
+    {
+      "recipe": "Everseeker's Garden Scythe",
+      "key": 35979
+    },
+    {
+      "recipe": "Rail Grindstone",
+      "key": 35998
+    },
+    {
+      "recipe": "Plush Carriage Seating",
+      "key": 35999
+    },
+    {
+      "recipe": "Map Printing Essentials",
+      "key": 36000
+    },
+    {
+      "recipe": "Engineer's Supply Kit",
+      "key": 36001
+    },
+    {
+      "recipe": "Railroad Repair Kit",
+      "key": 36002
+    },
+    {
+      "recipe": "Adamant Knuckles",
+      "key": 36042
+    },
+    {
+      "recipe": "Adamant Battleaxe",
+      "key": 36043
+    },
+    {
+      "recipe": "Adamant Partisan",
+      "key": 36044
+    },
+    {
+      "recipe": "Adamant Longbow",
+      "key": 36045
+    },
+    {
+      "recipe": "Adamant Cleavers",
+      "key": 36046
+    },
+    {
+      "recipe": "Adamant Guillotine",
+      "key": 36047
+    },
+    {
+      "recipe": "Adamant Pistol",
+      "key": 36048
+    },
+    {
+      "recipe": "Adamant Blade",
+      "key": 36054
+    },
+    {
+      "recipe": "Adamant Gunblade",
+      "key": 36056
+    },
+    {
+      "recipe": "Adamant Chakrams",
+      "key": 36057
+    },
+    {
+      "recipe": "Paladin's Adamant Arms",
+      "key": 36058
+    }
+  ],
+  "Armorer": [
+    {
+      "recipe": "Fighting Ring",
+      "key": 6252
+    },
+    {
+      "recipe": "Alexandrian Plate",
+      "key": 35958
+    },
+    {
+      "recipe": "Everseeker's Alembic",
+      "key": 35965
+    },
+    {
+      "recipe": "Everseeker's Bomb Frypan",
+      "key": 35966
+    },
+    {
+      "recipe": "Rail Grindstone",
+      "key": 36003
+    },
+    {
+      "recipe": "Plush Carriage Seating",
+      "key": 36004
+    },
+    {
+      "recipe": "Map Printing Essentials",
+      "key": 36005
+    },
+    {
+      "recipe": "Engineer's Supply Kit",
+      "key": 36006
+    },
+    {
+      "recipe": "Railroad Repair Kit",
+      "key": 36007
+    },
+    {
+      "recipe": "Eternal Cenotaph",
+      "key": 36033
+    },
+    {
+      "recipe": "Eternal Barding",
+      "key": 36034
+    },
+    {
+      "recipe": "Paladin's Adamant Arms",
+      "key": 36059
+    }
+  ],
+  "Leatherworker": [
+    {
+      "recipe": "Patchwork Sofa",
+      "key": 6248
+    },
+    {
+      "recipe": "Everseeker's Workboots of Crafting",
+      "key": 35984
+    },
+    {
+      "recipe": "Everseeker's Gloves of Gathering",
+      "key": 35987
+    },
+    {
+      "recipe": "Everseeker's Shoes of Gathering",
+      "key": 35989
+    },
+    {
+      "recipe": "Rail Grindstone",
+      "key": 36013
+    },
+    {
+      "recipe": "Plush Carriage Seating",
+      "key": 36014
+    },
+    {
+      "recipe": "Map Printing Essentials",
+      "key": 36015
+    },
+    {
+      "recipe": "Engineer's Supply Kit",
+      "key": 36016
+    },
+    {
+      "recipe": "Railroad Repair Kit",
+      "key": 36017
+    },
+    {
+      "recipe": "Wintertide Shoes",
+      "key": 36040
+    }
+  ],
+  "Weaver": [
+    {
+      "recipe": "Frilly Curtains",
+      "key": 6246
+    },
+    {
+      "recipe": "Indoor Awning",
+      "key": 6256
+    },
+    {
+      "recipe": "Everseeker's Top of Crafting",
+      "key": 35981
+    },
+    {
+      "recipe": "Everseeker's Armguards of Crafting",
+      "key": 35982
+    },
+    {
+      "recipe": "Everseeker's Slops of Crafting",
+      "key": 35983
+    },
+    {
+      "recipe": "Everseeker's Coat of Gathering",
+      "key": 35986
+    },
+    {
+      "recipe": "Everseeker's Kecks of Gathering",
+      "key": 35988
+    },
+    {
+      "recipe": "Rail Grindstone",
+      "key": 36018
+    },
+    {
+      "recipe": "Plush Carriage Seating",
+      "key": 36019
+    },
+    {
+      "recipe": "Map Printing Essentials",
+      "key": 36020
+    },
+    {
+      "recipe": "Engineer's Supply Kit",
+      "key": 36021
+    },
+    {
+      "recipe": "Railroad Repair Kit",
+      "key": 36022
+    },
+    {
+      "recipe": "Wintertide Trapper's Hat",
+      "key": 36037
+    },
+    {
+      "recipe": "Wintertide Blouson",
+      "key": 36038
+    },
+    {
+      "recipe": "Wintertide Culottes",
+      "key": 36039
+    },
+    {
+      "recipe": "Wintertide Sheath Skirt",
+      "key": 36041
+    }
+  ],
+  "Goldsmith": [
+    {
+      "recipe": "Wood-fired Range",
+      "key": 6245
+    },
+    {
+      "recipe": "Everseeker's Needle",
+      "key": 35964
+    },
+    {
+      "recipe": "Everseeker's Headgear of Crafting",
+      "key": 35980
+    },
+    {
+      "recipe": "Everseeker's Goggles of Gathering",
+      "key": 35985
+    },
+    {
+      "recipe": "Rail Grindstone",
+      "key": 36008
+    },
+    {
+      "recipe": "Plush Carriage Seating",
+      "key": 36009
+    },
+    {
+      "recipe": "Map Printing Essentials",
+      "key": 36010
+    },
+    {
+      "recipe": "Engineer's Supply Kit",
+      "key": 36011
+    },
+    {
+      "recipe": "Railroad Repair Kit",
+      "key": 36012
+    },
+    {
+      "recipe": "Adamant Cane",
+      "key": 36049
+    },
+    {
+      "recipe": "Adamant Rod",
+      "key": 36050
+    },
+    {
+      "recipe": "Adamant Planisphere",
+      "key": 36053
+    },
+    {
+      "recipe": "Adamant Hanger",
+      "key": 36055
+    }
+  ],
+  "Culinarian": [
+    {
+      "recipe": "Popoto Chips",
+      "key": 6249
+    },
+    {
+      "recipe": "Kugane-yaki",
+      "key": 6253
+    },
+    {
+      "recipe": "Ceviche",
+      "key": 35990
+    },
+    {
+      "recipe": "Cloudsail Meuniere",
+      "key": 35991
+    },
+    {
+      "recipe": "Rail Grindstone",
+      "key": 36028
+    },
+    {
+      "recipe": "Plush Carriage Seating",
+      "key": 36029
+    },
+    {
+      "recipe": "Map Printing Essentials",
+      "key": 36030
+    },
+    {
+      "recipe": "Engineer's Supply Kit",
+      "key": 36031
+    },
+    {
+      "recipe": "Railroad Repair Kit",
+      "key": 36032
+    }
+  ],
+  "Alchemist": [
+    {
+      "recipe": "Red Cattleya Corsage",
+      "key": 6236
+    },
+    {
+      "recipe": "Blue Cattleya Corsage",
+      "key": 6237
+    },
+    {
+      "recipe": "Yellow Cattleya Corsage",
+      "key": 6238
+    },
+    {
+      "recipe": "Green Cattleya Corsage",
+      "key": 6239
+    },
+    {
+      "recipe": "Orange Cattleya Corsage",
+      "key": 6240
+    },
+    {
+      "recipe": "Purple Cattleya Corsage",
+      "key": 6241
+    },
+    {
+      "recipe": "White Cattleya Corsage",
+      "key": 6242
+    },
+    {
+      "recipe": "Black Cattleya Corsage",
+      "key": 6243
+    },
+    {
+      "recipe": "Rainbow Cattleya Corsage",
+      "key": 6244
+    },
+    {
+      "recipe": "Grassy Rug",
+      "key": 6250
+    },
+    {
+      "recipe": "Optical Nanofiber",
+      "key": 35957
+    },
+    {
+      "recipe": "Rail Grindstone",
+      "key": 36023
+    },
+    {
+      "recipe": "Plush Carriage Seating",
+      "key": 36024
+    },
+    {
+      "recipe": "Map Printing Essentials",
+      "key": 36025
+    },
+    {
+      "recipe": "Engineer's Supply Kit",
+      "key": 36026
+    },
+    {
+      "recipe": "Railroad Repair Kit",
+      "key": 36027
+    },
+    {
+      "recipe": "Paved in Solitude Orchestrion Roll",
+      "key": 36035
+    },
+    {
+      "recipe": "Paved with Resolve Orchestrion Roll",
+      "key": 36036
+    },
+    {
+      "recipe": "Adamant Index",
+      "key": 36051
+    },
+    {
+      "recipe": "Adamant Codex",
+      "key": 36052
+    }
+  ]
+}
