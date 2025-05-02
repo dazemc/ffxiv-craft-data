@@ -2,7 +2,7 @@ import asyncio
 
 import json
 import mmap
-import os
+import os, sys
 import struct
 
 from io import StringIO
@@ -10,13 +10,33 @@ from io import StringIO
 import pandas as pd
 
 
-FFXIV_FILEPATH: str = "G:/SteamLibrary/steamapps/common/FINAL FANTASY XIV Online"
+FFXIV_FILEPATH: str | None = None
+
+
 IMPORT_DIR: str = "./import"
 IMPORT_RECIPE_DIR_KO: str = IMPORT_DIR + "/ko/recipedb"
 IMPORT_BUFFS_DIR_KO: str = IMPORT_DIR + "/ko/buffs"
 
+CRAFTDATA_FILEPATH: str = "./CraftData/Release/net7.0/win-x64/publish/"
 
-CRAFTDATA_FILEPATH: str = "/CraftData/Release/net7.0/win-x64/publish/"
+if not os.path.exists(CRAFTDATA_FILEPATH + "config.json"):
+    FFXIV_FILEPATH = input(
+        "FFXIV file path has not been set, input the filepath and press enter: "
+    ).replace("\\", "/")
+    if len(FFXIV_FILEPATH) < 6:
+        FFXIV_FILEPATH = None
+    else:
+        print(
+            f"FFXIV filepath set to : {FFXIV_FILEPATH}\nYou can change/delet this at ./CraftData/Release/net7.0/win-x64/publish/config.json"
+        )
+else:
+    print(
+        "FFXIV filepath is already set, you can change/delete this at ./CraftData/Release/net7.0/win-x64/publish/config.json"
+    )
+if FFXIV_FILEPATH == None:
+    print("Error reading filepath")
+    sys.exit()
+
 
 CURRENT_FILEPATH: str = os.path.abspath(__file__).replace("main.py", "")
 
@@ -79,21 +99,22 @@ def read_shared_memory() -> tuple:  # <StringIO>
 
 
 def set_ffxiv_config(config: dict) -> None:
-    with open("config.json", "w") as file:
-        json.dump(
-            config,
-            file,
-            indent=2,
-            sort_keys=True,
-            ensure_ascii=False,
-        )
+    if FFXIV_FILEPATH != None:
+        if not os.path.exists(FFXIV_FILEPATH + "config.json"):
+            with open("config.json", "w") as file:
+                json.dump(
+                    config,
+                    file,
+                    indent=2,
+                    sort_keys=True,
+                    ensure_ascii=False,
+                )
 
 
-async def terminate_signal(process) -> bool:
+async def terminate_signal(process) -> bool | None:
     async for line in process.stdout:
         if "terminate" in line.decode("utf-8").strip():
             return False
-
         return True
 
 
@@ -181,7 +202,9 @@ def merge_json(primary: dict, secondary: dict):
                     )
 
     if len(missing_recipes) > 0:
-        with open(f"{IMPORT_DIR}/ko/missing_recipes.json", "w", encoding="utf-8") as file:
+        with open(
+            f"{IMPORT_DIR}/ko/missing_recipes.json", "w", encoding="utf-8"
+        ) as file:
             json.dump(missing_recipes, file, ensure_ascii=False, indent=2)
 
 
@@ -253,7 +276,9 @@ def create_export_recipe(recipes_df: dict) -> dict:
                 "<SoftHyphen/>", "\u00ad"
             )
             name_ja: str = current_recipe.get("NameJA", name)
-            name_ko: str | bool = current_recipe.get("NameKO", None) # ko version < current version
+            name_ko: str | bool = current_recipe.get(
+                "NameKO", None
+            )  # ko version < current version
             difficulty: int = int(current_recipe.Difficulty)
             durability: int = int(current_recipe.Durability)
             base_level: int = int(current_recipe.ClassJobLevel)
@@ -304,7 +329,6 @@ def create_export_recipe(recipes_df: dict) -> dict:
 
 def create_export_buffs(df) -> dict:
     export_buffs = {"Meal": [], "Medicine": []}
-
     buff_key = ""
 
     for buff in df:
@@ -378,59 +402,59 @@ def create_export_buffs(df) -> dict:
                 info = {
                     "hq": False if k == 0 else True,
                     "name": {
-                        "de": current_item.get("NameDE", "")
-                        if pd.notna(current_item.get("NameDE", ""))
-                        else "",
-                        "en": current_item.get("Name", "")
-                        if pd.notna(current_item.get("Name", ""))
-                        else "",
-                        "fr": current_item.get("NameFR", "")
-                        if pd.notna(current_item.get("NameFR", ""))
-                        else "",
-                        "ja": current_item.get("NameJA", "")
-                        if pd.notna(current_item.get("NameJA", ""))
-                        else "",
+                        "de": (
+                            current_item.get("NameDE", "")
+                            if pd.notna(current_item.get("NameDE", ""))
+                            else ""
+                        ),
+                        "en": (
+                            current_item.get("Name", "")
+                            if pd.notna(current_item.get("Name", ""))
+                            else ""
+                        ),
+                        "fr": (
+                            current_item.get("NameFR", "")
+                            if pd.notna(current_item.get("NameFR", ""))
+                            else ""
+                        ),
+                        "ja": (
+                            current_item.get("NameJA", "")
+                            if pd.notna(current_item.get("NameJA", ""))
+                            else ""
+                        ),
                     },
                 }
 
                 if k == 0:
                     buff_types.update(info)
-
                     export_buffs[buff_key].append(buff_types)
                 else:
                     buff_types_hq.update(info)
-
                     export_buffs[buff_key].append(buff_types_hq)
 
     return export_buffs
 
 
 def export(export_recipes: dict, export_buffs: dict) -> None:
+    finish_message = ""
     path: str = "../../data/recipedb/"
-
     path_item: str = "../../data/buffs/"
-
     is_ko = export_recipes["Weaver"][0]["name"].get("ko", False)
-
     is_en = export_recipes["Weaver"][0]["name"].get("en", False)
-
     if is_ko and not is_en:
+        finish_message = "Korean data exported to import/ko/"
         path: str = f"{IMPORT_RECIPE_DIR_KO}"
-
         path_item: str = f"{IMPORT_BUFFS_DIR_KO}"
-
     elif not os.path.isdir(path):
+        finish_message = "Data exported to export/"
         path: str = "./export/recipedb/"
-
         path_item: str = "./export/buffs/"
-
     else:
+        finish_message = "Data exported to ffxiv-craft/data"
         path: str = "../../data/recipedb/"
-
         path_item: str = "../../data/buffs/"
 
     os.makedirs(path, exist_ok=True)
-
     os.makedirs(path_item, exist_ok=True)
 
     for crafter in export_recipes:
@@ -452,6 +476,10 @@ def export(export_recipes: dict, export_buffs: dict) -> None:
                 sort_keys=True,
                 ensure_ascii=False,
             )
+    if finish_message == "":
+        print("Error writing data files")
+        return
+    print(finish_message)
 
 
 async def main() -> None:
