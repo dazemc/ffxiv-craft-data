@@ -1,0 +1,41 @@
+name: Build SaintCoinach
+on: [push, pull_request]
+concurrency: build-${{ github.ref }}
+
+jobs:
+  build:
+    name: Build on Windows
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '7.x.x'
+      - name: Define Version
+        id: define-version
+        run: |
+          $env:COMMIT = $env:GITHUB_SHA.Substring(0, 7)
+          echo "::set-output name=commit::$env:COMMIT"
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build -c Release
+      - name: Create Release ZIPs
+        if: ${{ github.ref == 'refs/heads/master' }}
+        run: |
+          mkdir release-out
+          Compress-Archive -Path .\Godbert\bin\Release\net7.0-windows\* -DestinationPath .\release-out\Godbert.zip -Force
+          Compress-Archive -Path .\SaintCoinach.Cmd\bin\Release\net7.0\* -DestinationPath .\release-out\SaintCoinach.Cmd.zip -Force
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        if: ${{ github.ref == 'refs/heads/master' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: release-out/**
+          name: Release for ${{ steps.define-version.outputs.commit }}
+          body_path:  .github\RELEASE.md
+          prerelease: false
+          tag_name:  ${{ steps.define-version.outputs.commit }}

@@ -33,6 +33,46 @@
       "key": 6260
     },
     {
+      "recipe": "Herringbone Interior Wall",
+      "key": 6270
+    },
+    {
+      "recipe": "Hingan Dresser",
+      "key": 6272
+    },
+    {
+      "recipe": "Decorative Hingan Window",
+      "key": 6274
+    },
+    {
+      "recipe": "Simple Hingan Pillar",
+      "key": 6275
+    },
+    {
+      "recipe": "Hingan Wall Shelf",
+      "key": 6276
+    },
+    {
+      "recipe": "Hingan Wall Cabinet",
+      "key": 6277
+    },
+    {
+      "recipe": "Hingan Floor Cabinet",
+      "key": 6278
+    },
+    {
+      "recipe": "Wooden Frame Partition",
+      "key": 6279
+    },
+    {
+      "recipe": "Lattice-windowed Cabinet",
+      "key": 6280
+    },
+    {
+      "recipe": "Gardener's Gate",
+      "key": 6282
+    },
+    {
       "recipe": "Everseeker's Fishing Rod",
       "key": 35969
     },
@@ -63,6 +103,314 @@
     {
       "recipe": "Railroad Repair Kit",
       "key": 35997
+    },
+    {
+      "recipe": "Cordia Lumber",
+      "key": 36062
+    },
+    {
+      "recipe": "Ceremonial Longpole",
+      "key": 36094
+    },
+    {
+      "recipe": "Ceremonial Earring of Fending",
+      "key": 36145
+    },
+    {
+      "recipe": "Ceremonial Earring of Slaying",
+      "key": 36146
+    },
+    {
+      "recipe": "Ceremonial Earring of Aiming",
+      "key": 36147
+    },
+    {
+      "recipe": "Ceremonial Earring of Healing",
+      "key": 36148
+    },
+    {
+      "recipe": "Ceremonial Earring of Casting",
+      "key": 36149
+    },
+    {
+      "recipe": "Ceremonial Ring of Fending",
+      "key": 36160
+    },
+    {
+      "recipe": "Ceremonial Ring of Slaying",
+      "key": 36161
+    },
+    {
+      "recipe": "Ceremonial Ring of Aiming",
+      "key": 36162
+    },
+    {
+      "recipe": "Ceremonial Ring of Healing",
+      "key": 36163
+    },
+    {
+      "recipe": "Ceremonial Ring of Casting",
+      "key": 36164
+    },
+    {
+      "recipe": "Standard High-density Fiberboard",
+      "key": 36165
+    },
+    {
+      "recipe": "Fieldwork Firewood",
+      "key": 36166
+    },
+    {
+      "recipe": "Survey Bracelet",
+      "key": 36167
+    },
+    {
+      "recipe": "Researcher's Lumber",
+      "key": 36168
+    },
+    {
+      "recipe": "Fieldwork Charcoal",
+      "key": 36169
+    },
+    {
+      "recipe": "Habitat Bed",
+      "key": 36170
+    },
+    {
+      "recipe": "Standard High-density Fiberboard",
+      "key": 36171
+    },
+    {
+      "recipe": "Carpentry Supplies",
+      "key": 36172
+    },
+    {
+      "recipe": "Survey Spinning Wheels",
+      "key": 36173
+    },
+    {
+      "recipe": "Heavy-duty Pulp",
+      "key": 36174
+    },
+    {
+      "recipe": "Heavy-duty Paper",
+      "key": 36175
+    },
+    {
+      "recipe": "Enrichment Insulation Lumber",
+      "key": 36176
+    },
+    {
+      "recipe": "Enrichment Insulation",
+      "key": 36177
+    },
+    {
+      "recipe": "Survey Sap",
+      "key": 36178
+    },
+    {
+      "recipe": "Cosmoliner Resin",
+      "key": 36179
+    },
+    {
+      "recipe": "Standard Lumber",
+      "key": 36180
+    },
+    {
+      "recipe": "Standard Earring",
+      "key": 36181
+    },
+    {
+      "recipe": "Survey Crate",
+      "key": 36182
+    },
+    {
+      "recipe": "Standard High-density Fiberboard",
+      "key": 36183
+    },
+    {
+      "recipe": "Habitat Insulation",
+      "key": 36184
+    },
+    {
+      "recipe": "Transport Resin",
+      "key": 36185
+    },
+    {
+      "recipe": "Stable Paper",
+      "key": 36186
+    },
+    {
+      "recipe": "Habitat Chair",
+      "key": 36187
+    },
+    {
+      "recipe": "Test Fab Lumber",
+      "key": 36188
+    },
+    {
+      "recipe": "Survey Fishing Rod",
+      "key": 36189
+    },
+    {
+      "recipe": "Test Fab Lumber",
+      "key": 36190
+    },
+    {
+      "recipe": "Habitat Bed",
+      "key": 36191
+    },
+    {
+      "recipe": "Standard High-density Fiberboard",
+      "key": 36192
+    },
+    {
+      "recipe": "Stellar Paper",
+      "key": 36193
+    },
+    {
+      "recipe": "Enrichment Insulation",
+      "key": 36194
+    },
+    {
+      "recipe": "Fieldwork Charcoal",
+      "key": 36195
+    },
+    {
+      "recipe": "Experimental Lumber",
+      "key": 36196
+    },
+    {
+      "recipe": "Experimental Plank",
+      "key": 36197
+    },
+    {
+      "recipe": "Experimental Resin",
+      "key": 36198
+    },
+    {
+      "recipe": "Experimental Fishing Rod",
+      "key": 36199
+    },
+    {
+      "recipe": "Habitat Wooden Plates",
+      "key": 36200
+    },
+    {
+      "recipe": "Habitat Bunk Bed",
+      "key": 36201
+    },
+    {
+      "recipe": "Stellar Woodworking Bench",
+      "key": 36202
+    },
+    {
+      "recipe": "Stellar Goldsmithing Bench",
+      "key": 36203
+    },
+    {
+      "recipe": "Stellar Leatherworking Bench",
+      "key": 36204
+    },
+    {
+      "recipe": "Hardened Survey Plank",
+      "key": 36205
+    },
+    {
+      "recipe": "Survey Spinning Wheel",
+      "key": 36206
+    },
+    {
+      "recipe": "Hardened Survey Plank",
+      "key": 36207
+    },
+    {
+      "recipe": "Mobile Work Stairs",
+      "key": 36208
+    },
+    {
+      "recipe": "Cosmoliner Shaft Component",
+      "key": 36209
+    },
+    {
+      "recipe": "Cosmoliner Shaft",
+      "key": 36210
+    },
+    {
+      "recipe": "Researcher's Water-resistant Plank",
+      "key": 36211
+    },
+    {
+      "recipe": "Researcher's Water-resistant Resin",
+      "key": 36212
+    },
+    {
+      "recipe": "Analysis and Breeding Tank",
+      "key": 36213
+    },
+    {
+      "recipe": "Habitat Hardcover Book",
+      "key": 36214
+    },
+    {
+      "recipe": "Habitat Bookshelf",
+      "key": 36215
+    },
+    {
+      "recipe": "Cosmotized Transport Lumber",
+      "key": 36216
+    },
+    {
+      "recipe": "Transport Fiberboard",
+      "key": 36217
+    },
+    {
+      "recipe": "Rover Packing Material",
+      "key": 36218
+    },
+    {
+      "recipe": "Cosmotized Amber",
+      "key": 36219
+    },
+    {
+      "recipe": "Cosmotized Petrified Orb",
+      "key": 36220
+    },
+    {
+      "recipe": "Cosmotized Lovingbloom Oil",
+      "key": 36222
+    },
+    {
+      "recipe": "Cosmotized Distilled Oil",
+      "key": 36223
+    },
+    {
+      "recipe": "Cosmotized Cosmostuff",
+      "key": 36225
+    },
+    {
+      "recipe": "Survey Biofuel",
+      "key": 36227
+    },
+    {
+      "recipe": "Survey Water Tank",
+      "key": 36669
+    },
+    {
+      "recipe": "Survey Fishing Rod",
+      "key": 36670
+    },
+    {
+      "recipe": "Work Ladder",
+      "key": 36685
+    },
+    {
+      "recipe": "Kindling",
+      "key": 36686
+    },
+    {
+      "recipe": "Ultralight Fungal Brick",
+      "key": 36687
     }
   ],
   "Blacksmith": [
@@ -189,6 +537,366 @@
     {
       "recipe": "Paladin's Adamant Arms",
       "key": 36058
+    },
+    {
+      "recipe": "Octahedrite Nugget",
+      "key": 36063
+    },
+    {
+      "recipe": "Ceremonial Shamshir",
+      "key": 36088
+    },
+    {
+      "recipe": "Ceremonial Sainti",
+      "key": 36089
+    },
+    {
+      "recipe": "Ceremonial Bardiche",
+      "key": 36090
+    },
+    {
+      "recipe": "Ceremonial Couse",
+      "key": 36091
+    },
+    {
+      "recipe": "Ceremonial Cleavers",
+      "key": 36097
+    },
+    {
+      "recipe": "Ceremonial Claymore",
+      "key": 36098
+    },
+    {
+      "recipe": "Ceremonial Culverin",
+      "key": 36099
+    },
+    {
+      "recipe": "Ceremonial Tulwar",
+      "key": 36101
+    },
+    {
+      "recipe": "Ceremonial Gunblade",
+      "key": 36103
+    },
+    {
+      "recipe": "Ceremonial Chakrams",
+      "key": 36104
+    },
+    {
+      "recipe": "Ceremonial War Scythe",
+      "key": 36105
+    },
+    {
+      "recipe": "Ceremonial Saberfangs",
+      "key": 36107
+    },
+    {
+      "recipe": "Standard Metal Plating",
+      "key": 36228
+    },
+    {
+      "recipe": "Starship Gear",
+      "key": 36229
+    },
+    {
+      "recipe": "Lunar Alloy Ingots",
+      "key": 36230
+    },
+    {
+      "recipe": "Drone Rods",
+      "key": 36231
+    },
+    {
+      "recipe": "Standard Nails",
+      "key": 36232
+    },
+    {
+      "recipe": "Standard Rivets",
+      "key": 36233
+    },
+    {
+      "recipe": "Standard Metal Plating",
+      "key": 36234
+    },
+    {
+      "recipe": "Starship Shaft",
+      "key": 36235
+    },
+    {
+      "recipe": "Survey Maul",
+      "key": 36236
+    },
+    {
+      "recipe": "Standard Alloy Ingot",
+      "key": 36237
+    },
+    {
+      "recipe": "Standard Alloy Rivets",
+      "key": 36238
+    },
+    {
+      "recipe": "Standard Alloy Ingot",
+      "key": 36239
+    },
+    {
+      "recipe": "Survey Crosscut Saw",
+      "key": 36240
+    },
+    {
+      "recipe": "Drone Plating",
+      "key": 36241
+    },
+    {
+      "recipe": "Indurate Drone Rods",
+      "key": 36242
+    },
+    {
+      "recipe": "Heat-resistant Alloy Ingot",
+      "key": 36243
+    },
+    {
+      "recipe": "Large Enrichment Oven",
+      "key": 36244
+    },
+    {
+      "recipe": "Rover Shaft",
+      "key": 36245
+    },
+    {
+      "recipe": "Standard Metal Plating",
+      "key": 36246
+    },
+    {
+      "recipe": "Survey Cross-pein Hammer",
+      "key": 36247
+    },
+    {
+      "recipe": "Habitat Shower",
+      "key": 36248
+    },
+    {
+      "recipe": "Enrichment Stove",
+      "key": 36249
+    },
+    {
+      "recipe": "Habitat Ceiling Light",
+      "key": 36250
+    },
+    {
+      "recipe": "Lunar Alloy Bar",
+      "key": 36251
+    },
+    {
+      "recipe": "Survey File",
+      "key": 36252
+    },
+    {
+      "recipe": "Standard Flexible Plating",
+      "key": 36253
+    },
+    {
+      "recipe": "Standard Fitting",
+      "key": 36254
+    },
+    {
+      "recipe": "Standard Metal Plating",
+      "key": 36255
+    },
+    {
+      "recipe": "Indurate Lunar Adamantite Ingot",
+      "key": 36256
+    },
+    {
+      "recipe": "Indurate Rivets",
+      "key": 36257
+    },
+    {
+      "recipe": "Survey Raising Hammer",
+      "key": 36258
+    },
+    {
+      "recipe": "Cosmotized Lunar Adamantite Ingot",
+      "key": 36259
+    },
+    {
+      "recipe": "Cosmotized Chondrite Ingot",
+      "key": 36260
+    },
+    {
+      "recipe": "Cosmotized Ilmenite Plate",
+      "key": 36261
+    },
+    {
+      "recipe": "Habitat Cooking Stove",
+      "key": 36262
+    },
+    {
+      "recipe": "Habitat Partition",
+      "key": 36263
+    },
+    {
+      "recipe": "Habitat Lighting Rod",
+      "key": 36264
+    },
+    {
+      "recipe": "Enrichment Furnace",
+      "key": 36265
+    },
+    {
+      "recipe": "Enrichment Workbench",
+      "key": 36266
+    },
+    {
+      "recipe": "Enrichment Oven",
+      "key": 36267
+    },
+    {
+      "recipe": "Pressure-resistant Plate",
+      "key": 36268
+    },
+    {
+      "recipe": "High-durability Tank",
+      "key": 36269
+    },
+    {
+      "recipe": "Impact-resistant Plating",
+      "key": 36270
+    },
+    {
+      "recipe": "Impact-resistant Shelter Wall",
+      "key": 36271
+    },
+    {
+      "recipe": "Storage Trunk Materials",
+      "key": 36272
+    },
+    {
+      "recipe": "Hub Storage Trunk",
+      "key": 36273
+    },
+    {
+      "recipe": "Rust-resistant Metal Ingot",
+      "key": 36274
+    },
+    {
+      "recipe": "Pressure-resistant Glass",
+      "key": 36275
+    },
+    {
+      "recipe": "Researcher's Cultivation Tank",
+      "key": 36276
+    },
+    {
+      "recipe": "Indurate Alloy Ingot",
+      "key": 36277
+    },
+    {
+      "recipe": "Indurate Starship Plating",
+      "key": 36278
+    },
+    {
+      "recipe": "Drone Gear",
+      "key": 36279
+    },
+    {
+      "recipe": "Reflective Drone Plating",
+      "key": 36280
+    },
+    {
+      "recipe": "Survey Drone",
+      "key": 36281
+    },
+    {
+      "recipe": "Cosmotized Ilmenite Ingot",
+      "key": 36282
+    },
+    {
+      "recipe": "Cosmotized Ilmenite Nails",
+      "key": 36283
+    },
+    {
+      "recipe": "Cosmotized Chondrite Plate",
+      "key": 36285
+    },
+    {
+      "recipe": "Cosmotized Chondrite Gear",
+      "key": 36286
+    },
+    {
+      "recipe": "Cosmotized Cosmostuff",
+      "key": 36288
+    },
+    {
+      "recipe": "Survey Drill",
+      "key": 36290
+    },
+    {
+      "recipe": "Survey Automaton Digger",
+      "key": 36671
+    },
+    {
+      "recipe": "Survey Ataxite Ingot",
+      "key": 36672
+    },
+    {
+      "recipe": "Meteorite Drills",
+      "key": 36690
+    },
+    {
+      "recipe": "Flamethrower Parts",
+      "key": 36691
+    },
+    {
+      "recipe": "Vacuum Muzzle",
+      "key": 36694
+    },
+    {
+      "recipe": "Sainti of Sanctifying Light",
+      "key": 36735
+    },
+    {
+      "recipe": "Labrys of Sanctifying Light",
+      "key": 36736
+    },
+    {
+      "recipe": "Partisan of Sanctifying Light",
+      "key": 36737
+    },
+    {
+      "recipe": "Longbow of Sanctifying Light",
+      "key": 36738
+    },
+    {
+      "recipe": "Daggers of Sanctifying Light",
+      "key": 36739
+    },
+    {
+      "recipe": "Greatsword of Sanctifying Light",
+      "key": 36740
+    },
+    {
+      "recipe": "Pistol of Sanctifying Light",
+      "key": 36741
+    },
+    {
+      "recipe": "Blade of Sanctifying Light",
+      "key": 36747
+    },
+    {
+      "recipe": "Gunblade of Sanctifying Light",
+      "key": 36749
+    },
+    {
+      "recipe": "Tathlums of Sanctifying Light",
+      "key": 36750
+    },
+    {
+      "recipe": "War Scythe of Sanctifying Light",
+      "key": 36752
+    },
+    {
+      "recipe": "Paladin's Arms of Sanctifying Light",
+      "key": 36753
     }
   ],
   "Armorer": [
@@ -239,6 +947,314 @@
     {
       "recipe": "Paladin's Adamant Arms",
       "key": 36059
+    },
+    {
+      "recipe": "Octahedrite Nugget",
+      "key": 36064
+    },
+    {
+      "recipe": "Ceremonial Pelta",
+      "key": 36109
+    },
+    {
+      "recipe": "Ceremonial Corselet of Fending",
+      "key": 36111
+    },
+    {
+      "recipe": "Ceremonial Vambraces of Fending",
+      "key": 36112
+    },
+    {
+      "recipe": "Ceremonial Corselet of Maiming",
+      "key": 36116
+    },
+    {
+      "recipe": "Ceremonial Vambraces of Maiming",
+      "key": 36117
+    },
+    {
+      "recipe": "Ceremonial Armguards of Striking",
+      "key": 36122
+    },
+    {
+      "recipe": "Ceremonial Armguards of Aiming",
+      "key": 36127
+    },
+    {
+      "recipe": "Ceremonial Armguards of Scouting",
+      "key": 36132
+    },
+    {
+      "recipe": "Standard Metal Plating",
+      "key": 36291
+    },
+    {
+      "recipe": "Starship Gear",
+      "key": 36292
+    },
+    {
+      "recipe": "Lunar Alloy Ingots",
+      "key": 36293
+    },
+    {
+      "recipe": "Drone Wire",
+      "key": 36294
+    },
+    {
+      "recipe": "Standard Rings",
+      "key": 36295
+    },
+    {
+      "recipe": "Standard Rivets",
+      "key": 36296
+    },
+    {
+      "recipe": "Standard Metal Plating",
+      "key": 36297
+    },
+    {
+      "recipe": "Starship Shaft",
+      "key": 36298
+    },
+    {
+      "recipe": "Survey Frypan",
+      "key": 36299
+    },
+    {
+      "recipe": "Standard Indurate Rings",
+      "key": 36300
+    },
+    {
+      "recipe": "Standard Chainmail Sheet",
+      "key": 36301
+    },
+    {
+      "recipe": "Standard Alloy Ingot",
+      "key": 36302
+    },
+    {
+      "recipe": "Survey Mask",
+      "key": 36303
+    },
+    {
+      "recipe": "Drone Plating",
+      "key": 36304
+    },
+    {
+      "recipe": "Drone Wire",
+      "key": 36305
+    },
+    {
+      "recipe": "Heat-resistant Alloy Ingot",
+      "key": 36306
+    },
+    {
+      "recipe": "Enrichment Fuel Carrier",
+      "key": 36307
+    },
+    {
+      "recipe": "Rover Rings",
+      "key": 36308
+    },
+    {
+      "recipe": "Standard Metal Plating",
+      "key": 36309
+    },
+    {
+      "recipe": "Survey Frypan",
+      "key": 36310
+    },
+    {
+      "recipe": "Habitat Coffeemaker",
+      "key": 36311
+    },
+    {
+      "recipe": "Enrichment Campfire",
+      "key": 36312
+    },
+    {
+      "recipe": "Habitat Locker",
+      "key": 36313
+    },
+    {
+      "recipe": "Lunar Alloy Bar",
+      "key": 36314
+    },
+    {
+      "recipe": "Survey Alembic",
+      "key": 36315
+    },
+    {
+      "recipe": "Standard Flexible Plating",
+      "key": 36316
+    },
+    {
+      "recipe": "Standard Mortar",
+      "key": 36317
+    },
+    {
+      "recipe": "Standard Metal Plating",
+      "key": 36318
+    },
+    {
+      "recipe": "Indurate Lunar Adamantite Ingot",
+      "key": 36319
+    },
+    {
+      "recipe": "Indurate Rivets",
+      "key": 36320
+    },
+    {
+      "recipe": "Survey Skillet",
+      "key": 36321
+    },
+    {
+      "recipe": "Cosmotized Lunar Adamantite Ingot",
+      "key": 36322
+    },
+    {
+      "recipe": "Cosmotized Chondrite Ingot",
+      "key": 36323
+    },
+    {
+      "recipe": "Cosmotized Ilmenite Plate",
+      "key": 36324
+    },
+    {
+      "recipe": "Habitat Incensory",
+      "key": 36325
+    },
+    {
+      "recipe": "Habitat Wall-mounted Clock",
+      "key": 36326
+    },
+    {
+      "recipe": "Outdoor Hub Light",
+      "key": 36327
+    },
+    {
+      "recipe": "Enrichment Wall Lamp",
+      "key": 36328
+    },
+    {
+      "recipe": "Enrichment Lamp",
+      "key": 36329
+    },
+    {
+      "recipe": "Enrichment Lampstand",
+      "key": 36330
+    },
+    {
+      "recipe": "Pressure-resistant Plate",
+      "key": 36331
+    },
+    {
+      "recipe": "High-durability Fuel Carrier",
+      "key": 36332
+    },
+    {
+      "recipe": "Iron Plating",
+      "key": 36333
+    },
+    {
+      "recipe": "Impact-resistant Metal Flooring",
+      "key": 36334
+    },
+    {
+      "recipe": "Hub Bench Materials",
+      "key": 36335
+    },
+    {
+      "recipe": "Hub Bench",
+      "key": 36336
+    },
+    {
+      "recipe": "Hyper-resilient Outer Cladding Material",
+      "key": 36337
+    },
+    {
+      "recipe": "Heat-resistant Inner Cladding Material",
+      "key": 36338
+    },
+    {
+      "recipe": "Hub Safe",
+      "key": 36339
+    },
+    {
+      "recipe": "Indurate Alloy Ingot",
+      "key": 36340
+    },
+    {
+      "recipe": "Indurate Starship Plating",
+      "key": 36341
+    },
+    {
+      "recipe": "Heat-resistant Metal Ingot",
+      "key": 36342
+    },
+    {
+      "recipe": "Heat-resistant Drone Plating",
+      "key": 36343
+    },
+    {
+      "recipe": "Survey Drone",
+      "key": 36344
+    },
+    {
+      "recipe": "Cosmotized Maraging Steel Ingot",
+      "key": 36345
+    },
+    {
+      "recipe": "Cosmotized Maraging Rivets",
+      "key": 36346
+    },
+    {
+      "recipe": "Cosmotized Chondrite Plate",
+      "key": 36348
+    },
+    {
+      "recipe": "Cosmotized Chondrite Gear",
+      "key": 36349
+    },
+    {
+      "recipe": "Cosmotized Cosmostuff",
+      "key": 36351
+    },
+    {
+      "recipe": "Survey Aether Vacuum",
+      "key": 36353
+    },
+    {
+      "recipe": "Survey Storage Containers",
+      "key": 36673
+    },
+    {
+      "recipe": "Survey Blacksmith's Workbench",
+      "key": 36674
+    },
+    {
+      "recipe": "Spare Vacuum Tank",
+      "key": 36695
+    },
+    {
+      "recipe": "Vehicular Plating",
+      "key": 36697
+    },
+    {
+      "recipe": "Spare Gas Tank",
+      "key": 36699
+    },
+    {
+      "recipe": "Paladin's Arms of Sanctifying Light",
+      "key": 36754
+    },
+    {
+      "recipe": "Recollection Sword Stand",
+      "key": 36755
+    },
+    {
+      "recipe": "Queen's Knight Barding",
+      "key": 36756
     }
   ],
   "Leatherworker": [
@@ -281,6 +1297,342 @@
     {
       "recipe": "Wintertide Shoes",
       "key": 36040
+    },
+    {
+      "recipe": "Cronopio Leather",
+      "key": 36066
+    },
+    {
+      "recipe": "Ceremonial Greaves of Fending",
+      "key": 36114
+    },
+    {
+      "recipe": "Ceremonial Greaves of Maiming",
+      "key": 36119
+    },
+    {
+      "recipe": "Ceremonial Crakows of Striking",
+      "key": 36124
+    },
+    {
+      "recipe": "Ceremonial Crakows of Aiming",
+      "key": 36129
+    },
+    {
+      "recipe": "Ceremonial Crakows of Scouting",
+      "key": 36134
+    },
+    {
+      "recipe": "Ceremonial Gloves of Healing",
+      "key": 36137
+    },
+    {
+      "recipe": "Ceremonial Thighboots of Healing",
+      "key": 36139
+    },
+    {
+      "recipe": "Ceremonial Gloves of Casting",
+      "key": 36142
+    },
+    {
+      "recipe": "Ceremonial Thighboots of Casting",
+      "key": 36144
+    },
+    {
+      "recipe": "Ceremonial Bangle of Fending",
+      "key": 36155
+    },
+    {
+      "recipe": "Ceremonial Bangle of Slaying",
+      "key": 36156
+    },
+    {
+      "recipe": "Ceremonial Bangle of Aiming",
+      "key": 36157
+    },
+    {
+      "recipe": "Ceremonial Bangle of Healing",
+      "key": 36158
+    },
+    {
+      "recipe": "Ceremonial Bangle of Casting",
+      "key": 36159
+    },
+    {
+      "recipe": "Standard Leather Strap",
+      "key": 36417
+    },
+    {
+      "recipe": "First-aid Lunatender Leather",
+      "key": 36418
+    },
+    {
+      "recipe": "Survey Gloves",
+      "key": 36419
+    },
+    {
+      "recipe": "Researcher's Leather",
+      "key": 36420
+    },
+    {
+      "recipe": "Fieldwork Pouch",
+      "key": 36421
+    },
+    {
+      "recipe": "Habitat Leather Shoes",
+      "key": 36422
+    },
+    {
+      "recipe": "Standard Leather Strap",
+      "key": 36423
+    },
+    {
+      "recipe": "Survey Leather Bag",
+      "key": 36424
+    },
+    {
+      "recipe": "Survey Belt",
+      "key": 36425
+    },
+    {
+      "recipe": "Heavy-duty Leather",
+      "key": 36426
+    },
+    {
+      "recipe": "Heavy-duty Vellum",
+      "key": 36427
+    },
+    {
+      "recipe": "Enrichment Leather",
+      "key": 36428
+    },
+    {
+      "recipe": "Enrichment Sheep Rug",
+      "key": 36429
+    },
+    {
+      "recipe": "Cosmoliner Leather",
+      "key": 36430
+    },
+    {
+      "recipe": "Cosmoliner Leather Strap",
+      "key": 36431
+    },
+    {
+      "recipe": "Standard Cosmotized Leather",
+      "key": 36432
+    },
+    {
+      "recipe": "Standard Leather Jacket",
+      "key": 36433
+    },
+    {
+      "recipe": "First-aid Leather Sack",
+      "key": 36434
+    },
+    {
+      "recipe": "Standard Leather Strap",
+      "key": 36435
+    },
+    {
+      "recipe": "Habitat Bearskin Rug",
+      "key": 36436
+    },
+    {
+      "recipe": "Transport Daphnia Leather",
+      "key": 36437
+    },
+    {
+      "recipe": "Stable Vellum",
+      "key": 36438
+    },
+    {
+      "recipe": "Habitat Leather Chair",
+      "key": 36439
+    },
+    {
+      "recipe": "Test Fab Leather",
+      "key": 36440
+    },
+    {
+      "recipe": "Survey Work Gloves",
+      "key": 36441
+    },
+    {
+      "recipe": "Test Fab Leather",
+      "key": 36442
+    },
+    {
+      "recipe": "Habitat Lounge",
+      "key": 36443
+    },
+    {
+      "recipe": "Standard Leather Strap",
+      "key": 36444
+    },
+    {
+      "recipe": "Stellar Vellum",
+      "key": 36445
+    },
+    {
+      "recipe": "Enrichment Arbor Flooring",
+      "key": 36446
+    },
+    {
+      "recipe": "Fieldwork Leather",
+      "key": 36447
+    },
+    {
+      "recipe": "Experimental Leather Strap",
+      "key": 36448
+    },
+    {
+      "recipe": "Experimental Leather",
+      "key": 36449
+    },
+    {
+      "recipe": "Experimental Cosmotized Leather",
+      "key": 36450
+    },
+    {
+      "recipe": "Experimental Belt",
+      "key": 36451
+    },
+    {
+      "recipe": "Habitat Pouch",
+      "key": 36452
+    },
+    {
+      "recipe": "Habitat Sofa",
+      "key": 36453
+    },
+    {
+      "recipe": "Enrichment Fringed Rug",
+      "key": 36454
+    },
+    {
+      "recipe": "Enrichment Oval Rug",
+      "key": 36455
+    },
+    {
+      "recipe": "Enrichment Blossom Rug",
+      "key": 36456
+    },
+    {
+      "recipe": "Survey Leather",
+      "key": 36457
+    },
+    {
+      "recipe": "Survey Safety Boots",
+      "key": 36458
+    },
+    {
+      "recipe": "Survey Leather",
+      "key": 36459
+    },
+    {
+      "recipe": "Survey Gatherer's Overalls",
+      "key": 36460
+    },
+    {
+      "recipe": "Base Tent Component",
+      "key": 36461
+    },
+    {
+      "recipe": "Base Tent",
+      "key": 36462
+    },
+    {
+      "recipe": "Researcher's Leather Strap",
+      "key": 36463
+    },
+    {
+      "recipe": "Researcher's Water-resistant Leather",
+      "key": 36464
+    },
+    {
+      "recipe": "Starship Leather",
+      "key": 36465
+    },
+    {
+      "recipe": "Habitat Leather",
+      "key": 36466
+    },
+    {
+      "recipe": "Habitat Sofa",
+      "key": 36467
+    },
+    {
+      "recipe": "Transport Cosmotized Fiber",
+      "key": 36468
+    },
+    {
+      "recipe": "Thick Survey Leather",
+      "key": 36469
+    },
+    {
+      "recipe": "Rover Packing Material",
+      "key": 36470
+    },
+    {
+      "recipe": "Grey Cosmotized Leather",
+      "key": 36471
+    },
+    {
+      "recipe": "Cosmotized Leather Strap",
+      "key": 36472
+    },
+    {
+      "recipe": "Cosmotized Leather",
+      "key": 36474
+    },
+    {
+      "recipe": "Cosmotized Leather Strap",
+      "key": 36475
+    },
+    {
+      "recipe": "Cosmotized Cosmostuff",
+      "key": 36477
+    },
+    {
+      "recipe": "Survey Cosmic Suit",
+      "key": 36479
+    },
+    {
+      "recipe": "Cured Survey Leather",
+      "key": 36677
+    },
+    {
+      "recipe": "Survey Leather Strap",
+      "key": 36678
+    },
+    {
+      "recipe": "Impenetrable Gloves",
+      "key": 36705
+    },
+    {
+      "recipe": "Reinforced Gas Mask",
+      "key": 36707
+    },
+    {
+      "recipe": "Flame-resistant Workboots",
+      "key": 36708
+    },
+    {
+      "recipe": "Neon Street Blouson",
+      "key": 36726
+    },
+    {
+      "recipe": "Neon Street Shoes",
+      "key": 36728
+    },
+    {
+      "recipe": "Bouncer's Halfgloves",
+      "key": 36730
+    },
+    {
+      "recipe": "Bouncer's Dress Shoes",
+      "key": 36732
     }
   ],
   "Weaver": [
@@ -291,6 +1643,14 @@
     {
       "recipe": "Indoor Awning",
       "key": 6256
+    },
+    {
+      "recipe": "Teal Carpet",
+      "key": 6271
+    },
+    {
+      "recipe": "Hingan Event Partition",
+      "key": 6273
     },
     {
       "recipe": "Everseeker's Top of Crafting",
@@ -347,6 +1707,370 @@
     {
       "recipe": "Wintertide Sheath Skirt",
       "key": 36041
+    },
+    {
+      "recipe": "Diatryma Felt",
+      "key": 36067
+    },
+    {
+      "recipe": "Ceremonial Longcap of Fending",
+      "key": 36110
+    },
+    {
+      "recipe": "Ceremonial Hose of Fending",
+      "key": 36113
+    },
+    {
+      "recipe": "Ceremonial Longcap of Maiming",
+      "key": 36115
+    },
+    {
+      "recipe": "Ceremonial Hose of Maiming",
+      "key": 36118
+    },
+    {
+      "recipe": "Ceremonial Longcap of Striking",
+      "key": 36120
+    },
+    {
+      "recipe": "Ceremonial Vest of Striking",
+      "key": 36121
+    },
+    {
+      "recipe": "Ceremonial Culottes of Striking",
+      "key": 36123
+    },
+    {
+      "recipe": "Ceremonial Longcap of Aiming",
+      "key": 36125
+    },
+    {
+      "recipe": "Ceremonial Vest of Aiming",
+      "key": 36126
+    },
+    {
+      "recipe": "Ceremonial Culottes of Aiming",
+      "key": 36128
+    },
+    {
+      "recipe": "Ceremonial Longcap of Scouting",
+      "key": 36130
+    },
+    {
+      "recipe": "Ceremonial Vest of Scouting",
+      "key": 36131
+    },
+    {
+      "recipe": "Ceremonial Culottes of Scouting",
+      "key": 36133
+    },
+    {
+      "recipe": "Ceremonial Hood of Healing",
+      "key": 36135
+    },
+    {
+      "recipe": "Ceremonial Tunic of Healing",
+      "key": 36136
+    },
+    {
+      "recipe": "Ceremonial Hose of Healing",
+      "key": 36138
+    },
+    {
+      "recipe": "Ceremonial Hood of Casting",
+      "key": 36140
+    },
+    {
+      "recipe": "Ceremonial Tunic of Casting",
+      "key": 36141
+    },
+    {
+      "recipe": "Ceremonial Hose of Casting",
+      "key": 36143
+    },
+    {
+      "recipe": "Standard Cotton Yarn",
+      "key": 36480
+    },
+    {
+      "recipe": "First-aid Cloth",
+      "key": 36481
+    },
+    {
+      "recipe": "Survey Ushanka",
+      "key": 36482
+    },
+    {
+      "recipe": "Researcher's Fiber",
+      "key": 36483
+    },
+    {
+      "recipe": "Survey String",
+      "key": 36484
+    },
+    {
+      "recipe": "Survey Curtain",
+      "key": 36485
+    },
+    {
+      "recipe": "Standard Cotton Yarn",
+      "key": 36486
+    },
+    {
+      "recipe": "Survey Garments",
+      "key": 36487
+    },
+    {
+      "recipe": "Survey Towels",
+      "key": 36488
+    },
+    {
+      "recipe": "Heavy-duty Cotton Yarn",
+      "key": 36489
+    },
+    {
+      "recipe": "Heavy-duty Fiber",
+      "key": 36490
+    },
+    {
+      "recipe": "Enrichment Cloth",
+      "key": 36491
+    },
+    {
+      "recipe": "Enrichment Curtain",
+      "key": 36492
+    },
+    {
+      "recipe": "Cosmoliner Cotton Yarn",
+      "key": 36493
+    },
+    {
+      "recipe": "Cosmoliner Aether Fiber",
+      "key": 36494
+    },
+    {
+      "recipe": "Standard Sailcloth",
+      "key": 36495
+    },
+    {
+      "recipe": "Standard Trousers",
+      "key": 36496
+    },
+    {
+      "recipe": "Work Rope",
+      "key": 36497
+    },
+    {
+      "recipe": "Standard Cotton Yarn",
+      "key": 36498
+    },
+    {
+      "recipe": "Habitat Curtain",
+      "key": 36499
+    },
+    {
+      "recipe": "Transport Cloth",
+      "key": 36500
+    },
+    {
+      "recipe": "Stable Fiber",
+      "key": 36501
+    },
+    {
+      "recipe": "Habitat Woolen Yarn",
+      "key": 36502
+    },
+    {
+      "recipe": "Test Fab Cloth",
+      "key": 36503
+    },
+    {
+      "recipe": "Survey Hat",
+      "key": 36504
+    },
+    {
+      "recipe": "Test Fab Cloth",
+      "key": 36505
+    },
+    {
+      "recipe": "Habitat Cushions",
+      "key": 36506
+    },
+    {
+      "recipe": "Standard Cotton Yarn",
+      "key": 36507
+    },
+    {
+      "recipe": "Stellar Fiber",
+      "key": 36508
+    },
+    {
+      "recipe": "Enrichment Curtain",
+      "key": 36509
+    },
+    {
+      "recipe": "First-aid Bandaging",
+      "key": 36510
+    },
+    {
+      "recipe": "Experimental Thread",
+      "key": 36511
+    },
+    {
+      "recipe": "Experimental Cloth",
+      "key": 36512
+    },
+    {
+      "recipe": "Experimental Fiber",
+      "key": 36513
+    },
+    {
+      "recipe": "Experimental Gatherer's Overalls",
+      "key": 36514
+    },
+    {
+      "recipe": "Habitat Sewing Kit",
+      "key": 36515
+    },
+    {
+      "recipe": "Habitat Sofa Cushions",
+      "key": 36516
+    },
+    {
+      "recipe": "Enrichment Oasis Rug",
+      "key": 36517
+    },
+    {
+      "recipe": "Enrichment Glade Rug",
+      "key": 36518
+    },
+    {
+      "recipe": "Enrichment Riviera Rug",
+      "key": 36519
+    },
+    {
+      "recipe": "Survey Cloth",
+      "key": 36520
+    },
+    {
+      "recipe": "Survey Trapper's Hat",
+      "key": 36521
+    },
+    {
+      "recipe": "Survey Cloth",
+      "key": 36522
+    },
+    {
+      "recipe": "Survey Artisan's Garb",
+      "key": 36523
+    },
+    {
+      "recipe": "Cosmoliner Fiber Component",
+      "key": 36524
+    },
+    {
+      "recipe": "Cosmoliner Fiber",
+      "key": 36525
+    },
+    {
+      "recipe": "Researcher's Cosmotized Thread",
+      "key": 36526
+    },
+    {
+      "recipe": "Researcher's Cosmotized Cloth",
+      "key": 36527
+    },
+    {
+      "recipe": "Starship Cloth",
+      "key": 36528
+    },
+    {
+      "recipe": "Treated Habitat Cloth",
+      "key": 36529
+    },
+    {
+      "recipe": "Habitat Cushions",
+      "key": 36530
+    },
+    {
+      "recipe": "Transport String",
+      "key": 36531
+    },
+    {
+      "recipe": "Thick Survey Cloth",
+      "key": 36532
+    },
+    {
+      "recipe": "Rover Packing Material",
+      "key": 36533
+    },
+    {
+      "recipe": "Cosmotized Plant Fiber",
+      "key": 36534
+    },
+    {
+      "recipe": "Cosmotized Composite Fiber",
+      "key": 36535
+    },
+    {
+      "recipe": "Cosmotized Thread",
+      "key": 36537
+    },
+    {
+      "recipe": "Cosmotized Cloth",
+      "key": 36538
+    },
+    {
+      "recipe": "Cosmotized Cosmostuff",
+      "key": 36540
+    },
+    {
+      "recipe": "Survey Crew Suit",
+      "key": 36542
+    },
+    {
+      "recipe": "Survey Tiled Carpeting",
+      "key": 36679
+    },
+    {
+      "recipe": "Survey Mushroom Cotton",
+      "key": 36680
+    },
+    {
+      "recipe": "Ultralight Fungal Cloth",
+      "key": 36710
+    },
+    {
+      "recipe": "Spare Cloth",
+      "key": 36711
+    },
+    {
+      "recipe": "Flame-resistant Work Cloth",
+      "key": 36712
+    },
+    {
+      "recipe": "Neon Street Cap",
+      "key": 36725
+    },
+    {
+      "recipe": "Neon Street Cargo Trousers",
+      "key": 36727
+    },
+    {
+      "recipe": "Bouncer's Vest",
+      "key": 36729
+    },
+    {
+      "recipe": "Bouncer's Slacks",
+      "key": 36731
+    },
+    {
+      "recipe": "Bouncer's Holster Vest",
+      "key": 36733
+    },
+    {
+      "recipe": "Bouncer's Holster Slacks",
+      "key": 36734
     }
   ],
   "Goldsmith": [
@@ -401,6 +2125,330 @@
     {
       "recipe": "Adamant Hanger",
       "key": 36055
+    },
+    {
+      "recipe": "Rhodochrosite",
+      "key": 36065
+    },
+    {
+      "recipe": "Ceremonial Shortbow",
+      "key": 36092
+    },
+    {
+      "recipe": "Ceremonial Wand",
+      "key": 36093
+    },
+    {
+      "recipe": "Ceremonial Torquetum",
+      "key": 36100
+    },
+    {
+      "recipe": "Ceremonial Smallsword",
+      "key": 36102
+    },
+    {
+      "recipe": "Ceremonial Pendulums",
+      "key": 36106
+    },
+    {
+      "recipe": "Ceremonial Necklace of Fending",
+      "key": 36150
+    },
+    {
+      "recipe": "Ceremonial Necklace of Slaying",
+      "key": 36151
+    },
+    {
+      "recipe": "Ceremonial Necklace of Aiming",
+      "key": 36152
+    },
+    {
+      "recipe": "Ceremonial Necklace of Healing",
+      "key": 36153
+    },
+    {
+      "recipe": "Ceremonial Necklace of Casting",
+      "key": 36154
+    },
+    {
+      "recipe": "Standard Metal Plating",
+      "key": 36354
+    },
+    {
+      "recipe": "Starship Gear",
+      "key": 36355
+    },
+    {
+      "recipe": "Lunar Alloy Ingots",
+      "key": 36356
+    },
+    {
+      "recipe": "Drone Lens",
+      "key": 36357
+    },
+    {
+      "recipe": "Standard Rings",
+      "key": 36358
+    },
+    {
+      "recipe": "Standard Spring",
+      "key": 36359
+    },
+    {
+      "recipe": "Standard Metal Plating",
+      "key": 36360
+    },
+    {
+      "recipe": "Starship Shaft",
+      "key": 36361
+    },
+    {
+      "recipe": "Survey Grindstone",
+      "key": 36362
+    },
+    {
+      "recipe": "Standard Indurate Rings",
+      "key": 36363
+    },
+    {
+      "recipe": "Standard Chain",
+      "key": 36364
+    },
+    {
+      "recipe": "Standard Alloy Ingot",
+      "key": 36365
+    },
+    {
+      "recipe": "Survey Goggles",
+      "key": 36366
+    },
+    {
+      "recipe": "Drone Plating",
+      "key": 36367
+    },
+    {
+      "recipe": "Drone Sprocket",
+      "key": 36368
+    },
+    {
+      "recipe": "Heat-resistant Alloy Ingot",
+      "key": 36369
+    },
+    {
+      "recipe": "Enrichment Heat Dissipator",
+      "key": 36370
+    },
+    {
+      "recipe": "Rover Shaft",
+      "key": 36371
+    },
+    {
+      "recipe": "Standard Metal Plating",
+      "key": 36372
+    },
+    {
+      "recipe": "Survey Needle",
+      "key": 36373
+    },
+    {
+      "recipe": "Habitat Telescope",
+      "key": 36374
+    },
+    {
+      "recipe": "Enrichment Fireplace",
+      "key": 36375
+    },
+    {
+      "recipe": "Habitat Vanity Mirror",
+      "key": 36376
+    },
+    {
+      "recipe": "Lunar Alloy Bar",
+      "key": 36377
+    },
+    {
+      "recipe": "Survey Needle",
+      "key": 36378
+    },
+    {
+      "recipe": "Standard Flexible Plating",
+      "key": 36379
+    },
+    {
+      "recipe": "Standard Crank",
+      "key": 36380
+    },
+    {
+      "recipe": "Standard Metal Plating",
+      "key": 36381
+    },
+    {
+      "recipe": "Indurate Lunar Adamantite Ingot",
+      "key": 36382
+    },
+    {
+      "recipe": "Indurate Spring",
+      "key": 36383
+    },
+    {
+      "recipe": "Survey Knife",
+      "key": 36384
+    },
+    {
+      "recipe": "Cosmotized Lunar Adamantite Ingot",
+      "key": 36385
+    },
+    {
+      "recipe": "Cosmotized Chondrite Ingot",
+      "key": 36386
+    },
+    {
+      "recipe": "Cosmotized Ilmenite Plate",
+      "key": 36387
+    },
+    {
+      "recipe": "Habitat Bathtub",
+      "key": 36388
+    },
+    {
+      "recipe": "Habitat Mechanical Arm",
+      "key": 36389
+    },
+    {
+      "recipe": "Interior Hub Light",
+      "key": 36390
+    },
+    {
+      "recipe": "Enrichment Shaft",
+      "key": 36391
+    },
+    {
+      "recipe": "Enrichment Spring",
+      "key": 36392
+    },
+    {
+      "recipe": "Enrichment Mechanical Arm",
+      "key": 36393
+    },
+    {
+      "recipe": "Tank Frame Component",
+      "key": 36394
+    },
+    {
+      "recipe": "High-durability Tank Frame",
+      "key": 36395
+    },
+    {
+      "recipe": "Iron Plating",
+      "key": 36396
+    },
+    {
+      "recipe": "Impact-resistant Interior Wall",
+      "key": 36397
+    },
+    {
+      "recipe": "Interior Hub Light Components",
+      "key": 36398
+    },
+    {
+      "recipe": "Standing Hub Light",
+      "key": 36399
+    },
+    {
+      "recipe": "Insulating Metal Ingot",
+      "key": 36400
+    },
+    {
+      "recipe": "Heavy-duty Gear",
+      "key": 36401
+    },
+    {
+      "recipe": "Hub Vending Machine",
+      "key": 36402
+    },
+    {
+      "recipe": "Indurate Alloy Ingot",
+      "key": 36403
+    },
+    {
+      "recipe": "Indurate Starship Plating",
+      "key": 36404
+    },
+    {
+      "recipe": "Miniature Drone Gear",
+      "key": 36405
+    },
+    {
+      "recipe": "Compact Drone Camera Lens",
+      "key": 36406
+    },
+    {
+      "recipe": "Survey Drone",
+      "key": 36407
+    },
+    {
+      "recipe": "Cosmotized Rhodium Ingot",
+      "key": 36408
+    },
+    {
+      "recipe": "Cosmotized Rhodium Shaft",
+      "key": 36409
+    },
+    {
+      "recipe": "Cosmotized Chondrite Plate",
+      "key": 36411
+    },
+    {
+      "recipe": "Cosmotized Chondrite Gear",
+      "key": 36412
+    },
+    {
+      "recipe": "Cosmotized Cosmostuff",
+      "key": 36414
+    },
+    {
+      "recipe": "Survey Welder",
+      "key": 36416
+    },
+    {
+      "recipe": "Survey Censer",
+      "key": 36675
+    },
+    {
+      "recipe": "Survey Tourmaline Crystal",
+      "key": 36676
+    },
+    {
+      "recipe": "Lighting Repair Tools",
+      "key": 36700
+    },
+    {
+      "recipe": "Spare Vehicle Part",
+      "key": 36701
+    },
+    {
+      "recipe": "Intricate Vacuum Part",
+      "key": 36703
+    },
+    {
+      "recipe": "Cane of Sanctifying Light",
+      "key": 36742
+    },
+    {
+      "recipe": "Rod of Sanctifying Light",
+      "key": 36743
+    },
+    {
+      "recipe": "Torquetum of Sanctifying Light",
+      "key": 36746
+    },
+    {
+      "recipe": "Foil of Sanctifying Light",
+      "key": 36748
+    },
+    {
+      "recipe": "Wings of Sanctifying Light",
+      "key": 36751
     }
   ],
   "Culinarian": [
@@ -411,6 +2459,10 @@
     {
       "recipe": "Kugane-yaki",
       "key": 6253
+    },
+    {
+      "recipe": "Leg of Prosciutto",
+      "key": 6281
     },
     {
       "recipe": "Ceviche",
@@ -439,6 +2491,306 @@
     {
       "recipe": "Railroad Repair Kit",
       "key": 36032
+    },
+    {
+      "recipe": "Paes de Queijo",
+      "key": 36078
+    },
+    {
+      "recipe": "Bubble Tea",
+      "key": 36079
+    },
+    {
+      "recipe": "Sweet Maple Mate",
+      "key": 36080
+    },
+    {
+      "recipe": "Mate Cookie",
+      "key": 36081
+    },
+    {
+      "recipe": "Alpaca Stew",
+      "key": 36082
+    },
+    {
+      "recipe": "Lomo Saltado",
+      "key": 36083
+    },
+    {
+      "recipe": "Solterito",
+      "key": 36084
+    },
+    {
+      "recipe": "Mollete",
+      "key": 36085
+    },
+    {
+      "recipe": "Ground Woolback Steak",
+      "key": 36086
+    },
+    {
+      "recipe": "Woolback Steak",
+      "key": 36087
+    },
+    {
+      "recipe": "Standard Lubricant",
+      "key": 36606
+    },
+    {
+      "recipe": "Lunar Spices",
+      "key": 36607
+    },
+    {
+      "recipe": "Standard Adhesive",
+      "key": 36608
+    },
+    {
+      "recipe": "Lunar Broth",
+      "key": 36609
+    },
+    {
+      "recipe": "Researcher's Ink",
+      "key": 36610
+    },
+    {
+      "recipe": "Survey Porridge",
+      "key": 36611
+    },
+    {
+      "recipe": "Standard Lubricant",
+      "key": 36612
+    },
+    {
+      "recipe": "Worker's Chocolate Nutrient Bar",
+      "key": 36613
+    },
+    {
+      "recipe": "Construction Paint",
+      "key": 36614
+    },
+    {
+      "recipe": "Habitat Sandwich",
+      "key": 36615
+    },
+    {
+      "recipe": "Habitat Basket",
+      "key": 36616
+    },
+    {
+      "recipe": "Worker's Oil",
+      "key": 36617
+    },
+    {
+      "recipe": "Worker's Vanilla Nutrient Bar",
+      "key": 36618
+    },
+    {
+      "recipe": "Ready-to-eat Grilled Steak",
+      "key": 36619
+    },
+    {
+      "recipe": "Emergency Food",
+      "key": 36620
+    },
+    {
+      "recipe": "Researcher's Rye Flour",
+      "key": 36621
+    },
+    {
+      "recipe": "Researcher's Archon Loaf",
+      "key": 36622
+    },
+    {
+      "recipe": "Stable Ration",
+      "key": 36623
+    },
+    {
+      "recipe": "Standard Lubricant",
+      "key": 36624
+    },
+    {
+      "recipe": "Stable Jelly Drink",
+      "key": 36625
+    },
+    {
+      "recipe": "Launch Party Scrambled Eggs",
+      "key": 36626
+    },
+    {
+      "recipe": "Launch Party Boiled Fish Head",
+      "key": 36627
+    },
+    {
+      "recipe": "Launch Party Mushroom Skewer",
+      "key": 36628
+    },
+    {
+      "recipe": "Habitat Flour",
+      "key": 36629
+    },
+    {
+      "recipe": "Habitat Bread Basket",
+      "key": 36630
+    },
+    {
+      "recipe": "Habitat Dressing",
+      "key": 36631
+    },
+    {
+      "recipe": "Habitat Mushroom Salad",
+      "key": 36632
+    },
+    {
+      "recipe": "Standard Lubricant",
+      "key": 36633
+    },
+    {
+      "recipe": "Cosmotized Standard Adhesive",
+      "key": 36634
+    },
+    {
+      "recipe": "Super Jubilance Juice",
+      "key": 36635
+    },
+    {
+      "recipe": "Habitat Breakfast",
+      "key": 36636
+    },
+    {
+      "recipe": "Experimental Flour",
+      "key": 36637
+    },
+    {
+      "recipe": "Experimental Salt",
+      "key": 36638
+    },
+    {
+      "recipe": "Experimental Oil",
+      "key": 36639
+    },
+    {
+      "recipe": "Cosmotized Stable Ration",
+      "key": 36640
+    },
+    {
+      "recipe": "Launch Party Rusk",
+      "key": 36641
+    },
+    {
+      "recipe": "Launch Party Grilled Banquet",
+      "key": 36642
+    },
+    {
+      "recipe": "Survey Red Drop",
+      "key": 36643
+    },
+    {
+      "recipe": "Survey Green Drop",
+      "key": 36644
+    },
+    {
+      "recipe": "Survey Yellow Drop",
+      "key": 36645
+    },
+    {
+      "recipe": "Curing Spirits",
+      "key": 36646
+    },
+    {
+      "recipe": "Cured Fish",
+      "key": 36647
+    },
+    {
+      "recipe": "Curing Spirits",
+      "key": 36648
+    },
+    {
+      "recipe": "Cured Meat",
+      "key": 36649
+    },
+    {
+      "recipe": "Communal Meal Supplies",
+      "key": 36650
+    },
+    {
+      "recipe": "Communal Stew",
+      "key": 36651
+    },
+    {
+      "recipe": "Loporrit Juice",
+      "key": 36652
+    },
+    {
+      "recipe": "Loporrit White Drop",
+      "key": 36653
+    },
+    {
+      "recipe": "Loporrit Pellets",
+      "key": 36654
+    },
+    {
+      "recipe": "Aquaculture Extract",
+      "key": 36655
+    },
+    {
+      "recipe": "Aquaculture Pellet",
+      "key": 36656
+    },
+    {
+      "recipe": "Worker's Paste",
+      "key": 36657
+    },
+    {
+      "recipe": "Worker's Vanilla Nutrient Bar",
+      "key": 36658
+    },
+    {
+      "recipe": "Worker's Omni-nutritious Meal",
+      "key": 36659
+    },
+    {
+      "recipe": "Cosmotized Mushroom Oil",
+      "key": 36660
+    },
+    {
+      "recipe": "Cosmotized Mushroom Paste",
+      "key": 36661
+    },
+    {
+      "recipe": "Cosmotized Yeast",
+      "key": 36663
+    },
+    {
+      "recipe": "Cosmotized Cheese",
+      "key": 36664
+    },
+    {
+      "recipe": "Cosmotized Cosmostuff",
+      "key": 36666
+    },
+    {
+      "recipe": "Balanced Survey Meal",
+      "key": 36668
+    },
+    {
+      "recipe": "Survey Mushroom Potage",
+      "key": 36683
+    },
+    {
+      "recipe": "Eel Ration",
+      "key": 36684
+    },
+    {
+      "recipe": "Dried Worker's Food",
+      "key": 36720
+    },
+    {
+      "recipe": "Nutrient Supplement Jelly",
+      "key": 36721
+    },
+    {
+      "recipe": "Irregular Spongoi Extract",
+      "key": 36722
     }
   ],
   "Alchemist": [
@@ -483,6 +2835,42 @@
       "key": 6250
     },
     {
+      "recipe": "Red Paperflower Earring",
+      "key": 6261
+    },
+    {
+      "recipe": "Blue Paperflower Earring",
+      "key": 6262
+    },
+    {
+      "recipe": "Yellow Paperflower Earring",
+      "key": 6263
+    },
+    {
+      "recipe": "Green Paperflower Earring",
+      "key": 6264
+    },
+    {
+      "recipe": "Orange Paperflower Earring",
+      "key": 6265
+    },
+    {
+      "recipe": "Purple Paperflower Earring",
+      "key": 6266
+    },
+    {
+      "recipe": "White Paperflower Earring",
+      "key": 6267
+    },
+    {
+      "recipe": "Black Paperflower Earring",
+      "key": 6268
+    },
+    {
+      "recipe": "Rainbow Paperflower Earring",
+      "key": 6269
+    },
+    {
       "recipe": "Optical Nanofiber",
       "key": 35957
     },
@@ -521,6 +2909,330 @@
     {
       "recipe": "Adamant Codex",
       "key": 36052
+    },
+    {
+      "recipe": "Grade 3 Gemsap of Strength",
+      "key": 36068
+    },
+    {
+      "recipe": "Grade 3 Gemsap of Dexterity",
+      "key": 36069
+    },
+    {
+      "recipe": "Grade 3 Gemsap of Vitality",
+      "key": 36070
+    },
+    {
+      "recipe": "Grade 3 Gemsap of Intelligence",
+      "key": 36071
+    },
+    {
+      "recipe": "Grade 3 Gemsap of Mind",
+      "key": 36072
+    },
+    {
+      "recipe": "Grade 3 Gemdraught of Strength",
+      "key": 36073
+    },
+    {
+      "recipe": "Grade 3 Gemdraught of Dexterity",
+      "key": 36074
+    },
+    {
+      "recipe": "Grade 3 Gemdraught of Vitality",
+      "key": 36075
+    },
+    {
+      "recipe": "Grade 3 Gemdraught of Intelligence",
+      "key": 36076
+    },
+    {
+      "recipe": "Grade 3 Gemdraught of Mind",
+      "key": 36077
+    },
+    {
+      "recipe": "Ceremonial Grimoire",
+      "key": 36095
+    },
+    {
+      "recipe": "Ceremonial Codex",
+      "key": 36096
+    },
+    {
+      "recipe": "Ceremonial Flat Brush",
+      "key": 36108
+    },
+    {
+      "recipe": "Standard Brick",
+      "key": 36543
+    },
+    {
+      "recipe": "Lunar Spices",
+      "key": 36544
+    },
+    {
+      "recipe": "Standard Mortar",
+      "key": 36545
+    },
+    {
+      "recipe": "Worker's Nutrient Mixture",
+      "key": 36546
+    },
+    {
+      "recipe": "Standard Glue",
+      "key": 36547
+    },
+    {
+      "recipe": "Survey Porridge",
+      "key": 36548
+    },
+    {
+      "recipe": "Standard Brick",
+      "key": 36549
+    },
+    {
+      "recipe": "Worker's Health Drink",
+      "key": 36550
+    },
+    {
+      "recipe": "Standard Paint",
+      "key": 36551
+    },
+    {
+      "recipe": "Enrichment Mortar",
+      "key": 36552
+    },
+    {
+      "recipe": "Enrichment Concrete",
+      "key": 36553
+    },
+    {
+      "recipe": "Habitat Beeswax",
+      "key": 36554
+    },
+    {
+      "recipe": "Habitat Candles",
+      "key": 36555
+    },
+    {
+      "recipe": "Emergency Spices",
+      "key": 36556
+    },
+    {
+      "recipe": "Emergency Food",
+      "key": 36557
+    },
+    {
+      "recipe": "Researcher's Nutrients",
+      "key": 36558
+    },
+    {
+      "recipe": "Researcher's Jelly Drink",
+      "key": 36559
+    },
+    {
+      "recipe": "Stable Spices",
+      "key": 36560
+    },
+    {
+      "recipe": "Standard Brick",
+      "key": 36561
+    },
+    {
+      "recipe": "Stable Experimental Medicine",
+      "key": 36562
+    },
+    {
+      "recipe": "Worker's Holy Water",
+      "key": 36563
+    },
+    {
+      "recipe": "Enrichment Concrete",
+      "key": 36564
+    },
+    {
+      "recipe": "Worker's Nutrient Mixture",
+      "key": 36565
+    },
+    {
+      "recipe": "Habitat Growth Formula",
+      "key": 36566
+    },
+    {
+      "recipe": "Habitat Grass",
+      "key": 36567
+    },
+    {
+      "recipe": "Habitat Culture Fluid",
+      "key": 36568
+    },
+    {
+      "recipe": "Habitat Houseplant",
+      "key": 36569
+    },
+    {
+      "recipe": "Standard Brick",
+      "key": 36570
+    },
+    {
+      "recipe": "Cosmotized Standard Mortar",
+      "key": 36571
+    },
+    {
+      "recipe": "Cosmotized Worker's Nutrient Mixture",
+      "key": 36572
+    },
+    {
+      "recipe": "Habitat Dishware",
+      "key": 36573
+    },
+    {
+      "recipe": "Experimental Lubricant",
+      "key": 36574
+    },
+    {
+      "recipe": "Experimental Alchemic",
+      "key": 36575
+    },
+    {
+      "recipe": "Experimental Resin",
+      "key": 36576
+    },
+    {
+      "recipe": "Bottled Stable Drinks",
+      "key": 36577
+    },
+    {
+      "recipe": "Habitat Cosmetic Box",
+      "key": 36578
+    },
+    {
+      "recipe": "Habitat Houseplant",
+      "key": 36579
+    },
+    {
+      "recipe": "Survey Craftsman's Cunning Brew",
+      "key": 36580
+    },
+    {
+      "recipe": "Survey Craftsman's Competence Brew",
+      "key": 36581
+    },
+    {
+      "recipe": "Survey Craftsman's Command Brew",
+      "key": 36582
+    },
+    {
+      "recipe": "Survey Alchemic",
+      "key": 36583
+    },
+    {
+      "recipe": "Survey Rust Repellent",
+      "key": 36584
+    },
+    {
+      "recipe": "Survey Alchemic",
+      "key": 36585
+    },
+    {
+      "recipe": "Survey Preservative",
+      "key": 36586
+    },
+    {
+      "recipe": "Survey Tincture Materials",
+      "key": 36587
+    },
+    {
+      "recipe": "Survey Tincture",
+      "key": 36588
+    },
+    {
+      "recipe": "Loporrit Concrete",
+      "key": 36589
+    },
+    {
+      "recipe": "Loporrit Growth Formula",
+      "key": 36590
+    },
+    {
+      "recipe": "Verdant Loporrit-sized Partition",
+      "key": 36591
+    },
+    {
+      "recipe": "Aquaculture Extract",
+      "key": 36592
+    },
+    {
+      "recipe": "Aquaculture Pellet",
+      "key": 36593
+    },
+    {
+      "recipe": "Worker's Nutrient Mixture",
+      "key": 36594
+    },
+    {
+      "recipe": "Worker's Nutrient Jelly",
+      "key": 36595
+    },
+    {
+      "recipe": "Worker's Jelly Drink",
+      "key": 36596
+    },
+    {
+      "recipe": "Cosmotized Red Alchemic",
+      "key": 36597
+    },
+    {
+      "recipe": "Cosmotized Yellow Alchemic",
+      "key": 36598
+    },
+    {
+      "recipe": "Cosmotized Green Alchemic",
+      "key": 36600
+    },
+    {
+      "recipe": "Cosmotized Blue Alchemic",
+      "key": 36601
+    },
+    {
+      "recipe": "Cosmotized Cosmostuff",
+      "key": 36603
+    },
+    {
+      "recipe": "Prismatic Survey Alchemic",
+      "key": 36605
+    },
+    {
+      "recipe": "Survey Mushroom Lamp",
+      "key": 36681
+    },
+    {
+      "recipe": "Survey Moon Gel",
+      "key": 36682
+    },
+    {
+      "recipe": "Aether-resistant Agent",
+      "key": 36715
+    },
+    {
+      "recipe": "Flamethrower Fuel",
+      "key": 36718
+    },
+    {
+      "recipe": "Gas Poisoning Antidote",
+      "key": 36719
+    },
+    {
+      "recipe": "Grimoire of Sanctifying Light",
+      "key": 36744
+    },
+    {
+      "recipe": "Codex of Sanctifying Light",
+      "key": 36745
+    },
+    {
+      "recipe": "Roses of May (Dawntrail) Orchestrion Roll",
+      "key": 36757
     }
   ]
 }
