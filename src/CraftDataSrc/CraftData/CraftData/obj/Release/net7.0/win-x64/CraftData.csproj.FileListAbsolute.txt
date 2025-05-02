@@ -2479,3 +2479,12 @@ C:\Users\Administrator\Documents\git\ffxiv-craft-data\src\CraftDataSrc\CraftData
 C:\Users\Administrator\Documents\git\ffxiv-craft-data\src\CraftDataSrc\CraftData\CraftData\obj\Release\net7.0\win-x64\CraftData.pdb
 C:\Users\Administrator\Documents\git\ffxiv-craft-data\src\CraftDataSrc\CraftData\CraftData\obj\Release\net7.0\win-x64\CraftData.genruntimeconfig.cache
 C:\Users\Administrator\Documents\git\ffxiv-craft-data\src\CraftDataSrc\CraftData\CraftData\obj\Release\net7.0\win-x64\ref\CraftData.dll
+C:\tmp\ffxiv-craft-data\src\CraftDataSrc\CraftData\CraftData\obj\Release\net7.0\win-x64\CraftData.csproj.AssemblyReference.cache
+C:\tmp\ffxiv-craft-data\src\CraftDataSrc\CraftData\CraftData\obj\Release\net7.0\win-x64\CraftData.GeneratedMSBuildEditorConfig.editorconfig
+C:\tmp\ffxiv-craft-data\src\CraftDataSrc\CraftData\CraftData\obj\Release\net7.0\win-x64\CraftData.AssemblyInfoInputs.cache
+C:\tmp\ffxiv-craft-data\src\CraftDataSrc\CraftData\CraftData\obj\Release\net7.0\win-x64\CraftData.AssemblyInfo.cs
+C:\tmp\ffxiv-craft-data\src\CraftDataSrc\CraftData\CraftData\obj\Release\net7.0\win-x64\CraftData.csproj.CoreCompileInputs.cache
+C:\tmp\ffxiv-craft-data\src\CraftDataSrc\CraftData\CraftData\obj\Release\net7.0\win-x64\CraftData.sourcelink.json
+C:\tmp\ffxiv-craft-data\src\CraftDataSrc\CraftData\CraftData\obj\Release\net7.0\win-x64\CraftData.dll
+C:\tmp\ffxiv-craft-data\src\CraftDataSrc\CraftData\CraftData\obj\Release\net7.0\win-x64\refint\CraftData.dll
+C:\tmp\ffxiv-craft-data\src\CraftDataSrc\CraftData\CraftData\obj\Release\net7.0\win-x64\CraftData.pdb
