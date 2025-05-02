@@ -115,16 +115,7 @@ Initialize a `uv` project to create `pyproject.toml`:
 uv init
 ```
 
-### 6. Add Dependencies
-Add the required `pandas` package:
-
-```bash
-uv add pandas
-```
-
-This updates `pyproject.toml` and installs `pandas` and its dependencies (e.g., `numpy`).
-
-### 7. Run the Script
+### 6. Run the Script
 Execute `main.py` using `uv run`:
 
 ```bash
@@ -196,7 +187,7 @@ python main.py
     ```
 
 - **Windows-Specific**:
-  - `CraftData.exe` is Windows-only. For Linux/macOS, contact the maintainer for alternatives.
+  - `CraftData.exe` is Windows-only.
 
 ## Contributing
 - Report issues or suggest improvements via [GitHub Issues](https://github.com/dazemc/ffxiv-craft-data/issues).
