@@ -94,6 +94,7 @@ Clone the project, ensuring Git LFS pulls large files:
 ```bash
 git clone https://github.com/dazemc/ffxiv-craft-data.git
 cd ffxiv-craft-data
+git submodule update --init --recursive
 git lfs pull
 ```
 
