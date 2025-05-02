@@ -6,7 +6,4 @@ dotnet build -c Release
 cd ../../src/CraftDataSrc/CraftData/
 dotnet publish -c Release
 cd ../../../
-git add .
-git commit -m "updated submodules and build"
-git push
 exit
