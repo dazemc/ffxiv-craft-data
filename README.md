@@ -27,18 +27,18 @@ The project relies on **SaintCoinach** (in `./src/SaintCoinach`), a library for 
 
 - **Important**: SaintCoinach must be updated after every FFXIV patch to ensure compatibility with the latest game data.
 - **Update Process**:
-  - Run the provided `update.sh` script (PowerShell-compatible) to update SaintCoinach:
+  - Run the provided `update.ps1` PowerShell script to update SaintCoinach and build CraftData.exe:
     ```bash
-    ./update.sh
+    ./update.ps1
     ```
-  - Alternatively, reference `update.sh` for manual commands, typically:
+  - Alternatively, reference `update.ps1` for manual commands, typically:
     ```bash
     cd src/SaintCoinach
     git pull origin main
     cd ../..
-    # Rebuild CraftData if needed
+    # Rebuild CraftData
     ```
-  - Recompile `CraftData.exe` if SaintCoinach changes significantly (e.g., new data structures).
+  - Recompile `CraftData.exe` as it is self contained.
 
 ## Prerequisites
 - **Python** with `uv` (a fast Python package manager).
@@ -46,7 +46,6 @@ The project relies on **SaintCoinach** (in `./src/SaintCoinach`), a library for 
 - All required files are included in the repository:
   - `main.py`
   - `CraftData.exe` (in `CraftData/Release/net7.0/win-x64/publish/`)
-  - `data.txt`
   - `import/ko/recipedb/` (with JSON files like `Carpenter.json`, `Blacksmith.json`)
   - `import/ko/buffs/` (with JSON files like `Meal.json`, `Medicine.json`)
   - `CraftData/Release/net7.0/win-x64/publish/` (for `config.json`)
@@ -102,11 +101,11 @@ git lfs pull
 If setting up after an FFXIV patch, update the SaintCoinach source:
 
 ```bash
-./update.sh
+./update.ps1
 ```
 
 - This pulls the latest SaintCoinach data and rebuilds `CraftData` if needed.
-- Check `update.sh` for manual commands (e.g., `git pull` in `src/SaintCoinach`).
+- Check `update.ps1` for manual commands (e.g., `git pull` in `src/SaintCoinach`).
 
 ### 5. Initialize the Project
 Initialize a `uv` project to create `pyproject.toml`:
@@ -128,9 +127,7 @@ uv run python main.py
   - Korean JSON files in `import/ko/recipedb/` and `import/ko/buffs/` are merged into the output.
 
 - **Input Tips**:
-  - Use forward slashes (`/`) or double backslashes (`\\`) for Windows paths.
-  - Example: `C:/Program Files/FFXIV` or `C:\\Program Files\\FFXIV`.
-  - The path must be at least 6 characters long, or the script exits with an error.
+  - Example: `G:\SteamLibrary\steamapps\common\FINAL FANTASY XIV Online` slash orientation does not matter.
 
 ### Alternative: Manual Virtual Environment
 If you prefer to manage the virtual environment manually:
@@ -167,7 +164,7 @@ python main.py
 - **SaintCoinach Outdated**:
   - If data is incorrect or `CraftData.exe` fails, update SaintCoinach:
     ```bash
-    ./update.sh
+    ./update.ps1
     ```
   - Recompile `CraftData.exe` if SaintCoinach changes significantly.
 
