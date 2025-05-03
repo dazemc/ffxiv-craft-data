@@ -26,12 +26,12 @@ The Python script (`main.py`) communicates with `CraftData.exe` (located in `Cra
 The project relies on **SaintCoinach** (in `./src/SaintCoinach`), a library for extracting FFXIV game data. The SaintCoinach source files are **soft-linked** to the `CraftData` source, so updates to SaintCoinach propagate to `CraftData`.
 
 - **Important**: SaintCoinach must be updated after every FFXIV patch to ensure compatibility with the latest game data.
-- **Update Process**:
-  - Run the provided `update.ps1` PowerShell script to update SaintCoinach and build CraftData.exe:
+- **Build Process**:
+  - Run the provided `build.ps1` PowerShell script to update SaintCoinach and build CraftData.exe:
     ```bash
-    ./update.ps1
+    ./build.ps1
     ```
-  - Alternatively, reference `update.ps1` for manual commands, typically:
+  - Alternatively, reference `build.ps1` for manual commands, typically:
     ```bash
     cd src/SaintCoinach
     git pull origin main
@@ -102,11 +102,11 @@ git lfs pull
 If setting up after an FFXIV patch, update the SaintCoinach source:
 
 ```bash
-./update.ps1
+./build.ps1
 ```
 
 - This pulls the latest SaintCoinach data and rebuilds `CraftData` if needed.
-- Check `update.ps1` for manual commands (e.g., `git pull` in `src/SaintCoinach`).
+- Check `build.ps1` for manual commands (e.g., `git pull` in `src/SaintCoinach`).
 
 ### 5. Initialize the Project
 Initialize a `uv` project to create `pyproject.toml`:
@@ -156,7 +156,7 @@ python main.py
   - Check Git LFS setup or contact the maintainer.
 
 - **Error reading filepath**:
-  - The FFXIV filepath must be valid and at least 6 characters long.
+  - The FFXIV filepath must be valid.
   - Delete `config.json` to reset:
     ```bash
     del CraftData\Release\net7.0\win-x64\publish\config.json
@@ -165,7 +165,7 @@ python main.py
 - **SaintCoinach Outdated**:
   - If data is incorrect or `CraftData.exe` fails, update SaintCoinach:
     ```bash
-    ./update.ps1
+    ./build.ps1
     ```
   - Recompile `CraftData.exe` if SaintCoinach changes significantly.
 
