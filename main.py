@@ -9,8 +9,10 @@ from io import StringIO
 
 import pandas as pd
 
-
-FFXIV_FILEPATH: str | None = None
+WRITE_CSV = False
+FFXIV_FILEPATH: str | bool | None = (
+    None  # nullable string that is treated as a bool because I'm lazy
+)
 
 
 IMPORT_DIR: str = "./import"
@@ -27,12 +29,13 @@ if not os.path.exists(CRAFTDATA_FILEPATH + "config.json"):
         FFXIV_FILEPATH = None
     else:
         print(
-            f"FFXIV filepath set to : {FFXIV_FILEPATH}\nYou can change/delet this at ./CraftData/Release/net7.0/win-x64/publish/config.json"
+            f"FFXIV filepath set to : {FFXIV_FILEPATH}\nYou can change/delete this at ./CraftData/Release/net7.0/win-x64/publish/config.json"
         )
 else:
     print(
         "FFXIV filepath is already set, you can change/delete this at ./CraftData/Release/net7.0/win-x64/publish/config.json"
     )
+    FFXIV_FILEPATH = True
 if FFXIV_FILEPATH == None:
     print("Error reading filepath")
     sys.exit()
@@ -135,6 +138,9 @@ async def create_csv() -> StringIO:
         process.terminate()
 
     await process.wait()
+    if WRITE_CSV:
+        with open("recipes.csv", "w", encoding="utf-8") as file:
+            file.write(csv.getvalue())
 
     return csv, csv_item
 
@@ -299,6 +305,11 @@ def create_export_recipe(recipes_df: dict) -> dict:
             quality_modifier: int = int(current_recipe.QualityModifier)
             suggested_craft: int = int(current_recipe.SuggestedCraftsmanship)
             stars: int = int(current_recipe.Stars)
+
+            for i, saved_recipe in enumerate(export_recipes[craft_key]):
+                if saved_recipe["name"]["en"] == name:
+                    if recipe_key > saved_recipe["key"]:
+                        export_recipes[craft_key].pop(i)
 
             export_recipes[craft_key].append(
                 {
@@ -484,7 +495,8 @@ def export(export_recipes: dict, export_buffs: dict) -> None:
 
 async def main() -> None:
     set_cwd(CRAFTDATA_FILEPATH)
-    set_ffxiv_config(CRAFTDATA_CONFIG)
+    if FFXIV_FILEPATH is not True and FFXIV_FILEPATH is not None:
+        set_ffxiv_config(CRAFTDATA_CONFIG)
     csv: tuple = await create_csv()
     csv_recipe: StringIO = csv[0]
     csv_item: StringIO = csv[1]

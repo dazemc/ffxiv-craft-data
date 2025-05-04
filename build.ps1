@@ -31,5 +31,5 @@ cd ./src/SaintcoinachSrc/
 dotnet build -c Release
 cd ../CraftDataSrc/CraftData/CraftData
 dotnet publish -c Release
-cd ../../../
+cd ../../../../
 exit
