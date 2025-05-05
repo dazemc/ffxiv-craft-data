@@ -153,6 +153,22 @@
       "key": 36164
     },
     {
+      "recipe": "Standard High-density Fiberboard D",
+      "key": 36165
+    },
+    {
+      "recipe": "Standard High-density Fiberboard C",
+      "key": 36171
+    },
+    {
+      "recipe": "Standard High-density Fiberboard B",
+      "key": 36183
+    },
+    {
+      "recipe": "Standard High-density Fiberboard A",
+      "key": 36192
+    },
+    {
       "recipe": "Fieldwork Firewood",
       "key": 36166
     },
@@ -163,6 +179,22 @@
     {
       "recipe": "Researcher's Lumber",
       "key": 36168
+    },
+    {
+      "recipe": "Fieldwork Charcoal",
+      "key": 36169
+    },
+    {
+      "recipe": "Fieldwork Charcoal ★",
+      "key": 36195
+    },
+    {
+      "recipe": "Habitat Bed",
+      "key": 36170
+    },
+    {
+      "recipe": "Habitat Bed",
+      "key": 36191
     },
     {
       "recipe": "Carpentry Supplies",
@@ -183,6 +215,14 @@
     {
       "recipe": "Enrichment Insulation Lumber",
       "key": 36176
+    },
+    {
+      "recipe": "Enrichment Insulation",
+      "key": 36177
+    },
+    {
+      "recipe": "Enrichment Insulation ★",
+      "key": 36194
     },
     {
       "recipe": "Survey Sap",
@@ -222,27 +262,23 @@
     },
     {
       "recipe": "Test Fab Lumber",
+      "key": 36188
+    },
+    {
+      "recipe": "Test Fab Lumber",
       "key": 36190
     },
     {
-      "recipe": "Habitat Bed",
-      "key": 36191
+      "recipe": "Survey Fishing Rod",
+      "key": 36189
     },
     {
-      "recipe": "Standard High-density Fiberboard",
-      "key": 36192
+      "recipe": "Survey Fishing Rod ★★★",
+      "key": 36670
     },
     {
       "recipe": "Stellar Paper",
       "key": 36193
-    },
-    {
-      "recipe": "Enrichment Insulation",
-      "key": 36194
-    },
-    {
-      "recipe": "Fieldwork Charcoal",
-      "key": 36195
     },
     {
       "recipe": "Experimental Lumber",
@@ -281,12 +317,16 @@
       "key": 36204
     },
     {
-      "recipe": "Survey Spinning Wheel",
-      "key": 36206
+      "recipe": "Hardened Survey Plank ★★★",
+      "key": 36205
     },
     {
-      "recipe": "Hardened Survey Plank",
+      "recipe": "Hardened Survey Plank ★★★",
       "key": 36207
+    },
+    {
+      "recipe": "Survey Spinning Wheel",
+      "key": 36206
     },
     {
       "recipe": "Mobile Work Stairs",
@@ -359,10 +399,6 @@
     {
       "recipe": "Survey Water Tank",
       "key": 36669
-    },
-    {
-      "recipe": "Survey Fishing Rod",
-      "key": 36670
     },
     {
       "recipe": "Work Ladder",
@@ -555,6 +591,22 @@
       "key": 36107
     },
     {
+      "recipe": "Standard Metal Plating D",
+      "key": 36228
+    },
+    {
+      "recipe": "Standard Metal Plating C",
+      "key": 36234
+    },
+    {
+      "recipe": "Standard Metal Plating B",
+      "key": 36246
+    },
+    {
+      "recipe": "Standard Metal Plating A",
+      "key": 36255
+    },
+    {
       "recipe": "Starship Gear",
       "key": 36229
     },
@@ -583,12 +635,16 @@
       "key": 36236
     },
     {
-      "recipe": "Standard Alloy Rivets",
-      "key": 36238
+      "recipe": "Standard Alloy Ingot",
+      "key": 36237
     },
     {
       "recipe": "Standard Alloy Ingot",
       "key": 36239
+    },
+    {
+      "recipe": "Standard Alloy Rivets",
+      "key": 36238
     },
     {
       "recipe": "Survey Crosscut Saw",
@@ -645,10 +701,6 @@
     {
       "recipe": "Standard Fitting",
       "key": 36254
-    },
-    {
-      "recipe": "Standard Metal Plating",
-      "key": 36255
     },
     {
       "recipe": "Indurate Lunar Adamantite Ingot",
@@ -933,12 +985,36 @@
       "key": 36132
     },
     {
+      "recipe": "Standard Metal Plating D",
+      "key": 36291
+    },
+    {
+      "recipe": "Standard Metal Plating C",
+      "key": 36297
+    },
+    {
+      "recipe": "Standard Metal Plating B",
+      "key": 36309
+    },
+    {
+      "recipe": "Standard Metal Plating A",
+      "key": 36318
+    },
+    {
       "recipe": "Starship Gear",
       "key": 36292
     },
     {
       "recipe": "Lunar Alloy Ingots",
       "key": 36293
+    },
+    {
+      "recipe": "Drone Wire",
+      "key": 36294
+    },
+    {
+      "recipe": "Drone Wire",
+      "key": 36305
     },
     {
       "recipe": "Standard Rings",
@@ -951,6 +1027,14 @@
     {
       "recipe": "Starship Shaft",
       "key": 36298
+    },
+    {
+      "recipe": "Survey Frypan",
+      "key": 36299
+    },
+    {
+      "recipe": "Survey Frypan",
+      "key": 36310
     },
     {
       "recipe": "Standard Indurate Rings",
@@ -973,10 +1057,6 @@
       "key": 36304
     },
     {
-      "recipe": "Drone Wire",
-      "key": 36305
-    },
-    {
       "recipe": "Heat-resistant Alloy Ingot",
       "key": 36306
     },
@@ -987,10 +1067,6 @@
     {
       "recipe": "Rover Rings",
       "key": 36308
-    },
-    {
-      "recipe": "Survey Frypan",
-      "key": 36310
     },
     {
       "recipe": "Habitat Coffeemaker",
@@ -1019,10 +1095,6 @@
     {
       "recipe": "Standard Mortar",
       "key": 36317
-    },
-    {
-      "recipe": "Standard Metal Plating",
-      "key": 36318
     },
     {
       "recipe": "Indurate Lunar Adamantite Ingot",
@@ -1287,6 +1359,22 @@
       "key": 36159
     },
     {
+      "recipe": "Standard Leather Strap D",
+      "key": 36417
+    },
+    {
+      "recipe": "Standard Leather Strap C",
+      "key": 36423
+    },
+    {
+      "recipe": "Standard Leather Strap B",
+      "key": 36435
+    },
+    {
+      "recipe": "Standard Leather Strap A",
+      "key": 36444
+    },
+    {
       "recipe": "First-aid Lunatender Leather",
       "key": 36418
     },
@@ -1367,20 +1455,20 @@
       "key": 36439
     },
     {
-      "recipe": "Survey Work Gloves",
-      "key": 36441
+      "recipe": "Test Fab Leather",
+      "key": 36440
     },
     {
       "recipe": "Test Fab Leather",
       "key": 36442
     },
     {
-      "recipe": "Habitat Lounge",
-      "key": 36443
+      "recipe": "Survey Work Gloves",
+      "key": 36441
     },
     {
-      "recipe": "Standard Leather Strap",
-      "key": 36444
+      "recipe": "Habitat Lounge",
+      "key": 36443
     },
     {
       "recipe": "Stellar Vellum",
@@ -1415,6 +1503,14 @@
       "key": 36452
     },
     {
+      "recipe": "Habitat Sofa ★★",
+      "key": 36453
+    },
+    {
+      "recipe": "Habitat Sofa ★★★",
+      "key": 36467
+    },
+    {
       "recipe": "Enrichment Fringed Rug",
       "key": 36454
     },
@@ -1427,12 +1523,16 @@
       "key": 36456
     },
     {
-      "recipe": "Survey Safety Boots",
-      "key": 36458
+      "recipe": "Survey Leather ★★★",
+      "key": 36457
     },
     {
-      "recipe": "Survey Leather",
+      "recipe": "Survey Leather ★★★",
       "key": 36459
+    },
+    {
+      "recipe": "Survey Safety Boots",
+      "key": 36458
     },
     {
       "recipe": "Survey Gatherer's Overalls",
@@ -1463,10 +1563,6 @@
       "key": 36466
     },
     {
-      "recipe": "Habitat Sofa",
-      "key": 36467
-    },
-    {
       "recipe": "Transport Cosmotized Fiber",
       "key": 36468
     },
@@ -1483,12 +1579,16 @@
       "key": 36471
     },
     {
-      "recipe": "Cosmotized Leather",
-      "key": 36474
+      "recipe": "Cosmotized Leather Strap ★★★",
+      "key": 36472
     },
     {
-      "recipe": "Cosmotized Leather Strap",
+      "recipe": "Cosmotized Leather Strap ★★★",
       "key": 36475
+    },
+    {
+      "recipe": "Cosmotized Leather",
+      "key": 36474
     },
     {
       "recipe": "Cosmotized Cosmostuff",
@@ -1689,6 +1789,22 @@
       "key": 36143
     },
     {
+      "recipe": "Standard Cotton Yarn D",
+      "key": 36480
+    },
+    {
+      "recipe": "Standard Cotton Yarn C",
+      "key": 36486
+    },
+    {
+      "recipe": "Standard Cotton Yarn B",
+      "key": 36498
+    },
+    {
+      "recipe": "Standard Cotton Yarn A",
+      "key": 36507
+    },
+    {
       "recipe": "First-aid Cloth",
       "key": 36481
     },
@@ -1729,6 +1845,14 @@
       "key": 36491
     },
     {
+      "recipe": "Enrichment Curtain",
+      "key": 36492
+    },
+    {
+      "recipe": "Enrichment Curtain ★",
+      "key": 36509
+    },
+    {
       "recipe": "Cosmoliner Cotton Yarn",
       "key": 36493
     },
@@ -1765,24 +1889,28 @@
       "key": 36502
     },
     {
-      "recipe": "Survey Hat",
-      "key": 36504
+      "recipe": "Test Fab Cloth",
+      "key": 36503
     },
     {
       "recipe": "Test Fab Cloth",
       "key": 36505
     },
     {
-      "recipe": "Standard Cotton Yarn",
-      "key": 36507
+      "recipe": "Survey Hat",
+      "key": 36504
+    },
+    {
+      "recipe": "Habitat Cushions",
+      "key": 36506
+    },
+    {
+      "recipe": "Habitat Cushions ★★★",
+      "key": 36530
     },
     {
       "recipe": "Stellar Fiber",
       "key": 36508
-    },
-    {
-      "recipe": "Enrichment Curtain",
-      "key": 36509
     },
     {
       "recipe": "First-aid Bandaging",
@@ -1825,12 +1953,16 @@
       "key": 36519
     },
     {
-      "recipe": "Survey Trapper's Hat",
-      "key": 36521
+      "recipe": "Survey Cloth ★★★",
+      "key": 36520
     },
     {
-      "recipe": "Survey Cloth",
+      "recipe": "Survey Cloth ★★★",
       "key": 36522
+    },
+    {
+      "recipe": "Survey Trapper's Hat",
+      "key": 36521
     },
     {
       "recipe": "Survey Artisan's Garb",
@@ -1859,10 +1991,6 @@
     {
       "recipe": "Treated Habitat Cloth",
       "key": 36529
-    },
-    {
-      "recipe": "Habitat Cushions",
-      "key": 36530
     },
     {
       "recipe": "Transport String",
@@ -2043,6 +2171,22 @@
       "key": 36154
     },
     {
+      "recipe": "Standard Metal Plating D",
+      "key": 36354
+    },
+    {
+      "recipe": "Standard Metal Plating C",
+      "key": 36360
+    },
+    {
+      "recipe": "Standard Metal Plating B",
+      "key": 36372
+    },
+    {
+      "recipe": "Standard Metal Plating A",
+      "key": 36381
+    },
+    {
       "recipe": "Starship Gear",
       "key": 36355
     },
@@ -2107,6 +2251,14 @@
       "key": 36371
     },
     {
+      "recipe": "Survey Needle",
+      "key": 36373
+    },
+    {
+      "recipe": "Survey Needle",
+      "key": 36378
+    },
+    {
       "recipe": "Habitat Telescope",
       "key": 36374
     },
@@ -2123,20 +2275,12 @@
       "key": 36377
     },
     {
-      "recipe": "Survey Needle",
-      "key": 36378
-    },
-    {
       "recipe": "Standard Flexible Plating",
       "key": 36379
     },
     {
       "recipe": "Standard Crank",
       "key": 36380
-    },
-    {
-      "recipe": "Standard Metal Plating",
-      "key": 36381
     },
     {
       "recipe": "Indurate Lunar Adamantite Ingot",
@@ -2389,6 +2533,22 @@
       "key": 36087
     },
     {
+      "recipe": "Standard Lubricant D",
+      "key": 36606
+    },
+    {
+      "recipe": "Standard Lubricant C",
+      "key": 36612
+    },
+    {
+      "recipe": "Standard Lubricant B",
+      "key": 36624
+    },
+    {
+      "recipe": "Standard Lubricant A",
+      "key": 36633
+    },
+    {
       "recipe": "Lunar Spices",
       "key": 36607
     },
@@ -2427,6 +2587,14 @@
     {
       "recipe": "Worker's Oil",
       "key": 36617
+    },
+    {
+      "recipe": "Worker's Vanilla Nutrient Bar",
+      "key": 36618
+    },
+    {
+      "recipe": "Worker's Vanilla Nutrient Bar ★★",
+      "key": 36658
     },
     {
       "recipe": "Ready-to-eat Grilled Steak",
@@ -2481,10 +2649,6 @@
       "key": 36632
     },
     {
-      "recipe": "Standard Lubricant",
-      "key": 36633
-    },
-    {
       "recipe": "Cosmotized Standard Adhesive",
       "key": 36634
     },
@@ -2533,12 +2697,16 @@
       "key": 36645
     },
     {
-      "recipe": "Cured Fish",
-      "key": 36647
+      "recipe": "Curing Spirits ★★★",
+      "key": 36646
     },
     {
-      "recipe": "Curing Spirits",
+      "recipe": "Curing Spirits ★★★",
       "key": 36648
+    },
+    {
+      "recipe": "Cured Fish",
+      "key": 36647
     },
     {
       "recipe": "Cured Meat",
@@ -2575,10 +2743,6 @@
     {
       "recipe": "Worker's Paste",
       "key": 36657
-    },
-    {
-      "recipe": "Worker's Vanilla Nutrient Bar",
-      "key": 36658
     },
     {
       "recipe": "Worker's Omni-nutritious Meal",
@@ -2799,12 +2963,40 @@
       "key": 36108
     },
     {
+      "recipe": "Standard Brick D",
+      "key": 36543
+    },
+    {
+      "recipe": "Standard Brick C",
+      "key": 36549
+    },
+    {
+      "recipe": "Standard Brick B",
+      "key": 36561
+    },
+    {
+      "recipe": "Standard Brick A",
+      "key": 36570
+    },
+    {
       "recipe": "Lunar Spices",
       "key": 36544
     },
     {
       "recipe": "Standard Mortar",
       "key": 36545
+    },
+    {
+      "recipe": "Worker's Nutrient Mixture",
+      "key": 36546
+    },
+    {
+      "recipe": "Worker's Nutrient Mixture",
+      "key": 36565
+    },
+    {
+      "recipe": "Worker's Nutrient Mixture",
+      "key": 36594
     },
     {
       "recipe": "Standard Glue",
@@ -2825,6 +3017,14 @@
     {
       "recipe": "Enrichment Mortar",
       "key": 36552
+    },
+    {
+      "recipe": "Enrichment Concrete",
+      "key": 36553
+    },
+    {
+      "recipe": "Enrichment Concrete",
+      "key": 36564
     },
     {
       "recipe": "Habitat Beeswax",
@@ -2863,10 +3063,6 @@
       "key": 36563
     },
     {
-      "recipe": "Enrichment Concrete",
-      "key": 36564
-    },
-    {
       "recipe": "Habitat Growth Formula",
       "key": 36566
     },
@@ -2879,8 +3075,12 @@
       "key": 36568
     },
     {
-      "recipe": "Standard Brick",
-      "key": 36570
+      "recipe": "Habitat Houseplant",
+      "key": 36569
+    },
+    {
+      "recipe": "Habitat Houseplant ★★",
+      "key": 36579
     },
     {
       "recipe": "Cosmotized Standard Mortar",
@@ -2915,10 +3115,6 @@
       "key": 36578
     },
     {
-      "recipe": "Habitat Houseplant",
-      "key": 36579
-    },
-    {
       "recipe": "Survey Craftsman's Cunning Brew",
       "key": 36580
     },
@@ -2931,12 +3127,16 @@
       "key": 36582
     },
     {
-      "recipe": "Survey Rust Repellent",
-      "key": 36584
+      "recipe": "Survey Alchemic ★★★",
+      "key": 36583
     },
     {
-      "recipe": "Survey Alchemic",
+      "recipe": "Survey Alchemic ★★★",
       "key": 36585
+    },
+    {
+      "recipe": "Survey Rust Repellent",
+      "key": 36584
     },
     {
       "recipe": "Survey Preservative",
@@ -2969,10 +3169,6 @@
     {
       "recipe": "Aquaculture Pellet",
       "key": 36593
-    },
-    {
-      "recipe": "Worker's Nutrient Mixture",
-      "key": 36594
     },
     {
       "recipe": "Worker's Nutrient Jelly",

@@ -306,11 +306,6 @@ def create_export_recipe(recipes_df: dict) -> dict:
             suggested_craft: int = int(current_recipe.SuggestedCraftsmanship)
             stars: int = int(current_recipe.Stars)
 
-            for i, saved_recipe in enumerate(export_recipes[craft_key]):
-                if saved_recipe["name"]["en"] == name:
-                    if recipe_key > saved_recipe["key"]:
-                        export_recipes[craft_key].pop(i)
-
             export_recipes[craft_key].append(
                 {
                     "key": recipe_key,
@@ -334,8 +329,46 @@ def create_export_recipe(recipes_df: dict) -> dict:
                     "stars": stars,
                 }
             )
-
+    export_recipes = sort_variants(export_recipes)
     return export_recipes
+
+
+def sort_variants(recipes):
+    reverse_map = {}
+
+    # group recipes by crafter and then by name
+    for crafter in recipes:
+        reverse_map[crafter] = {}
+        for recipe in recipes[crafter]:
+            name = recipe["name"]["en"]
+            reverse_map[crafter].setdefault(name, []).append(recipe)
+
+    for crafter in reverse_map:
+        for recipe_name, variant_recipes in reverse_map[crafter].items():
+            append_order = list("DCBA")
+            variant_amount = len(variant_recipes)
+
+            if variant_amount == 4:
+                sorted_variants = sorted(variant_recipes, key=lambda x: x["key"])
+                for i, variant in enumerate(sorted_variants):
+                    suffix = append_order[i]
+                    for lang in variant["name"]:
+                        if variant["name"][lang] is not None:
+                            variant["name"][lang] += f" {suffix}"
+
+            if variant_amount == 2:
+                for variant in variant_recipes:
+                    if variant["stars"] > 0:
+                        stars = "★" * variant["stars"]
+                        for lang in variant["name"]:
+                            if variant["name"][lang] is not None:
+                                variant["name"][lang] += f" {stars}"
+    result_recipes = {}
+    for crafter, grouped_recipes in reverse_map.items():
+        result_recipes[crafter] = []
+        for recipe_list in grouped_recipes.values():
+            result_recipes[crafter].extend(recipe_list)
+    return result_recipes
 
 
 def create_export_buffs(df) -> dict:
