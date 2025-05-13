@@ -1,6 +1,13 @@
 $sourcePath = "./src/SaintcoinachSrc/SaintCoinach/bin/Release/net7.0"
 $destPath = "./src/CraftDataSrc"
 
+
+git submodule update --init --recursive
+git submodule foreach git pull origin master
+cd ./src/SaintcoinachSrc/
+dotnet build -c Release
+cd ../..
+
 # Ensure the destination directory exists
 if (-not (Test-Path $destPath)) {
     New-Item -Path $destPath -ItemType Directory -Force
@@ -25,11 +32,8 @@ foreach ($item in $items) {
     # Create a symbolic link for the item (file or directory)
     New-Item -Path $linkPath -ItemType SymbolicLink -Value $item.FullName -Force
 }
-git submodule update --init --recursive
-git submodule foreach git pull origin master
-cd ./src/SaintcoinachSrc/
-dotnet build -c Release
-cd ../CraftDataSrc/CraftData/CraftData
+
+cd ./src/CraftDataSrc/CraftData/CraftData
 dotnet publish -c Release
 cd ../../../../
 exit
